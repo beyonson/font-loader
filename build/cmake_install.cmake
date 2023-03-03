@@ -1,4 +1,4 @@
-# Install script for directory: /home/garrett/git/learn-opengl
+# Install script for directory: /home/garrett/git/opengl-text-editor
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,7 +44,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/garrett/git/learn-opengl/build/external/cmake_install.cmake")
+  include("/home/garrett/git/opengl-text-editor/build/external/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -55,5 +55,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/garrett/git/learn-opengl/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/garrett/git/opengl-text-editor/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

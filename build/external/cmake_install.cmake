@@ -1,4 +1,4 @@
-# Install script for directory: /home/garrett/git/learn-opengl/external
+# Install script for directory: /home/garrett/git/opengl-text-editor/external
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,6 +44,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/garrett/git/learn-opengl/build/external/glfw/cmake_install.cmake")
+  include("/home/garrett/git/opengl-text-editor/build/external/glfw/cmake_install.cmake")
 endif()
 

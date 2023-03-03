@@ -5,13 +5,13 @@
 # compile CXX with /usr/bin/c++
 C_DEFINES = 
 
-C_INCLUDES = -I/home/garrett/git/learn-opengl/include -I/home/garrett/git/learn-opengl/external/glfw/include
+C_INCLUDES = -I/home/garrett/git/opengl-text-editor/include -I/home/garrett/git/opengl-text-editor/external/glfw/include
 
 C_FLAGS = 
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/garrett/git/learn-opengl/include -I/home/garrett/git/learn-opengl/external/glfw/include
+CXX_INCLUDES = -I/home/garrett/git/opengl-text-editor/include -I/home/garrett/git/opengl-text-editor/external/glfw/include
 
 CXX_FLAGS = 
 

@@ -1,9 +1,9 @@
 
-if (NOT EXISTS "/home/garrett/git/learn-opengl/build/external/glfw/install_manifest.txt")
-    message(FATAL_ERROR "Cannot find install manifest: \"/home/garrett/git/learn-opengl/build/external/glfw/install_manifest.txt\"")
+if (NOT EXISTS "/home/garrett/git/opengl-text-editor/build/external/glfw/install_manifest.txt")
+    message(FATAL_ERROR "Cannot find install manifest: \"/home/garrett/git/opengl-text-editor/build/external/glfw/install_manifest.txt\"")
 endif()
 
-file(READ "/home/garrett/git/learn-opengl/build/external/glfw/install_manifest.txt" files)
+file(READ "/home/garrett/git/opengl-text-editor/build/external/glfw/install_manifest.txt" files)
 string(REGEX REPLACE "\n" ";" files "${files}")
 
 foreach (file ${files})

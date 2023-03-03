@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = -D_DEFAULT_SOURCE -D_GLFW_X11
 
-C_INCLUDES = -I/home/garrett/git/learn-opengl/external/glfw/include -I/home/garrett/git/learn-opengl/external/glfw/src -I/home/garrett/git/learn-opengl/build/external/glfw/src
+C_INCLUDES = -I/home/garrett/git/opengl-text-editor/external/glfw/include -I/home/garrett/git/opengl-text-editor/external/glfw/src -I/home/garrett/git/opengl-text-editor/build/external/glfw/src
 
 C_FLAGS = -fPIC -Wall -std=c99
 

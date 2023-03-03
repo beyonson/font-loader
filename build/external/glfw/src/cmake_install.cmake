@@ -1,4 +1,4 @@
-# Install script for directory: /home/garrett/git/learn-opengl/external/glfw/src
+# Install script for directory: /home/garrett/git/opengl-text-editor/external/glfw/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -43,6 +43,6 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/garrett/git/learn-opengl/build/external/glfw/src/libglfw3.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/garrett/git/opengl-text-editor/build/external/glfw/src/libglfw3.a")
 endif()
 

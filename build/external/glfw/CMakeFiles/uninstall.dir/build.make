@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/garrett/git/learn-opengl
+CMAKE_SOURCE_DIR = /home/garrett/git/opengl-text-editor
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/garrett/git/learn-opengl/build
+CMAKE_BINARY_DIR = /home/garrett/git/opengl-text-editor/build
 
 # Utility rule file for uninstall.
 
@@ -67,7 +67,7 @@ include external/glfw/CMakeFiles/uninstall.dir/compiler_depend.make
 include external/glfw/CMakeFiles/uninstall.dir/progress.make
 
 external/glfw/CMakeFiles/uninstall:
-	cd /home/garrett/git/learn-opengl/build/external/glfw && /usr/bin/cmake -P /home/garrett/git/learn-opengl/build/external/glfw/cmake_uninstall.cmake
+	cd /home/garrett/git/opengl-text-editor/build/external/glfw && /usr/bin/cmake -P /home/garrett/git/opengl-text-editor/build/external/glfw/cmake_uninstall.cmake
 
 uninstall: external/glfw/CMakeFiles/uninstall
 uninstall: external/glfw/CMakeFiles/uninstall.dir/build.make
@@ -78,10 +78,10 @@ external/glfw/CMakeFiles/uninstall.dir/build: uninstall
 .PHONY : external/glfw/CMakeFiles/uninstall.dir/build
 
 external/glfw/CMakeFiles/uninstall.dir/clean:
-	cd /home/garrett/git/learn-opengl/build/external/glfw && $(CMAKE_COMMAND) -P CMakeFiles/uninstall.dir/cmake_clean.cmake
+	cd /home/garrett/git/opengl-text-editor/build/external/glfw && $(CMAKE_COMMAND) -P CMakeFiles/uninstall.dir/cmake_clean.cmake
 .PHONY : external/glfw/CMakeFiles/uninstall.dir/clean
 
 external/glfw/CMakeFiles/uninstall.dir/depend:
-	cd /home/garrett/git/learn-opengl/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/garrett/git/learn-opengl /home/garrett/git/learn-opengl/external/glfw /home/garrett/git/learn-opengl/build /home/garrett/git/learn-opengl/build/external/glfw /home/garrett/git/learn-opengl/build/external/glfw/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/garrett/git/opengl-text-editor/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/garrett/git/opengl-text-editor /home/garrett/git/opengl-text-editor/external/glfw /home/garrett/git/opengl-text-editor/build /home/garrett/git/opengl-text-editor/build/external/glfw /home/garrett/git/opengl-text-editor/build/external/glfw/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : external/glfw/CMakeFiles/uninstall.dir/depend
 

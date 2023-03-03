@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/garrett/git/learn-opengl
+CMAKE_SOURCE_DIR = /home/garrett/git/opengl-text-editor
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/garrett/git/learn-opengl/build
+CMAKE_BINARY_DIR = /home/garrett/git/opengl-text-editor/build
 
 # Utility rule file for update_mappings.
 
@@ -67,8 +67,8 @@ include external/glfw/src/CMakeFiles/update_mappings.dir/compiler_depend.make
 include external/glfw/src/CMakeFiles/update_mappings.dir/progress.make
 
 external/glfw/src/CMakeFiles/update_mappings:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/garrett/git/learn-opengl/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Updating gamepad mappings from upstream repository"
-	cd /home/garrett/git/learn-opengl/external/glfw/src && /usr/bin/cmake -P /home/garrett/git/learn-opengl/external/glfw/CMake/GenerateMappings.cmake mappings.h.in mappings.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/garrett/git/opengl-text-editor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Updating gamepad mappings from upstream repository"
+	cd /home/garrett/git/opengl-text-editor/external/glfw/src && /usr/bin/cmake -P /home/garrett/git/opengl-text-editor/external/glfw/CMake/GenerateMappings.cmake mappings.h.in mappings.h
 
 update_mappings: external/glfw/src/CMakeFiles/update_mappings
 update_mappings: external/glfw/src/CMakeFiles/update_mappings.dir/build.make
@@ -79,10 +79,10 @@ external/glfw/src/CMakeFiles/update_mappings.dir/build: update_mappings
 .PHONY : external/glfw/src/CMakeFiles/update_mappings.dir/build
 
 external/glfw/src/CMakeFiles/update_mappings.dir/clean:
-	cd /home/garrett/git/learn-opengl/build/external/glfw/src && $(CMAKE_COMMAND) -P CMakeFiles/update_mappings.dir/cmake_clean.cmake
+	cd /home/garrett/git/opengl-text-editor/build/external/glfw/src && $(CMAKE_COMMAND) -P CMakeFiles/update_mappings.dir/cmake_clean.cmake
 .PHONY : external/glfw/src/CMakeFiles/update_mappings.dir/clean
 
 external/glfw/src/CMakeFiles/update_mappings.dir/depend:
-	cd /home/garrett/git/learn-opengl/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/garrett/git/learn-opengl /home/garrett/git/learn-opengl/external/glfw/src /home/garrett/git/learn-opengl/build /home/garrett/git/learn-opengl/build/external/glfw/src /home/garrett/git/learn-opengl/build/external/glfw/src/CMakeFiles/update_mappings.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/garrett/git/opengl-text-editor/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/garrett/git/opengl-text-editor /home/garrett/git/opengl-text-editor/external/glfw/src /home/garrett/git/opengl-text-editor/build /home/garrett/git/opengl-text-editor/build/external/glfw/src /home/garrett/git/opengl-text-editor/build/external/glfw/src/CMakeFiles/update_mappings.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : external/glfw/src/CMakeFiles/update_mappings.dir/depend
 

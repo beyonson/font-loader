@@ -1,6 +1,6 @@
 CMakeFiles/learn-opengl.dir/src/main.cpp.o: \
- /home/garrett/git/learn-opengl/src/main.cpp /usr/include/stdc-predef.h \
- /usr/include/c++/12.2.1/iostream \
+ /home/garrett/git/opengl-text-editor/src/main.cpp \
+ /usr/include/stdc-predef.h /usr/include/c++/12.2.1/iostream \
  /usr/include/c++/12.2.1/x86_64-pc-linux-gnu/bits/c++config.h \
  /usr/include/c++/12.2.1/x86_64-pc-linux-gnu/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -132,6 +132,6 @@ CMakeFiles/learn-opengl.dir/src/main.cpp.o: \
  /usr/include/c++/12.2.1/bits/basic_ios.tcc \
  /usr/include/c++/12.2.1/bits/ostream.tcc /usr/include/c++/12.2.1/istream \
  /usr/include/c++/12.2.1/bits/istream.tcc \
- /home/garrett/git/learn-opengl/include/glad/glad.h \
- /home/garrett/git/learn-opengl/include/KHR/khrplatform.h \
- /home/garrett/git/learn-opengl/external/glfw/include/GLFW/glfw3.h
+ /home/garrett/git/opengl-text-editor/include/glad/glad.h \
+ /home/garrett/git/opengl-text-editor/include/KHR/khrplatform.h \
+ /home/garrett/git/opengl-text-editor/external/glfw/include/GLFW/glfw3.h
