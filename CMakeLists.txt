@@ -6,7 +6,7 @@ add_subdirectory(external)
 include_directories(include)
 
 ## create executables and link
-set(SOURCES src/main.cpp src/glad.c include/glad/glad.h include/KHR/khrplatform.h)
+set(SOURCES src/main.cpp src/glad.c include/shader.h include/glad/glad.h include/KHR/khrplatform.h)
 add_executable(${PROJECT_NAME}
     ${SOURCES}
 )
