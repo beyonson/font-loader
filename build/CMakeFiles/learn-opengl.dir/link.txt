@@ -1,0 +1,1 @@
+/usr/bin/c++ "CMakeFiles/learn-opengl.dir/src/main.cpp.o" "CMakeFiles/learn-opengl.dir/src/glad.c.o" -o learn-opengl  external/glfw/src/libglfw3.a /usr/lib/librt.a -lm -ldl 
