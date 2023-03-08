@@ -109,8 +109,17 @@ learn-opengl: CMakeFiles/learn-opengl.dir/src/main.cpp.o
 learn-opengl: CMakeFiles/learn-opengl.dir/src/glad.c.o
 learn-opengl: CMakeFiles/learn-opengl.dir/build.make
 learn-opengl: external/glfw/src/libglfw3.a
+learn-opengl: external/freetype/libfreetype.a
 learn-opengl: /usr/lib/librt.a
 learn-opengl: /usr/lib/libm.so
+learn-opengl: /usr/lib/libz.so
+learn-opengl: /usr/lib/libbz2.so
+learn-opengl: /usr/lib/libpng.so
+learn-opengl: /usr/lib/libz.so
+learn-opengl: /usr/lib/libbz2.so
+learn-opengl: /usr/lib/libpng.so
+learn-opengl: /usr/lib/libharfbuzz.so
+learn-opengl: /usr/lib/libbrotlidec.so
 learn-opengl: CMakeFiles/learn-opengl.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/garrett/git/opengl-text-editor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable learn-opengl"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/learn-opengl.dir/link.txt --verbose=$(VERBOSE)

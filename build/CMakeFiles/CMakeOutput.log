@@ -26,12 +26,12 @@ Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" p
 The CXX compiler identification is GNU, found in "/home/garrett/git/opengl-text-editor/build/CMakeFiles/3.25.2/CompilerIdCXX/a.out"
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: /home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-nUqQUy
+Change Dir: /home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-xN9t3r
 
-Run Build Command(s):/usr/bin/make -f Makefile cmTC_a941b/fast && /usr/bin/make  -f CMakeFiles/cmTC_a941b.dir/build.make CMakeFiles/cmTC_a941b.dir/build
-make[1]: Entering directory '/home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-nUqQUy'
-Building C object CMakeFiles/cmTC_a941b.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc   -v -o CMakeFiles/cmTC_a941b.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_8a708/fast && /usr/bin/make  -f CMakeFiles/cmTC_8a708.dir/build.make CMakeFiles/cmTC_8a708.dir/build
+make[1]: Entering directory '/home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-xN9t3r'
+Building C object CMakeFiles/cmTC_8a708.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc   -v -o CMakeFiles/cmTC_8a708.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 Target: x86_64-pc-linux-gnu
@@ -39,8 +39,8 @@ Configured with: /build/gcc/src/gcc/configure --enable-languages=c,c++,ada,fortr
 Thread model: posix
 Supported LTO compression algorithms: zlib zstd
 gcc version 12.2.1 20230201 (GCC) 
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a941b.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_a941b.dir/'
- /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_a941b.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o /tmp/cctPi8He.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8a708.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8a708.dir/'
+ /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_8a708.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o /tmp/cc55lTaj.s
 GNU C17 (GCC) version 12.2.1 20230201 (x86_64-pc-linux-gnu)
 	compiled by GNU C version 12.2.1 20230201, GMP version 6.2.1, MPFR version 4.2.0, MPC version 1.3.1, isl version isl-0.25-GMP
 
@@ -58,15 +58,15 @@ GNU C17 (GCC) version 12.2.1 20230201 (x86_64-pc-linux-gnu)
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 Compiler executable checksum: 99df1fbb4c4d7eeb8d93f0979bfab9ce
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a941b.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_a941b.dir/'
- as -v --64 -o CMakeFiles/cmTC_a941b.dir/CMakeCCompilerABI.c.o /tmp/cctPi8He.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8a708.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8a708.dir/'
+ as -v --64 -o CMakeFiles/cmTC_8a708.dir/CMakeCCompilerABI.c.o /tmp/cc55lTaj.s
 GNU assembler version 2.40 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.40
 COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a941b.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_a941b.dir/CMakeCCompilerABI.c.'
-Linking C executable cmTC_a941b
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a941b.dir/link.txt --verbose=1
-/usr/bin/cc  -v CMakeFiles/cmTC_a941b.dir/CMakeCCompilerABI.c.o -o cmTC_a941b 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8a708.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8a708.dir/CMakeCCompilerABI.c.'
+Linking C executable cmTC_8a708
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8a708.dir/link.txt --verbose=1
+/usr/bin/cc  -v CMakeFiles/cmTC_8a708.dir/CMakeCCompilerABI.c.o -o cmTC_8a708 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/lto-wrapper
@@ -77,10 +77,10 @@ Supported LTO compression algorithms: zlib zstd
 gcc version 12.2.1 20230201 (GCC) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_a941b' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_a941b.'
- /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccLhcTZq.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_a941b /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../.. CMakeFiles/cmTC_a941b.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_a941b' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_a941b.'
-make[1]: Leaving directory '/home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-nUqQUy'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8a708' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_8a708.'
+ /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cckUCVqu.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_8a708 /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../.. CMakeFiles/cmTC_8a708.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8a708' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_8a708.'
+make[1]: Leaving directory '/home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-xN9t3r'
 
 
 
@@ -101,12 +101,12 @@ Parsed C implicit include dir info from above output: rv=done
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-nUqQUy]
+  ignore line: [Change Dir: /home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-xN9t3r]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/make -f Makefile cmTC_a941b/fast && /usr/bin/make  -f CMakeFiles/cmTC_a941b.dir/build.make CMakeFiles/cmTC_a941b.dir/build]
-  ignore line: [make[1]: Entering directory '/home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-nUqQUy']
-  ignore line: [Building C object CMakeFiles/cmTC_a941b.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_a941b.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
+  ignore line: [Run Build Command(s):/usr/bin/make -f Makefile cmTC_8a708/fast && /usr/bin/make  -f CMakeFiles/cmTC_8a708.dir/build.make CMakeFiles/cmTC_8a708.dir/build]
+  ignore line: [make[1]: Entering directory '/home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-xN9t3r']
+  ignore line: [Building C object CMakeFiles/cmTC_8a708.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_8a708.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [Target: x86_64-pc-linux-gnu]
@@ -114,8 +114,8 @@ Parsed C implicit link information from above output:
   ignore line: [Thread model: posix]
   ignore line: [Supported LTO compression algorithms: zlib zstd]
   ignore line: [gcc version 12.2.1 20230201 (GCC) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a941b.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_a941b.dir/']
-  ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_a941b.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o /tmp/cctPi8He.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8a708.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8a708.dir/']
+  ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_8a708.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o /tmp/cc55lTaj.s]
   ignore line: [GNU C17 (GCC) version 12.2.1 20230201 (x86_64-pc-linux-gnu)]
   ignore line: [	compiled by GNU C version 12.2.1 20230201  GMP version 6.2.1  MPFR version 4.2.0  MPC version 1.3.1  isl version isl-0.25-GMP]
   ignore line: []
@@ -133,15 +133,15 @@ Parsed C implicit link information from above output:
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [Compiler executable checksum: 99df1fbb4c4d7eeb8d93f0979bfab9ce]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a941b.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_a941b.dir/']
-  ignore line: [ as -v --64 -o CMakeFiles/cmTC_a941b.dir/CMakeCCompilerABI.c.o /tmp/cctPi8He.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8a708.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8a708.dir/']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_8a708.dir/CMakeCCompilerABI.c.o /tmp/cc55lTaj.s]
   ignore line: [GNU assembler version 2.40 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.40]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a941b.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_a941b.dir/CMakeCCompilerABI.c.']
-  ignore line: [Linking C executable cmTC_a941b]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a941b.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc  -v CMakeFiles/cmTC_a941b.dir/CMakeCCompilerABI.c.o -o cmTC_a941b ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8a708.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8a708.dir/CMakeCCompilerABI.c.']
+  ignore line: [Linking C executable cmTC_8a708]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8a708.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc  -v CMakeFiles/cmTC_8a708.dir/CMakeCCompilerABI.c.o -o cmTC_8a708 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/lto-wrapper]
@@ -152,13 +152,13 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 12.2.1 20230201 (GCC) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_a941b' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_a941b.']
-  link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccLhcTZq.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_a941b /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../.. CMakeFiles/cmTC_a941b.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8a708' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_8a708.']
+  link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cckUCVqu.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_8a708 /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../.. CMakeFiles/cmTC_8a708.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib/crtn.o]
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccLhcTZq.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cckUCVqu.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -173,7 +173,7 @@ Parsed C implicit link information from above output:
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-pie] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_a941b] ==> ignore
+    arg [cmTC_8a708] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib/Scrt1.o]
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib/crti.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib/crti.o]
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/crtbeginS.o]
@@ -182,7 +182,7 @@ Parsed C implicit link information from above output:
     arg [-L/lib/../lib] ==> dir [/lib/../lib]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../..] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../..]
-    arg [CMakeFiles/cmTC_a941b.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_8a708.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--push-state] ==> ignore
     arg [--as-needed] ==> ignore
@@ -211,12 +211,12 @@ Parsed C implicit link information from above output:
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: /home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-nAvMxV
+Change Dir: /home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-p7InWE
 
-Run Build Command(s):/usr/bin/make -f Makefile cmTC_d95fc/fast && /usr/bin/make  -f CMakeFiles/cmTC_d95fc.dir/build.make CMakeFiles/cmTC_d95fc.dir/build
-make[1]: Entering directory '/home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-nAvMxV'
-Building CXX object CMakeFiles/cmTC_d95fc.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++   -v -o CMakeFiles/cmTC_d95fc.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_0ffd1/fast && /usr/bin/make  -f CMakeFiles/cmTC_0ffd1.dir/build.make CMakeFiles/cmTC_0ffd1.dir/build
+make[1]: Entering directory '/home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-p7InWE'
+Building CXX object CMakeFiles/cmTC_0ffd1.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++   -v -o CMakeFiles/cmTC_0ffd1.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 Target: x86_64-pc-linux-gnu
@@ -224,8 +224,8 @@ Configured with: /build/gcc/src/gcc/configure --enable-languages=c,c++,ada,fortr
 Thread model: posix
 Supported LTO compression algorithms: zlib zstd
 gcc version 12.2.1 20230201 (GCC) 
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_d95fc.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_d95fc.dir/'
- /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_d95fc.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/ccbufyci.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_0ffd1.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_0ffd1.dir/'
+ /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_0ffd1.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/ccwluJ8b.s
 GNU C++17 (GCC) version 12.2.1 20230201 (x86_64-pc-linux-gnu)
 	compiled by GNU C version 12.2.1 20230201, GMP version 6.2.1, MPFR version 4.2.0, MPC version 1.3.1, isl version isl-0.25-GMP
 
@@ -246,15 +246,15 @@ GNU C++17 (GCC) version 12.2.1 20230201 (x86_64-pc-linux-gnu)
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 Compiler executable checksum: ab2adc4aa87e9c5b6e6cb24c55e663d5
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_d95fc.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_d95fc.dir/'
- as -v --64 -o CMakeFiles/cmTC_d95fc.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccbufyci.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_0ffd1.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_0ffd1.dir/'
+ as -v --64 -o CMakeFiles/cmTC_0ffd1.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccwluJ8b.s
 GNU assembler version 2.40 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.40
 COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_d95fc.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_d95fc.dir/CMakeCXXCompilerABI.cpp.'
-Linking CXX executable cmTC_d95fc
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d95fc.dir/link.txt --verbose=1
-/usr/bin/c++  -v CMakeFiles/cmTC_d95fc.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_d95fc 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_0ffd1.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_0ffd1.dir/CMakeCXXCompilerABI.cpp.'
+Linking CXX executable cmTC_0ffd1
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0ffd1.dir/link.txt --verbose=1
+/usr/bin/c++  -v CMakeFiles/cmTC_0ffd1.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_0ffd1 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/lto-wrapper
@@ -265,10 +265,10 @@ Supported LTO compression algorithms: zlib zstd
 gcc version 12.2.1 20230201 (GCC) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_d95fc' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_d95fc.'
- /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccw1niHr.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_d95fc /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../.. CMakeFiles/cmTC_d95fc.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_d95fc' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_d95fc.'
-make[1]: Leaving directory '/home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-nAvMxV'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_0ffd1' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_0ffd1.'
+ /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccmdJaFC.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_0ffd1 /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../.. CMakeFiles/cmTC_0ffd1.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_0ffd1' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_0ffd1.'
+make[1]: Leaving directory '/home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-p7InWE'
 
 
 
@@ -295,12 +295,12 @@ Parsed CXX implicit include dir info from above output: rv=done
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-nAvMxV]
+  ignore line: [Change Dir: /home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-p7InWE]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/make -f Makefile cmTC_d95fc/fast && /usr/bin/make  -f CMakeFiles/cmTC_d95fc.dir/build.make CMakeFiles/cmTC_d95fc.dir/build]
-  ignore line: [make[1]: Entering directory '/home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-nAvMxV']
-  ignore line: [Building CXX object CMakeFiles/cmTC_d95fc.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_d95fc.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Run Build Command(s):/usr/bin/make -f Makefile cmTC_0ffd1/fast && /usr/bin/make  -f CMakeFiles/cmTC_0ffd1.dir/build.make CMakeFiles/cmTC_0ffd1.dir/build]
+  ignore line: [make[1]: Entering directory '/home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-p7InWE']
+  ignore line: [Building CXX object CMakeFiles/cmTC_0ffd1.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_0ffd1.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [Target: x86_64-pc-linux-gnu]
@@ -308,8 +308,8 @@ Parsed CXX implicit link information from above output:
   ignore line: [Thread model: posix]
   ignore line: [Supported LTO compression algorithms: zlib zstd]
   ignore line: [gcc version 12.2.1 20230201 (GCC) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_d95fc.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_d95fc.dir/']
-  ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_d95fc.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/ccbufyci.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_0ffd1.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_0ffd1.dir/']
+  ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_0ffd1.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/ccwluJ8b.s]
   ignore line: [GNU C++17 (GCC) version 12.2.1 20230201 (x86_64-pc-linux-gnu)]
   ignore line: [	compiled by GNU C version 12.2.1 20230201  GMP version 6.2.1  MPFR version 4.2.0  MPC version 1.3.1  isl version isl-0.25-GMP]
   ignore line: []
@@ -330,15 +330,15 @@ Parsed CXX implicit link information from above output:
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [Compiler executable checksum: ab2adc4aa87e9c5b6e6cb24c55e663d5]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_d95fc.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_d95fc.dir/']
-  ignore line: [ as -v --64 -o CMakeFiles/cmTC_d95fc.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccbufyci.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_0ffd1.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_0ffd1.dir/']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_0ffd1.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccwluJ8b.s]
   ignore line: [GNU assembler version 2.40 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.40]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_d95fc.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_d95fc.dir/CMakeCXXCompilerABI.cpp.']
-  ignore line: [Linking CXX executable cmTC_d95fc]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d95fc.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++  -v CMakeFiles/cmTC_d95fc.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_d95fc ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_0ffd1.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_0ffd1.dir/CMakeCXXCompilerABI.cpp.']
+  ignore line: [Linking CXX executable cmTC_0ffd1]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0ffd1.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++  -v CMakeFiles/cmTC_0ffd1.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_0ffd1 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/lto-wrapper]
@@ -349,13 +349,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 12.2.1 20230201 (GCC) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_d95fc' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_d95fc.']
-  link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccw1niHr.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_d95fc /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../.. CMakeFiles/cmTC_d95fc.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_0ffd1' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_0ffd1.']
+  link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccmdJaFC.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_0ffd1 /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../.. CMakeFiles/cmTC_0ffd1.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib/crtn.o]
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccw1niHr.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccmdJaFC.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -370,7 +370,7 @@ Parsed CXX implicit link information from above output:
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-pie] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_d95fc] ==> ignore
+    arg [cmTC_0ffd1] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib/Scrt1.o]
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib/crti.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../../../lib/crti.o]
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/crtbeginS.o]
@@ -379,7 +379,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/lib/../lib] ==> dir [/lib/../lib]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../..] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/../../..]
-    arg [CMakeFiles/cmTC_d95fc.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_0ffd1.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -404,16 +404,16 @@ Parsed CXX implicit link information from above output:
 
 
 Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD succeeded with the following output:
-Change Dir: /home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-HBtXgu
+Change Dir: /home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-bXECZQ
 
-Run Build Command(s):/usr/bin/make -f Makefile cmTC_1cc7a/fast && /usr/bin/make  -f CMakeFiles/cmTC_1cc7a.dir/build.make CMakeFiles/cmTC_1cc7a.dir/build
-make[1]: Entering directory '/home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-HBtXgu'
-Building C object CMakeFiles/cmTC_1cc7a.dir/src.c.o
-/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_1cc7a.dir/src.c.o -c /home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-HBtXgu/src.c
-Linking C executable cmTC_1cc7a
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1cc7a.dir/link.txt --verbose=1
-/usr/bin/cc CMakeFiles/cmTC_1cc7a.dir/src.c.o -o cmTC_1cc7a 
-make[1]: Leaving directory '/home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-HBtXgu'
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_2e674/fast && /usr/bin/make  -f CMakeFiles/cmTC_2e674.dir/build.make CMakeFiles/cmTC_2e674.dir/build
+make[1]: Entering directory '/home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-bXECZQ'
+Building C object CMakeFiles/cmTC_2e674.dir/src.c.o
+/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_2e674.dir/src.c.o -c /home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-bXECZQ/src.c
+Linking C executable cmTC_2e674
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2e674.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_2e674.dir/src.c.o -o cmTC_2e674 
+make[1]: Leaving directory '/home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-bXECZQ'
 
 
 Source file was:
@@ -439,86 +439,142 @@ int main(void)
 
 
 Determining if the function XOpenDisplay exists in the /usr/lib/libX11.so;/usr/lib/libXext.so passed with the following output:
-Change Dir: /home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-lZXTIz
+Change Dir: /home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-6JRsbL
 
-Run Build Command(s):/usr/bin/make -f Makefile cmTC_7a1d7/fast && /usr/bin/make  -f CMakeFiles/cmTC_7a1d7.dir/build.make CMakeFiles/cmTC_7a1d7.dir/build
-make[1]: Entering directory '/home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-lZXTIz'
-Building C object CMakeFiles/cmTC_7a1d7.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=XOpenDisplay -o CMakeFiles/cmTC_7a1d7.dir/CheckFunctionExists.c.o -c /home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-lZXTIz/CheckFunctionExists.c
-Linking C executable cmTC_7a1d7
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7a1d7.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=XOpenDisplay CMakeFiles/cmTC_7a1d7.dir/CheckFunctionExists.c.o -o cmTC_7a1d7  /usr/lib/libX11.so /usr/lib/libXext.so 
-make[1]: Leaving directory '/home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-lZXTIz'
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_0135f/fast && /usr/bin/make  -f CMakeFiles/cmTC_0135f.dir/build.make CMakeFiles/cmTC_0135f.dir/build
+make[1]: Entering directory '/home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-6JRsbL'
+Building C object CMakeFiles/cmTC_0135f.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=XOpenDisplay -o CMakeFiles/cmTC_0135f.dir/CheckFunctionExists.c.o -c /home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-6JRsbL/CheckFunctionExists.c
+Linking C executable cmTC_0135f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0135f.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=XOpenDisplay CMakeFiles/cmTC_0135f.dir/CheckFunctionExists.c.o -o cmTC_0135f  /usr/lib/libX11.so /usr/lib/libXext.so 
+make[1]: Leaving directory '/home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-6JRsbL'
 
 
 
 Determining if the function gethostbyname exists passed with the following output:
-Change Dir: /home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-DyvF0m
+Change Dir: /home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-M3eYlS
 
-Run Build Command(s):/usr/bin/make -f Makefile cmTC_40acf/fast && /usr/bin/make  -f CMakeFiles/cmTC_40acf.dir/build.make CMakeFiles/cmTC_40acf.dir/build
-make[1]: Entering directory '/home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-DyvF0m'
-Building C object CMakeFiles/cmTC_40acf.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gethostbyname -o CMakeFiles/cmTC_40acf.dir/CheckFunctionExists.c.o -c /home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-DyvF0m/CheckFunctionExists.c
-Linking C executable cmTC_40acf
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_40acf.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=gethostbyname CMakeFiles/cmTC_40acf.dir/CheckFunctionExists.c.o -o cmTC_40acf 
-make[1]: Leaving directory '/home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-DyvF0m'
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_4632f/fast && /usr/bin/make  -f CMakeFiles/cmTC_4632f.dir/build.make CMakeFiles/cmTC_4632f.dir/build
+make[1]: Entering directory '/home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-M3eYlS'
+Building C object CMakeFiles/cmTC_4632f.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gethostbyname -o CMakeFiles/cmTC_4632f.dir/CheckFunctionExists.c.o -c /home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-M3eYlS/CheckFunctionExists.c
+Linking C executable cmTC_4632f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4632f.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=gethostbyname CMakeFiles/cmTC_4632f.dir/CheckFunctionExists.c.o -o cmTC_4632f 
+make[1]: Leaving directory '/home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-M3eYlS'
 
 
 
 Determining if the function connect exists passed with the following output:
-Change Dir: /home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-NlPiI6
+Change Dir: /home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-G8Mj4z
 
-Run Build Command(s):/usr/bin/make -f Makefile cmTC_65ebc/fast && /usr/bin/make  -f CMakeFiles/cmTC_65ebc.dir/build.make CMakeFiles/cmTC_65ebc.dir/build
-make[1]: Entering directory '/home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-NlPiI6'
-Building C object CMakeFiles/cmTC_65ebc.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=connect -o CMakeFiles/cmTC_65ebc.dir/CheckFunctionExists.c.o -c /home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-NlPiI6/CheckFunctionExists.c
-Linking C executable cmTC_65ebc
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_65ebc.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=connect CMakeFiles/cmTC_65ebc.dir/CheckFunctionExists.c.o -o cmTC_65ebc 
-make[1]: Leaving directory '/home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-NlPiI6'
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_24264/fast && /usr/bin/make  -f CMakeFiles/cmTC_24264.dir/build.make CMakeFiles/cmTC_24264.dir/build
+make[1]: Entering directory '/home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-G8Mj4z'
+Building C object CMakeFiles/cmTC_24264.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=connect -o CMakeFiles/cmTC_24264.dir/CheckFunctionExists.c.o -c /home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-G8Mj4z/CheckFunctionExists.c
+Linking C executable cmTC_24264
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_24264.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=connect CMakeFiles/cmTC_24264.dir/CheckFunctionExists.c.o -o cmTC_24264 
+make[1]: Leaving directory '/home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-G8Mj4z'
 
 
 
 Determining if the function remove exists passed with the following output:
-Change Dir: /home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-ZUQyyq
+Change Dir: /home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-6ZwklE
 
-Run Build Command(s):/usr/bin/make -f Makefile cmTC_24f32/fast && /usr/bin/make  -f CMakeFiles/cmTC_24f32.dir/build.make CMakeFiles/cmTC_24f32.dir/build
-make[1]: Entering directory '/home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-ZUQyyq'
-Building C object CMakeFiles/cmTC_24f32.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=remove -o CMakeFiles/cmTC_24f32.dir/CheckFunctionExists.c.o -c /home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-ZUQyyq/CheckFunctionExists.c
-Linking C executable cmTC_24f32
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_24f32.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=remove CMakeFiles/cmTC_24f32.dir/CheckFunctionExists.c.o -o cmTC_24f32 
-make[1]: Leaving directory '/home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-ZUQyyq'
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_50f35/fast && /usr/bin/make  -f CMakeFiles/cmTC_50f35.dir/build.make CMakeFiles/cmTC_50f35.dir/build
+make[1]: Entering directory '/home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-6ZwklE'
+Building C object CMakeFiles/cmTC_50f35.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=remove -o CMakeFiles/cmTC_50f35.dir/CheckFunctionExists.c.o -c /home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-6ZwklE/CheckFunctionExists.c
+Linking C executable cmTC_50f35
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_50f35.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=remove CMakeFiles/cmTC_50f35.dir/CheckFunctionExists.c.o -o cmTC_50f35 
+make[1]: Leaving directory '/home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-6ZwklE'
 
 
 
 Determining if the function shmat exists passed with the following output:
-Change Dir: /home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-m8UNV4
+Change Dir: /home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-rVhwP0
 
-Run Build Command(s):/usr/bin/make -f Makefile cmTC_f9517/fast && /usr/bin/make  -f CMakeFiles/cmTC_f9517.dir/build.make CMakeFiles/cmTC_f9517.dir/build
-make[1]: Entering directory '/home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-m8UNV4'
-Building C object CMakeFiles/cmTC_f9517.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=shmat -o CMakeFiles/cmTC_f9517.dir/CheckFunctionExists.c.o -c /home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-m8UNV4/CheckFunctionExists.c
-Linking C executable cmTC_f9517
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f9517.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=shmat CMakeFiles/cmTC_f9517.dir/CheckFunctionExists.c.o -o cmTC_f9517 
-make[1]: Leaving directory '/home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-m8UNV4'
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_51e1c/fast && /usr/bin/make  -f CMakeFiles/cmTC_51e1c.dir/build.make CMakeFiles/cmTC_51e1c.dir/build
+make[1]: Entering directory '/home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-rVhwP0'
+Building C object CMakeFiles/cmTC_51e1c.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=shmat -o CMakeFiles/cmTC_51e1c.dir/CheckFunctionExists.c.o -c /home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-rVhwP0/CheckFunctionExists.c
+Linking C executable cmTC_51e1c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_51e1c.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=shmat CMakeFiles/cmTC_51e1c.dir/CheckFunctionExists.c.o -o cmTC_51e1c 
+make[1]: Leaving directory '/home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-rVhwP0'
 
 
 
 Determining if the function IceConnectionNumber exists in the ICE passed with the following output:
-Change Dir: /home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-mWi6sJ
+Change Dir: /home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-9uHZFj
 
-Run Build Command(s):/usr/bin/make -f Makefile cmTC_2cfb6/fast && /usr/bin/make  -f CMakeFiles/cmTC_2cfb6.dir/build.make CMakeFiles/cmTC_2cfb6.dir/build
-make[1]: Entering directory '/home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-mWi6sJ'
-Building C object CMakeFiles/cmTC_2cfb6.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber -o CMakeFiles/cmTC_2cfb6.dir/CheckFunctionExists.c.o -c /home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-mWi6sJ/CheckFunctionExists.c
-Linking C executable cmTC_2cfb6
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2cfb6.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=IceConnectionNumber CMakeFiles/cmTC_2cfb6.dir/CheckFunctionExists.c.o -o cmTC_2cfb6  -lICE 
-make[1]: Leaving directory '/home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-mWi6sJ'
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_f1078/fast && /usr/bin/make  -f CMakeFiles/cmTC_f1078.dir/build.make CMakeFiles/cmTC_f1078.dir/build
+make[1]: Entering directory '/home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-9uHZFj'
+Building C object CMakeFiles/cmTC_f1078.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber -o CMakeFiles/cmTC_f1078.dir/CheckFunctionExists.c.o -c /home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-9uHZFj/CheckFunctionExists.c
+Linking C executable cmTC_f1078
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f1078.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=IceConnectionNumber CMakeFiles/cmTC_f1078.dir/CheckFunctionExists.c.o -o cmTC_f1078  -lICE 
+make[1]: Leaving directory '/home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-9uHZFj'
+
+
+
+Determining if the BZ2_bzCompressInit exist passed with the following output:
+Change Dir: /home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-EJbl41
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_d1c9a/fast && /usr/bin/make  -f CMakeFiles/cmTC_d1c9a.dir/build.make CMakeFiles/cmTC_d1c9a.dir/build
+make[1]: Entering directory '/home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-EJbl41'
+Building C object CMakeFiles/cmTC_d1c9a.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_d1c9a.dir/CheckSymbolExists.c.o -c /home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-EJbl41/CheckSymbolExists.c
+Linking C executable cmTC_d1c9a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d1c9a.dir/link.txt --verbose=1
+/usr/bin/cc -rdynamic CMakeFiles/cmTC_d1c9a.dir/CheckSymbolExists.c.o -o cmTC_d1c9a  /usr/lib/libbz2.so 
+make[1]: Leaving directory '/home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-EJbl41'
+
+
+File CheckSymbolExists.c:
+/* */
+#include <bzlib.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef BZ2_bzCompressInit
+  return ((int*)(&BZ2_bzCompressInit))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the include file unistd.h exists passed with the following output:
+Change Dir: /home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-cECInV
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_7c493/fast && /usr/bin/make  -f CMakeFiles/cmTC_7c493.dir/build.make CMakeFiles/cmTC_7c493.dir/build
+make[1]: Entering directory '/home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-cECInV'
+Building C object CMakeFiles/cmTC_7c493.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_7c493.dir/CheckIncludeFile.c.o -c /home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-cECInV/CheckIncludeFile.c
+Linking C executable cmTC_7c493
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7c493.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_7c493.dir/CheckIncludeFile.c.o -o cmTC_7c493 
+make[1]: Leaving directory '/home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-cECInV'
+
+
+
+Determining if the include file fcntl.h exists passed with the following output:
+Change Dir: /home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-JzJm5a
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_8c1ed/fast && /usr/bin/make  -f CMakeFiles/cmTC_8c1ed.dir/build.make CMakeFiles/cmTC_8c1ed.dir/build
+make[1]: Entering directory '/home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-JzJm5a'
+Building C object CMakeFiles/cmTC_8c1ed.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_8c1ed.dir/CheckIncludeFile.c.o -c /home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-JzJm5a/CheckIncludeFile.c
+Linking C executable cmTC_8c1ed
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8c1ed.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_8c1ed.dir/CheckIncludeFile.c.o -o cmTC_8c1ed 
+make[1]: Leaving directory '/home/garrett/git/opengl-text-editor/build/CMakeFiles/CMakeScratch/TryCompile-JzJm5a'
 
 
 

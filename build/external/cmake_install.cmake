@@ -47,3 +47,8 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/garrett/git/opengl-text-editor/build/external/glfw/cmake_install.cmake")
 endif()
 
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/garrett/git/opengl-text-editor/build/external/freetype/cmake_install.cmake")
+endif()
+

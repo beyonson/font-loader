@@ -14,8 +14,23 @@
 # EXTERNAL cache entries
 ########################
 
+//Path to a file.
+BROTLIDEC_INCLUDE_DIRS:PATH=/usr/include
+
+//Path to a library.
+BROTLIDEC_LIBRARIES:FILEPATH=/usr/lib/libbrotlidec.so
+
 //Build shared libraries
 BUILD_SHARED_LIBS:BOOL=OFF
+
+//Path to a file.
+BZIP2_INCLUDE_DIR:PATH=/usr/include
+
+//Path to a library.
+BZIP2_LIBRARY_DEBUG:FILEPATH=BZIP2_LIBRARY_DEBUG-NOTFOUND
+
+//Path to a library.
+BZIP2_LIBRARY_RELEASE:FILEPATH=/usr/lib/libbz2.so
 
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=/usr/bin/addr2line
@@ -278,6 +293,24 @@ CMAKE_STRIP:FILEPATH=/usr/bin/strip
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
+//Enable to build RPM source packages
+CPACK_SOURCE_RPM:BOOL=OFF
+
+//Enable to build TBZ2 source packages
+CPACK_SOURCE_TBZ2:BOOL=ON
+
+//Enable to build TGZ source packages
+CPACK_SOURCE_TGZ:BOOL=ON
+
+//Enable to build TXZ source packages
+CPACK_SOURCE_TXZ:BOOL=ON
+
+//Enable to build TZ source packages
+CPACK_SOURCE_TZ:BOOL=ON
+
+//Enable to build ZIP source packages
+CPACK_SOURCE_ZIP:BOOL=OFF
+
 //Doxygen documentation generation tool (https://www.doxygen.nl)
 DOXYGEN_EXECUTABLE:FILEPATH=DOXYGEN_EXECUTABLE-NOTFOUND
 
@@ -292,6 +325,40 @@ FREETYPE_LIBRARY_DEBUG:FILEPATH=FREETYPE_LIBRARY_DEBUG-NOTFOUND
 
 //Path to a library.
 FREETYPE_LIBRARY_RELEASE:FILEPATH=/usr/lib/libfreetype.so
+
+//Disable support of compressed WOFF2 fonts.
+FT_DISABLE_BROTLI:BOOL=OFF
+
+//Disable support of bzip2 compressed fonts.
+FT_DISABLE_BZIP2:BOOL=OFF
+
+//Disable HarfBuzz (used for improving auto-hinting of OpenType
+// fonts).
+FT_DISABLE_HARFBUZZ:BOOL=OFF
+
+//Disable support of PNG compressed OpenType embedded bitmaps.
+FT_DISABLE_PNG:BOOL=OFF
+
+//Disable use of system zlib and use internal zlib library instead.
+FT_DISABLE_ZLIB:BOOL=OFF
+
+//Enable support for meaningful error descriptions.
+FT_ENABLE_ERROR_STRINGS:BOOL=OFF
+
+//Require support of compressed WOFF2 fonts.
+FT_REQUIRE_BROTLI:BOOL=OFF
+
+//Require support of bzip2 compressed fonts.
+FT_REQUIRE_BZIP2:BOOL=OFF
+
+//Require HarfBuzz for improving auto-hinting of OpenType fonts.
+FT_REQUIRE_HARFBUZZ:BOOL=OFF
+
+//Require support of PNG compressed OpenType embedded bitmaps.
+FT_REQUIRE_PNG:BOOL=OFF
+
+//Require system zlib instead of internal zlib library.
+FT_REQUIRE_ZLIB:BOOL=OFF
 
 //Path to a file.
 Fontconfig_INCLUDE_DIR:PATH=/usr/include
@@ -330,6 +397,12 @@ GLFW_LIBRARY_TYPE:STRING=
 //Value Computed by CMake
 GLFW_SOURCE_DIR:STATIC=/home/garrett/git/opengl-text-editor/external/glfw
 
+//Path to a file.
+HarfBuzz_INCLUDE_DIR:PATH=/usr/include/harfbuzz
+
+//Path to a library.
+HarfBuzz_LIBRARY:FILEPATH=/usr/lib/libharfbuzz.so
+
 //Path to a library.
 MATH_LIBRARY:FILEPATH=/usr/lib/libm.so
 
@@ -338,6 +411,15 @@ PKG_CONFIG_ARGN:STRING=
 
 //pkg-config executable
 PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
+
+//Path to a library.
+PNG_LIBRARY_DEBUG:FILEPATH=PNG_LIBRARY_DEBUG-NOTFOUND
+
+//Path to a library.
+PNG_LIBRARY_RELEASE:FILEPATH=/usr/lib/libpng.so
+
+//Path to a file.
+PNG_PNG_INCLUDE_DIR:PATH=/usr/include
 
 //Path to a library.
 RT_LIBRARY:FILEPATH=/usr/lib/librt.a
@@ -591,6 +673,27 @@ X11_xkbfile_INCLUDE_PATH:PATH=/usr/include
 //Path to a library.
 X11_xkbfile_LIB:FILEPATH=/usr/lib/libxkbfile.so
 
+//Path to a file.
+ZLIB_INCLUDE_DIR:PATH=/usr/include
+
+//Path to a library.
+ZLIB_LIBRARY_DEBUG:FILEPATH=ZLIB_LIBRARY_DEBUG-NOTFOUND
+
+//Path to a library.
+ZLIB_LIBRARY_RELEASE:FILEPATH=/usr/lib/libz.so
+
+//Value Computed by CMake
+freetype_BINARY_DIR:STATIC=/home/garrett/git/opengl-text-editor/build/external/freetype
+
+//Value Computed by CMake
+freetype_IS_TOP_LEVEL:STATIC=OFF
+
+//Dependencies for the target
+freetype_LIB_DEPENDS:STATIC=general;/usr/lib/libz.so;general;/usr/lib/libbz2.so;general;/usr/lib/libpng.so;general;/usr/lib/libz.so;general;/usr/lib/libharfbuzz.so;general;/usr/lib/libbrotlidec.so;
+
+//Value Computed by CMake
+freetype_SOURCE_DIR:STATIC=/home/garrett/git/opengl-text-editor/external/freetype
+
 //Value Computed by CMake
 learn-opengl_BINARY_DIR:STATIC=/home/garrett/git/opengl-text-editor/build
 
@@ -599,6 +702,15 @@ learn-opengl_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 learn-opengl_SOURCE_DIR:STATIC=/home/garrett/git/opengl-text-editor
+
+//Path to a library.
+pkgcfg_lib_PC_BROTLIDEC_brotlidec:FILEPATH=/usr/lib/libbrotlidec.so
+
+//Path to a library.
+pkgcfg_lib_PC_BZIP2_bz2:FILEPATH=/usr/lib/libbz2.so
+
+//Path to a library.
+pkgcfg_lib_PC_HARFBUZZ_harfbuzz:FILEPATH=/usr/lib/libharfbuzz.so
 
 //Path to a library.
 pkgcfg_lib_PKG_FONTCONFIG_fontconfig:FILEPATH=/usr/lib/libfontconfig.so
@@ -611,6 +723,18 @@ pkgcfg_lib_PKG_FONTCONFIG_freetype:FILEPATH=/usr/lib/libfreetype.so
 # INTERNAL cache entries
 ########################
 
+//ADVANCED property for variable: BROTLIDEC_INCLUDE_DIRS
+BROTLIDEC_INCLUDE_DIRS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: BROTLIDEC_LIBRARIES
+BROTLIDEC_LIBRARIES-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: BZIP2_INCLUDE_DIR
+BZIP2_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: BZIP2_LIBRARY_DEBUG
+BZIP2_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: BZIP2_LIBRARY_RELEASE
+BZIP2_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+//Have symbol BZ2_bzCompressInit
+BZIP2_NEED_PREFIX:INTERNAL=1
 //ADVANCED property for variable: CMAKE_ADDR2LINE
 CMAKE_ADDR2LINE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_AR
@@ -757,7 +881,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=4
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -800,12 +924,36 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_SOURCE_RPM
+CPACK_SOURCE_RPM-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_SOURCE_TBZ2
+CPACK_SOURCE_TBZ2-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_SOURCE_TGZ
+CPACK_SOURCE_TGZ-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_SOURCE_TXZ
+CPACK_SOURCE_TXZ-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_SOURCE_TZ
+CPACK_SOURCE_TZ-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_SOURCE_ZIP
+CPACK_SOURCE_ZIP-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: DOXYGEN_EXECUTABLE
 DOXYGEN_EXECUTABLE-ADVANCED:INTERNAL=1
+//Details about finding BZip2
+FIND_PACKAGE_MESSAGE_DETAILS_BZip2:INTERNAL=[/usr/lib/libbz2.so][/usr/include][v1.0.8()]
+//Details about finding BrotliDec
+FIND_PACKAGE_MESSAGE_DETAILS_BrotliDec:INTERNAL=[/usr/include][/usr/lib/libbrotlidec.so][v1.0.9()]
+//Details about finding HarfBuzz
+FIND_PACKAGE_MESSAGE_DETAILS_HarfBuzz:INTERNAL=[/usr/include/harfbuzz][/usr/lib/libharfbuzz.so][ON][v7.0.1(2.0.0)]
+//Details about finding PNG
+FIND_PACKAGE_MESSAGE_DETAILS_PNG:INTERNAL=[/usr/lib/libpng.so][/usr/include][v1.6.39()]
+//Details about finding PkgConfig
+FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/bin/pkg-config][v1.8.0()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //Details about finding X11
 FIND_PACKAGE_MESSAGE_DETAILS_X11:INTERNAL=[/usr/include][/usr/lib/libX11.so][c ][v()]
+//Details about finding ZLIB
+FIND_PACKAGE_MESSAGE_DETAILS_ZLIB:INTERNAL=[/usr/lib/libz.so][/usr/include][v1.2.13()]
 //ADVANCED property for variable: FREETYPE_INCLUDE_DIR_freetype2
 FREETYPE_INCLUDE_DIR_freetype2-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: FREETYPE_INCLUDE_DIR_ft2build
@@ -822,8 +970,121 @@ Fontconfig_LIBRARY-ADVANCED:INTERNAL=1
 GLFW_PKG_CONFIG_LIBS_PRIVATE:INTERNAL= -lrt -lm -ldl
 //GLFW pkg-config Requires.private
 GLFW_PKG_CONFIG_REQUIRES_PRIVATE:INTERNAL=
+//Have include fcntl.h
+HAVE_FCNTL_H:INTERNAL=1
+//Have include unistd.h
+HAVE_UNISTD_H:INTERNAL=1
+//ADVANCED property for variable: HarfBuzz_INCLUDE_DIR
+HarfBuzz_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: HarfBuzz_LIBRARY
+HarfBuzz_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: MATH_LIBRARY
 MATH_LIBRARY-ADVANCED:INTERNAL=1
+PC_BROTLIDEC_CFLAGS:INTERNAL=
+PC_BROTLIDEC_CFLAGS_I:INTERNAL=
+PC_BROTLIDEC_CFLAGS_OTHER:INTERNAL=
+PC_BROTLIDEC_FOUND:INTERNAL=1
+PC_BROTLIDEC_INCLUDEDIR:INTERNAL=/usr/include
+PC_BROTLIDEC_INCLUDE_DIRS:INTERNAL=
+PC_BROTLIDEC_LDFLAGS:INTERNAL=-L/usr/lib;-lbrotlidec
+PC_BROTLIDEC_LDFLAGS_OTHER:INTERNAL=
+PC_BROTLIDEC_LIBDIR:INTERNAL=/usr/lib
+PC_BROTLIDEC_LIBRARIES:INTERNAL=brotlidec
+PC_BROTLIDEC_LIBRARY_DIRS:INTERNAL=/usr/lib
+PC_BROTLIDEC_LIBS:INTERNAL=
+PC_BROTLIDEC_LIBS_L:INTERNAL=
+PC_BROTLIDEC_LIBS_OTHER:INTERNAL=
+PC_BROTLIDEC_LIBS_PATHS:INTERNAL=
+PC_BROTLIDEC_MODULE_NAME:INTERNAL=libbrotlidec
+PC_BROTLIDEC_PREFIX:INTERNAL=/usr
+PC_BROTLIDEC_STATIC_CFLAGS:INTERNAL=
+PC_BROTLIDEC_STATIC_CFLAGS_I:INTERNAL=
+PC_BROTLIDEC_STATIC_CFLAGS_OTHER:INTERNAL=
+PC_BROTLIDEC_STATIC_INCLUDE_DIRS:INTERNAL=
+PC_BROTLIDEC_STATIC_LDFLAGS:INTERNAL=-L/usr/lib;-lbrotlidec;-L/usr/lib;-lbrotlicommon
+PC_BROTLIDEC_STATIC_LDFLAGS_OTHER:INTERNAL=
+PC_BROTLIDEC_STATIC_LIBDIR:INTERNAL=
+PC_BROTLIDEC_STATIC_LIBRARIES:INTERNAL=brotlidec;brotlicommon
+PC_BROTLIDEC_STATIC_LIBRARY_DIRS:INTERNAL=/usr/lib;/usr/lib
+PC_BROTLIDEC_STATIC_LIBS:INTERNAL=
+PC_BROTLIDEC_STATIC_LIBS_L:INTERNAL=
+PC_BROTLIDEC_STATIC_LIBS_OTHER:INTERNAL=
+PC_BROTLIDEC_STATIC_LIBS_PATHS:INTERNAL=
+PC_BROTLIDEC_VERSION:INTERNAL=1.0.9
+PC_BROTLIDEC_libbrotlidec_INCLUDEDIR:INTERNAL=
+PC_BROTLIDEC_libbrotlidec_LIBDIR:INTERNAL=
+PC_BROTLIDEC_libbrotlidec_PREFIX:INTERNAL=
+PC_BROTLIDEC_libbrotlidec_VERSION:INTERNAL=
+PC_BZIP2_CFLAGS:INTERNAL=
+PC_BZIP2_CFLAGS_I:INTERNAL=
+PC_BZIP2_CFLAGS_OTHER:INTERNAL=
+PC_BZIP2_FOUND:INTERNAL=1
+PC_BZIP2_INCLUDEDIR:INTERNAL=/usr/include
+PC_BZIP2_INCLUDE_DIRS:INTERNAL=
+PC_BZIP2_LDFLAGS:INTERNAL=-L/usr/lib;-lbz2
+PC_BZIP2_LDFLAGS_OTHER:INTERNAL=
+PC_BZIP2_LIBDIR:INTERNAL=/usr/lib
+PC_BZIP2_LIBRARIES:INTERNAL=bz2
+PC_BZIP2_LIBRARY_DIRS:INTERNAL=/usr/lib
+PC_BZIP2_LIBS:INTERNAL=
+PC_BZIP2_LIBS_L:INTERNAL=
+PC_BZIP2_LIBS_OTHER:INTERNAL=
+PC_BZIP2_LIBS_PATHS:INTERNAL=
+PC_BZIP2_MODULE_NAME:INTERNAL=bzip2
+PC_BZIP2_PREFIX:INTERNAL=/usr
+PC_BZIP2_STATIC_CFLAGS:INTERNAL=
+PC_BZIP2_STATIC_CFLAGS_I:INTERNAL=
+PC_BZIP2_STATIC_CFLAGS_OTHER:INTERNAL=
+PC_BZIP2_STATIC_INCLUDE_DIRS:INTERNAL=
+PC_BZIP2_STATIC_LDFLAGS:INTERNAL=-L/usr/lib;-lbz2
+PC_BZIP2_STATIC_LDFLAGS_OTHER:INTERNAL=
+PC_BZIP2_STATIC_LIBDIR:INTERNAL=
+PC_BZIP2_STATIC_LIBRARIES:INTERNAL=bz2
+PC_BZIP2_STATIC_LIBRARY_DIRS:INTERNAL=/usr/lib
+PC_BZIP2_STATIC_LIBS:INTERNAL=
+PC_BZIP2_STATIC_LIBS_L:INTERNAL=
+PC_BZIP2_STATIC_LIBS_OTHER:INTERNAL=
+PC_BZIP2_STATIC_LIBS_PATHS:INTERNAL=
+PC_BZIP2_VERSION:INTERNAL=1.0.8
+PC_BZIP2_bzip2_INCLUDEDIR:INTERNAL=
+PC_BZIP2_bzip2_LIBDIR:INTERNAL=
+PC_BZIP2_bzip2_PREFIX:INTERNAL=
+PC_BZIP2_bzip2_VERSION:INTERNAL=
+PC_HARFBUZZ_CFLAGS:INTERNAL=-I/usr/include/harfbuzz;-I/usr/include/freetype2;-I/usr/include/libpng16;-I/usr/include/glib-2.0;-I/usr/lib/glib-2.0/include;-I/usr/include/sysprof-4;-pthread
+PC_HARFBUZZ_CFLAGS_I:INTERNAL=
+PC_HARFBUZZ_CFLAGS_OTHER:INTERNAL=-pthread
+PC_HARFBUZZ_FOUND:INTERNAL=1
+PC_HARFBUZZ_INCLUDEDIR:INTERNAL=/usr/include
+PC_HARFBUZZ_INCLUDE_DIRS:INTERNAL=/usr/include/harfbuzz;/usr/include/freetype2;/usr/include/libpng16;/usr/include/glib-2.0;/usr/lib/glib-2.0/include;/usr/include/sysprof-4
+PC_HARFBUZZ_LDFLAGS:INTERNAL=-L/usr/lib;-lharfbuzz
+PC_HARFBUZZ_LDFLAGS_OTHER:INTERNAL=
+PC_HARFBUZZ_LIBDIR:INTERNAL=/usr/lib
+PC_HARFBUZZ_LIBRARIES:INTERNAL=harfbuzz
+PC_HARFBUZZ_LIBRARY_DIRS:INTERNAL=/usr/lib
+PC_HARFBUZZ_LIBS:INTERNAL=
+PC_HARFBUZZ_LIBS_L:INTERNAL=
+PC_HARFBUZZ_LIBS_OTHER:INTERNAL=
+PC_HARFBUZZ_LIBS_PATHS:INTERNAL=
+PC_HARFBUZZ_MODULE_NAME:INTERNAL=harfbuzz
+PC_HARFBUZZ_PREFIX:INTERNAL=/usr
+PC_HARFBUZZ_STATIC_CFLAGS:INTERNAL=-I/usr/include/harfbuzz;-I/usr/include/freetype2;-I/usr/include/libpng16;-I/usr/include/glib-2.0;-I/usr/lib/glib-2.0/include;-I/usr/include/sysprof-4;-pthread
+PC_HARFBUZZ_STATIC_CFLAGS_I:INTERNAL=
+PC_HARFBUZZ_STATIC_CFLAGS_OTHER:INTERNAL=-pthread
+PC_HARFBUZZ_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include/harfbuzz;/usr/include/freetype2;/usr/include/libpng16;/usr/include/glib-2.0;/usr/lib/glib-2.0/include;/usr/include/sysprof-4
+PC_HARFBUZZ_STATIC_LDFLAGS:INTERNAL=-L/usr/lib;-lharfbuzz;-pthread;-lm;-L/usr/lib;-lfreetype;-lbz2;-L/usr/lib;-L/usr/lib;-lz;-lpng16;-lm;-lz;-lm;-L/usr/lib;-L/usr/lib;-lz;-lbrotlidec;-L/usr/lib;-lbrotlicommon;-lglib-2.0;-lm;-L/usr/lib;-lpcre2-8;-lsysprof-capture-4;-pthread;-lgraphite2
+PC_HARFBUZZ_STATIC_LDFLAGS_OTHER:INTERNAL=-pthread;-pthread
+PC_HARFBUZZ_STATIC_LIBDIR:INTERNAL=
+PC_HARFBUZZ_STATIC_LIBRARIES:INTERNAL=harfbuzz;m;freetype;bz2;z;png16;m;z;m;z;brotlidec;brotlicommon;glib-2.0;m;pcre2-8;sysprof-capture-4;graphite2
+PC_HARFBUZZ_STATIC_LIBRARY_DIRS:INTERNAL=/usr/lib;/usr/lib;/usr/lib;/usr/lib;/usr/lib;/usr/lib;/usr/lib;/usr/lib
+PC_HARFBUZZ_STATIC_LIBS:INTERNAL=
+PC_HARFBUZZ_STATIC_LIBS_L:INTERNAL=
+PC_HARFBUZZ_STATIC_LIBS_OTHER:INTERNAL=
+PC_HARFBUZZ_STATIC_LIBS_PATHS:INTERNAL=
+PC_HARFBUZZ_VERSION:INTERNAL=7.0.1
+PC_HARFBUZZ_harfbuzz_INCLUDEDIR:INTERNAL=
+PC_HARFBUZZ_harfbuzz_LIBDIR:INTERNAL=
+PC_HARFBUZZ_harfbuzz_PREFIX:INTERNAL=
+PC_HARFBUZZ_harfbuzz_VERSION:INTERNAL=
 //ADVANCED property for variable: PKG_CONFIG_ARGN
 PKG_CONFIG_ARGN-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
@@ -863,6 +1124,12 @@ PKG_FONTCONFIG_fontconfig_INCLUDEDIR:INTERNAL=
 PKG_FONTCONFIG_fontconfig_LIBDIR:INTERNAL=
 PKG_FONTCONFIG_fontconfig_PREFIX:INTERNAL=
 PKG_FONTCONFIG_fontconfig_VERSION:INTERNAL=
+//ADVANCED property for variable: PNG_LIBRARY_DEBUG
+PNG_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PNG_LIBRARY_RELEASE
+PNG_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PNG_PNG_INCLUDE_DIR
+PNG_PNG_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: RT_LIBRARY
 RT_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: X11_ICE_INCLUDE_PATH
@@ -1033,12 +1300,30 @@ X11_xkbcommon_X11_LIB-ADVANCED:INTERNAL=1
 X11_xkbfile_INCLUDE_PATH-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: X11_xkbfile_LIB
 X11_xkbfile_LIB-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ZLIB_INCLUDE_DIR
+ZLIB_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ZLIB_LIBRARY_DEBUG
+ZLIB_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ZLIB_LIBRARY_RELEASE
+ZLIB_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 //linker supports push/pop state
 _CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED:INTERNAL=TRUE
 //CMAKE_INSTALL_PREFIX during last run
 _GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=/usr/local
+__pkg_config_arguments_PC_BROTLIDEC:INTERNAL=QUIET;libbrotlidec
+__pkg_config_arguments_PC_BZIP2:INTERNAL=bzip2
+__pkg_config_arguments_PC_HARFBUZZ:INTERNAL=QUIET;harfbuzz
 __pkg_config_arguments_PKG_FONTCONFIG:INTERNAL=QUIET;fontconfig
+__pkg_config_checked_PC_BROTLIDEC:INTERNAL=1
+__pkg_config_checked_PC_BZIP2:INTERNAL=1
+__pkg_config_checked_PC_HARFBUZZ:INTERNAL=1
 __pkg_config_checked_PKG_FONTCONFIG:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_PC_BROTLIDEC_brotlidec
+pkgcfg_lib_PC_BROTLIDEC_brotlidec-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_PC_BZIP2_bz2
+pkgcfg_lib_PC_BZIP2_bz2-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_PC_HARFBUZZ_harfbuzz
+pkgcfg_lib_PC_HARFBUZZ_harfbuzz-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_PKG_FONTCONFIG_fontconfig
 pkgcfg_lib_PKG_FONTCONFIG_fontconfig-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_PKG_FONTCONFIG_freetype

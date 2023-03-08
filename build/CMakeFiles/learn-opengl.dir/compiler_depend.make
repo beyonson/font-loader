@@ -276,6 +276,15 @@ CMakeFiles/learn-opengl.dir/src/main.cpp.o: /home/garrett/git/opengl-text-editor
   /usr/include/c++/12.2.1/tr1/poly_hermite.tcc \
   /usr/include/c++/12.2.1/tr1/poly_laguerre.tcc \
   /usr/include/c++/12.2.1/tr1/riemann_zeta.tcc \
+  /usr/include/c++/12.2.1/map \
+  /usr/include/c++/12.2.1/bits/stl_tree.h \
+  /usr/include/c++/12.2.1/ext/aligned_buffer.h \
+  /usr/include/c++/12.2.1/bits/node_handle.h \
+  /usr/include/c++/12.2.1/bits/stl_map.h \
+  /usr/include/c++/12.2.1/tuple \
+  /usr/include/c++/12.2.1/bits/uses_allocator.h \
+  /usr/include/c++/12.2.1/bits/stl_multimap.h \
+  /usr/include/c++/12.2.1/bits/erase_if.h \
   /home/garrett/git/opengl-text-editor/include/glad/glad.h \
   /home/garrett/git/opengl-text-editor/include/KHR/khrplatform.h \
   /home/garrett/git/opengl-text-editor/external/glfw/include/GLFW/glfw3.h \
@@ -436,8 +445,145 @@ CMakeFiles/learn-opengl.dir/src/main.cpp.o: /home/garrett/git/opengl-text-editor
   /usr/include/c++/12.2.1/x86_64-pc-linux-gnu/bits/c++io.h \
   /usr/include/c++/12.2.1/bits/fstream.tcc \
   /usr/include/c++/12.2.1/sstream \
-  /usr/include/c++/12.2.1/bits/sstream.tcc
+  /usr/include/c++/12.2.1/bits/sstream.tcc \
+  /usr/include/glm/gtc/matrix_transform.hpp \
+  /usr/include/glm/ext/matrix_projection.hpp \
+  /usr/include/glm/gtc/constants.hpp \
+  /usr/include/glm/ext/scalar_constants.hpp \
+  /usr/include/glm/ext/scalar_constants.inl \
+  /usr/include/glm/gtc/constants.inl \
+  /usr/include/glm/ext/matrix_projection.inl \
+  /usr/include/glm/ext/matrix_clip_space.hpp \
+  /usr/include/glm/ext/matrix_clip_space.inl \
+  /usr/include/glm/ext/matrix_transform.hpp \
+  /usr/include/glm/ext/matrix_transform.inl \
+  /usr/include/glm/gtc/matrix_transform.inl \
+  /usr/include/glm/gtc/type_ptr.hpp \
+  /usr/include/glm/gtc/quaternion.hpp \
+  /usr/include/glm/ext/vector_relational.hpp \
+  /usr/include/glm/ext/vector_relational.inl \
+  /usr/include/glm/detail/type_float.hpp \
+  /usr/include/glm/ext/quaternion_common.hpp \
+  /usr/include/glm/ext/quaternion_geometric.hpp \
+  /usr/include/glm/ext/quaternion_geometric.inl \
+  /usr/include/glm/ext/quaternion_common.inl \
+  /usr/include/glm/ext/quaternion_float.hpp \
+  /usr/include/glm/detail/type_quat.hpp \
+  /usr/include/glm/ext/quaternion_relational.hpp \
+  /usr/include/glm/ext/quaternion_relational.inl \
+  /usr/include/glm/detail/type_quat.inl \
+  /usr/include/glm/ext/quaternion_float_precision.hpp \
+  /usr/include/glm/ext/quaternion_double.hpp \
+  /usr/include/glm/ext/quaternion_double_precision.hpp \
+  /usr/include/glm/ext/quaternion_trigonometric.hpp \
+  /usr/include/glm/ext/quaternion_trigonometric.inl \
+  /usr/include/glm/ext/quaternion_transform.hpp \
+  /usr/include/glm/ext/quaternion_transform.inl \
+  /usr/include/glm/gtc/quaternion.inl \
+  /usr/include/glm/gtc/epsilon.hpp \
+  /usr/include/glm/detail/setup.hpp \
+  /usr/include/glm/gtc/epsilon.inl \
+  /usr/include/glm/gtc/vec1.hpp \
+  /usr/include/glm/ext/vector_bool1.hpp \
+  /usr/include/glm/ext/vector_bool1_precision.hpp \
+  /usr/include/glm/ext/vector_float1.hpp \
+  /usr/include/glm/ext/vector_float1_precision.hpp \
+  /usr/include/glm/ext/vector_double1.hpp \
+  /usr/include/glm/ext/vector_double1_precision.hpp \
+  /usr/include/glm/ext/vector_int1.hpp \
+  /usr/include/glm/ext/vector_int1_sized.hpp \
+  /usr/include/glm/ext/vector_uint1.hpp \
+  /usr/include/glm/ext/vector_uint1_sized.hpp \
+  /usr/include/c++/12.2.1/cstring \
+  /usr/include/string.h \
+  /usr/include/strings.h \
+  /usr/include/glm/gtc/type_ptr.inl \
+  /home/garrett/git/opengl-text-editor/external/freetype/include/ft2build.h \
+  /home/garrett/git/opengl-text-editor/external/freetype/include/freetype/config/ftheader.h \
+  /home/garrett/git/opengl-text-editor/external/freetype/include/freetype/freetype.h \
+  external/freetype/include/freetype/config/ftconfig.h \
+  external/freetype/include/freetype/config/ftoption.h \
+  /home/garrett/git/opengl-text-editor/external/freetype/include/freetype/config/ftstdlib.h \
+  /usr/include/c++/12.2.1/stdlib.h \
+  /usr/include/setjmp.h \
+  /home/garrett/git/opengl-text-editor/external/freetype/include/freetype/config/integer-types.h \
+  /home/garrett/git/opengl-text-editor/external/freetype/include/freetype/config/public-macros.h \
+  /home/garrett/git/opengl-text-editor/external/freetype/include/freetype/config/mac-support.h \
+  /home/garrett/git/opengl-text-editor/external/freetype/include/freetype/fttypes.h \
+  /home/garrett/git/opengl-text-editor/external/freetype/include/freetype/ftsystem.h \
+  /home/garrett/git/opengl-text-editor/external/freetype/include/freetype/ftimage.h \
+  /home/garrett/git/opengl-text-editor/external/freetype/include/freetype/fterrors.h \
+  /home/garrett/git/opengl-text-editor/external/freetype/include/freetype/ftmoderr.h \
+  /home/garrett/git/opengl-text-editor/external/freetype/include/freetype/fterrdef.h
 
+
+/home/garrett/git/opengl-text-editor/external/freetype/include/freetype/fterrdef.h:
+
+/home/garrett/git/opengl-text-editor/external/freetype/include/freetype/ftmoderr.h:
+
+/home/garrett/git/opengl-text-editor/external/freetype/include/freetype/ftsystem.h:
+
+/home/garrett/git/opengl-text-editor/external/freetype/include/freetype/config/mac-support.h:
+
+/home/garrett/git/opengl-text-editor/external/freetype/include/freetype/config/integer-types.h:
+
+/home/garrett/git/opengl-text-editor/external/freetype/include/freetype/freetype.h:
+
+/home/garrett/git/opengl-text-editor/external/freetype/include/freetype/config/ftheader.h:
+
+/usr/include/glm/ext/vector_uint1.hpp:
+
+/usr/include/glm/ext/vector_int1_sized.hpp:
+
+/usr/include/glm/ext/vector_int1.hpp:
+
+/usr/include/glm/ext/vector_double1.hpp:
+
+/usr/include/glm/ext/vector_float1_precision.hpp:
+
+/usr/include/glm/ext/vector_bool1.hpp:
+
+/usr/include/glm/gtc/vec1.hpp:
+
+/usr/include/glm/gtc/epsilon.inl:
+
+/usr/include/glm/ext/quaternion_transform.hpp:
+
+/home/garrett/git/opengl-text-editor/external/freetype/include/freetype/ftimage.h:
+
+external/freetype/include/freetype/config/ftconfig.h:
+
+/usr/include/glm/ext/quaternion_trigonometric.inl:
+
+/usr/include/glm/ext/quaternion_trigonometric.hpp:
+
+/usr/include/glm/ext/quaternion_double_precision.hpp:
+
+/usr/include/glm/ext/quaternion_double.hpp:
+
+/usr/include/glm/detail/type_quat.hpp:
+
+/usr/include/glm/ext/quaternion_geometric.inl:
+
+/usr/include/glm/ext/vector_relational.inl:
+
+/usr/include/glm/gtc/quaternion.hpp:
+
+/usr/include/glm/gtc/type_ptr.hpp:
+
+/usr/include/glm/ext/matrix_transform.hpp:
+
+/usr/include/glm/ext/matrix_projection.inl:
+
+/usr/include/glm/gtc/constants.inl:
+
+/usr/include/glm/ext/scalar_constants.inl:
+
+/usr/include/glm/ext/scalar_constants.hpp:
+
+/usr/include/glm/gtc/constants.hpp:
+
+/usr/include/glm/ext/matrix_projection.hpp:
 
 /usr/include/c++/12.2.1/bits/fstream.tcc:
 
@@ -446,6 +592,8 @@ CMakeFiles/learn-opengl.dir/src/main.cpp.o: /home/garrett/git/opengl-text-editor
 /usr/include/glm/integer.hpp:
 
 /usr/include/glm/detail/type_half.inl:
+
+external/freetype/include/freetype/config/ftoption.h:
 
 /usr/include/glm/detail/func_packing.inl:
 
@@ -459,6 +607,8 @@ CMakeFiles/learn-opengl.dir/src/main.cpp.o: /home/garrett/git/opengl-text-editor
 
 /usr/include/glm/detail/func_vector_relational.inl:
 
+/usr/include/glm/detail/type_float.hpp:
+
 /usr/include/glm/vector_relational.hpp:
 
 /usr/include/glm/detail/type_vec1.inl:
@@ -471,7 +621,7 @@ CMakeFiles/learn-opengl.dir/src/main.cpp.o: /home/garrett/git/opengl-text-editor
 
 /usr/include/glm/detail/func_matrix.inl:
 
-/usr/include/glm/ext/matrix_float4x4_precision.hpp:
+/usr/include/glm/ext/quaternion_common.inl:
 
 /usr/include/glm/ext/matrix_double4x4_precision.hpp:
 
@@ -489,7 +639,7 @@ CMakeFiles/learn-opengl.dir/src/main.cpp.o: /home/garrett/git/opengl-text-editor
 
 /usr/include/glm/detail/type_mat4x3.hpp:
 
-/usr/include/glm/ext/matrix_float4x2.hpp:
+/usr/include/glm/gtc/type_ptr.inl:
 
 /usr/include/glm/ext/matrix_double4x2.hpp:
 
@@ -498,6 +648,8 @@ CMakeFiles/learn-opengl.dir/src/main.cpp.o: /home/garrett/git/opengl-text-editor
 /usr/include/glm/mat4x2.hpp:
 
 /usr/include/glm/ext/matrix_float3x4_precision.hpp:
+
+/usr/include/glm/ext/quaternion_geometric.hpp:
 
 /usr/include/glm/ext/matrix_float3x4.hpp:
 
@@ -512,6 +664,8 @@ CMakeFiles/learn-opengl.dir/src/main.cpp.o: /home/garrett/git/opengl-text-editor
 /usr/include/glm/ext/matrix_float3x3_precision.hpp:
 
 /usr/include/glm/ext/matrix_double3x3_precision.hpp:
+
+/home/garrett/git/opengl-text-editor/external/freetype/include/freetype/fttypes.h:
 
 /usr/include/glm/detail/type_mat3x3.hpp:
 
@@ -569,21 +723,43 @@ CMakeFiles/learn-opengl.dir/src/main.cpp.o: /home/garrett/git/opengl-text-editor
 
 /usr/include/glm/ext/vector_bool4.hpp:
 
+/usr/include/glm/ext/vector_double1_precision.hpp:
+
 /usr/include/glm/ext/vector_int3.hpp:
 
+/usr/include/glm/ext/quaternion_common.hpp:
+
 /usr/include/glm/ext/vector_double3_precision.hpp:
+
+/usr/include/glm/ext/quaternion_float_precision.hpp:
 
 /usr/include/c++/12.2.1/bits/sstream.tcc:
 
 /usr/include/glm/ext/vector_double3.hpp:
 
+/usr/include/c++/12.2.1/cstring:
+
 /usr/include/glm/ext/vector_float3_precision.hpp:
 
 /usr/include/glm/detail/type_vec3.inl:
 
+/usr/include/glm/matrix.hpp:
+
+/usr/include/glm/ext/vector_bool3.hpp:
+
+/usr/include/glm/ext/scalar_uint_sized.hpp:
+
+/usr/include/glm/ext/vector_uint2.hpp:
+
+/usr/include/glm/ext/vector_int2_sized.hpp:
+
+/usr/include/glm/ext/vector_int2.hpp:
+
 /usr/include/c++/12.2.1/x86_64-pc-linux-gnu/bits/c++allocator.h:
 
 /usr/include/c++/12.2.1/x86_64-pc-linux-gnu/bits/c++config.h:
+
+/usr/include/c++/12.2.1/bits/erase_if.h:
 
 /usr/include/sys/select.h:
 
@@ -596,6 +772,8 @@ CMakeFiles/learn-opengl.dir/src/main.cpp.o: /home/garrett/git/opengl-text-editor
 /usr/include/c++/12.2.1/tr1/bessel_function.tcc:
 
 /usr/include/c++/12.2.1/x86_64-pc-linux-gnu/bits/atomic_word.h:
+
+/usr/include/glm/ext/quaternion_relational.hpp:
 
 /usr/include/glm/ext/matrix_double2x4_precision.hpp:
 
@@ -619,6 +797,8 @@ CMakeFiles/learn-opengl.dir/src/main.cpp.o: /home/garrett/git/opengl-text-editor
 
 /usr/include/c++/12.2.1/ios:
 
+/usr/include/glm/gtc/quaternion.inl:
+
 /usr/include/pthread.h:
 
 /usr/include/c++/12.2.1/x86_64-pc-linux-gnu/bits/gthr-default.h:
@@ -632,6 +812,8 @@ CMakeFiles/learn-opengl.dir/src/main.cpp.o: /home/garrett/git/opengl-text-editor
 /usr/include/bits/waitflags.h:
 
 /usr/include/bits/locale.h:
+
+/home/garrett/git/opengl-text-editor/external/freetype/include/freetype/config/ftstdlib.h:
 
 /usr/include/c++/12.2.1/clocale:
 
@@ -669,6 +851,8 @@ CMakeFiles/learn-opengl.dir/src/main.cpp.o: /home/garrett/git/opengl-text-editor
 
 /usr/include/c++/12.2.1/exception:
 
+/usr/include/c++/12.2.1/stdlib.h:
+
 /usr/include/c++/12.2.1/bits/cxxabi_init_exception.h:
 
 /usr/include/c++/12.2.1/bits/exception_defines.h:
@@ -680,6 +864,8 @@ CMakeFiles/learn-opengl.dir/src/main.cpp.o: /home/garrett/git/opengl-text-editor
 /usr/include/bits/types/mbstate_t.h:
 
 /usr/include/bits/select.h:
+
+/home/garrett/git/opengl-text-editor/external/freetype/include/ft2build.h:
 
 /usr/include/asm-generic/errno-base.h:
 
@@ -697,6 +883,8 @@ CMakeFiles/learn-opengl.dir/src/main.cpp.o: /home/garrett/git/opengl-text-editor
 
 /usr/include/bits/types/struct_tm.h:
 
+/usr/include/glm/ext/matrix_transform.inl:
+
 /usr/include/glm/ext/matrix_float3x3.hpp:
 
 /usr/include/c++/12.2.1/bits/functional_hash.h:
@@ -706,6 +894,8 @@ CMakeFiles/learn-opengl.dir/src/main.cpp.o: /home/garrett/git/opengl-text-editor
 /usr/include/linux/limits.h:
 
 /usr/include/c++/12.2.1/x86_64-pc-linux-gnu/bits/os_defines.h:
+
+/usr/include/c++/12.2.1/ext/aligned_buffer.h:
 
 /usr/include/glm/detail/type_mat3x4.inl:
 
@@ -752,6 +942,8 @@ CMakeFiles/learn-opengl.dir/src/main.cpp.o: /home/garrett/git/opengl-text-editor
 /usr/include/c++/12.2.1/bits/memoryfwd.h:
 
 /usr/include/bits/types/__fpos64_t.h:
+
+/usr/include/glm/detail/type_quat.inl:
 
 /usr/include/features-time64.h:
 
@@ -819,6 +1011,10 @@ CMakeFiles/learn-opengl.dir/src/main.cpp.o: /home/garrett/git/opengl-text-editor
 
 /usr/include/c++/12.2.1/bits/utility.h:
 
+/usr/include/glm/detail/type_vec3.hpp:
+
+/usr/include/sys/cdefs.h:
+
 /usr/include/glm/ext/matrix_double2x2.hpp:
 
 /usr/include/c++/12.2.1/tr1/beta_function.tcc:
@@ -835,11 +1031,15 @@ CMakeFiles/learn-opengl.dir/src/main.cpp.o: /home/garrett/git/opengl-text-editor
 
 /usr/include/glm/glm.hpp:
 
+/usr/include/glm/ext/quaternion_relational.inl:
+
 /usr/include/c++/12.2.1/cstdint:
 
 /usr/include/bits/long-double.h:
 
 /usr/include/bits/types/struct_FILE.h:
+
+/usr/include/glm/ext/vector_relational.hpp:
 
 /usr/include/glm/ext/vector_float2_precision.hpp:
 
@@ -860,6 +1060,8 @@ CMakeFiles/learn-opengl.dir/src/main.cpp.o: /home/garrett/git/opengl-text-editor
 /usr/include/c++/12.2.1/bits/istream.tcc:
 
 /usr/include/c++/12.2.1/bits/stl_iterator.h:
+
+/usr/include/glm/ext/vector_float1.hpp:
 
 /usr/include/bits/wctype-wchar.h:
 
@@ -887,6 +1089,8 @@ CMakeFiles/learn-opengl.dir/src/main.cpp.o: /home/garrett/git/opengl-text-editor
 
 /usr/include/c++/12.2.1/tr1/hypergeometric.tcc:
 
+/usr/include/glm/ext/vector_bool1_precision.hpp:
+
 /usr/include/bits/pthreadtypes.h:
 
 /usr/include/glm/ext/vector_uint4.hpp:
@@ -897,13 +1101,17 @@ CMakeFiles/learn-opengl.dir/src/main.cpp.o: /home/garrett/git/opengl-text-editor
 
 /usr/include/glm/fwd.hpp:
 
+/usr/include/glm/gtc/epsilon.hpp:
+
 /usr/include/glm/ext/matrix_float2x2_precision.hpp:
 
 /usr/include/stdc-predef.h:
 
+/usr/include/glm/ext/vector_uint1_sized.hpp:
+
 /usr/include/glm/ext/vector_float2.hpp:
 
-/usr/include/glm/ext/scalar_uint_sized.hpp:
+/home/garrett/git/opengl-text-editor/external/freetype/include/freetype/fterrors.h:
 
 /usr/include/c++/12.2.1/bits/streambuf_iterator.h:
 
@@ -931,6 +1139,8 @@ CMakeFiles/learn-opengl.dir/src/main.cpp.o: /home/garrett/git/opengl-text-editor
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/include-fixed/limits.h:
 
+/usr/include/glm/ext/quaternion_float.hpp:
+
 /usr/include/glm/mat4x4.hpp:
 
 /usr/include/c++/12.2.1/bits/functexcept.h:
@@ -947,15 +1157,13 @@ CMakeFiles/learn-opengl.dir/src/main.cpp.o: /home/garrett/git/opengl-text-editor
 
 /usr/include/c++/12.2.1/bits/ostream_insert.h:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/include/stddef.h:
-
-/usr/include/errno.h:
-
 /usr/include/glm/detail/type_mat4x2.inl:
 
 /usr/include/glm/detail/type_mat4x2.hpp:
 
 /usr/include/c++/12.2.1/bits/cxxabi_forced.h:
+
+/usr/include/setjmp.h:
 
 /usr/include/c++/12.2.1/x86_64-pc-linux-gnu/bits/ctype_inline.h:
 
@@ -966,10 +1174,6 @@ CMakeFiles/learn-opengl.dir/src/main.cpp.o: /home/garrett/git/opengl-text-editor
 /usr/include/c++/12.2.1/bits/concept_check.h:
 
 /usr/include/c++/12.2.1/tr1/poly_hermite.tcc:
-
-/usr/include/glm/matrix.hpp:
-
-/usr/include/glm/ext/vector_bool3.hpp:
 
 /usr/include/glm/mat2x3.hpp:
 
@@ -1025,6 +1229,10 @@ CMakeFiles/learn-opengl.dir/src/main.cpp.o: /home/garrett/git/opengl-text-editor
 
 /usr/include/c++/12.2.1/bits/alloc_traits.h:
 
+/usr/include/c++/12.2.1/map:
+
+/home/garrett/git/opengl-text-editor/external/freetype/include/freetype/config/public-macros.h:
+
 /usr/include/c++/12.2.1/bits/stl_construct.h:
 
 /usr/include/c++/12.2.1/string_view:
@@ -1075,6 +1283,8 @@ CMakeFiles/learn-opengl.dir/src/main.cpp.o: /home/garrett/git/opengl-text-editor
 
 /usr/include/c++/12.2.1/stdexcept:
 
+/usr/include/c++/12.2.1/bits/stl_multimap.h:
+
 /usr/include/c++/12.2.1/bits/streambuf.tcc:
 
 /usr/include/c++/12.2.1/bits/locale_facets.h:
@@ -1085,15 +1295,19 @@ CMakeFiles/learn-opengl.dir/src/main.cpp.o: /home/garrett/git/opengl-text-editor
 
 /usr/include/c++/12.2.1/x86_64-pc-linux-gnu/bits/ctype_base.h:
 
-/usr/include/sys/cdefs.h:
-
-/usr/include/glm/detail/type_vec3.hpp:
+/usr/include/glm/ext/quaternion_transform.inl:
 
 /usr/include/c++/12.2.1/bits/basic_ios.h:
 
 /usr/include/c++/12.2.1/bits/basic_ios.tcc:
 
 /usr/include/c++/12.2.1/bits/ostream.tcc:
+
+/usr/include/glm/ext/matrix_float4x4_precision.hpp:
+
+/usr/include/c++/12.2.1/bits/uses_allocator.h:
+
+/usr/include/glm/gtc/matrix_transform.inl:
 
 /usr/include/glm/detail/type_mat2x3.hpp:
 
@@ -1133,7 +1347,7 @@ CMakeFiles/learn-opengl.dir/src/main.cpp.o: /home/garrett/git/opengl-text-editor
 
 /usr/include/c++/12.2.1/tr1/ell_integral.tcc:
 
-/usr/include/glm/ext/vector_uint2.hpp:
+/usr/include/glm/ext/matrix_clip_space.hpp:
 
 /usr/include/c++/12.2.1/tr1/legendre_function.tcc:
 
@@ -1143,7 +1357,27 @@ CMakeFiles/learn-opengl.dir/src/main.cpp.o: /home/garrett/git/opengl-text-editor
 
 /usr/include/c++/12.2.1/tr1/riemann_zeta.tcc:
 
+/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/include/stddef.h:
+
+/usr/include/errno.h:
+
+/usr/include/c++/12.2.1/bits/stl_tree.h:
+
+/usr/include/c++/12.2.1/bits/new_allocator.h:
+
+/usr/include/glm/detail/type_vec2.inl:
+
+/usr/include/glm/ext/matrix_float4x2.hpp:
+
+/usr/include/c++/12.2.1/bits/node_handle.h:
+
+/usr/include/c++/12.2.1/bits/stl_map.h:
+
+/usr/include/c++/12.2.1/tuple:
+
 /home/garrett/git/opengl-text-editor/external/glfw/include/GLFW/glfw3.h:
+
+/usr/include/glm/ext/matrix_clip_space.inl:
 
 /usr/include/glm/detail/setup.hpp:
 
@@ -1152,6 +1386,8 @@ CMakeFiles/learn-opengl.dir/src/main.cpp.o: /home/garrett/git/opengl-text-editor
 /usr/include/glm/ext/vector_int3_sized.hpp:
 
 /usr/include/assert.h:
+
+/usr/include/glm/gtc/matrix_transform.hpp:
 
 /usr/include/glm/simd/platform.h:
 
@@ -1165,10 +1401,6 @@ CMakeFiles/learn-opengl.dir/src/main.cpp.o: /home/garrett/git/opengl-text-editor
 
 /usr/include/glm/detail/type_vec2.hpp:
 
-/usr/include/c++/12.2.1/bits/new_allocator.h:
-
-/usr/include/glm/detail/type_vec2.inl:
-
 /usr/include/glm/ext/vector_bool2_precision.hpp:
 
 /usr/include/glm/ext/vector_double2.hpp:
@@ -1178,7 +1410,3 @@ CMakeFiles/learn-opengl.dir/src/main.cpp.o: /home/garrett/git/opengl-text-editor
 /usr/include/bits/uintn-identity.h:
 
 /usr/include/glm/ext/vector_double2_precision.hpp:
-
-/usr/include/glm/ext/vector_int2.hpp:
-
-/usr/include/glm/ext/vector_int2_sized.hpp:

@@ -150,7 +150,14 @@ CMakeFiles/learn-opengl.dir/src/main.cpp.o: \
  /usr/include/c++/12.2.1/tr1/modified_bessel_func.tcc \
  /usr/include/c++/12.2.1/tr1/poly_hermite.tcc \
  /usr/include/c++/12.2.1/tr1/poly_laguerre.tcc \
- /usr/include/c++/12.2.1/tr1/riemann_zeta.tcc \
+ /usr/include/c++/12.2.1/tr1/riemann_zeta.tcc /usr/include/c++/12.2.1/map \
+ /usr/include/c++/12.2.1/bits/stl_tree.h \
+ /usr/include/c++/12.2.1/ext/aligned_buffer.h \
+ /usr/include/c++/12.2.1/bits/node_handle.h \
+ /usr/include/c++/12.2.1/bits/stl_map.h /usr/include/c++/12.2.1/tuple \
+ /usr/include/c++/12.2.1/bits/uses_allocator.h \
+ /usr/include/c++/12.2.1/bits/stl_multimap.h \
+ /usr/include/c++/12.2.1/bits/erase_if.h \
  /home/garrett/git/opengl-text-editor/include/glad/glad.h \
  /home/garrett/git/opengl-text-editor/include/KHR/khrplatform.h \
  /home/garrett/git/opengl-text-editor/external/glfw/include/GLFW/glfw3.h \
@@ -281,4 +288,66 @@ CMakeFiles/learn-opengl.dir/src/main.cpp.o: \
  /usr/include/c++/12.2.1/x86_64-pc-linux-gnu/bits/basic_file.h \
  /usr/include/c++/12.2.1/x86_64-pc-linux-gnu/bits/c++io.h \
  /usr/include/c++/12.2.1/bits/fstream.tcc /usr/include/c++/12.2.1/sstream \
- /usr/include/c++/12.2.1/bits/sstream.tcc
+ /usr/include/c++/12.2.1/bits/sstream.tcc \
+ /usr/include/glm/gtc/matrix_transform.hpp \
+ /usr/include/glm/ext/matrix_projection.hpp \
+ /usr/include/glm/gtc/constants.hpp \
+ /usr/include/glm/ext/scalar_constants.hpp \
+ /usr/include/glm/ext/scalar_constants.inl \
+ /usr/include/glm/gtc/constants.inl \
+ /usr/include/glm/ext/matrix_projection.inl \
+ /usr/include/glm/ext/matrix_clip_space.hpp \
+ /usr/include/glm/ext/matrix_clip_space.inl \
+ /usr/include/glm/ext/matrix_transform.hpp \
+ /usr/include/glm/ext/matrix_transform.inl \
+ /usr/include/glm/gtc/matrix_transform.inl \
+ /usr/include/glm/gtc/type_ptr.hpp /usr/include/glm/gtc/quaternion.hpp \
+ /usr/include/glm/ext/vector_relational.hpp \
+ /usr/include/glm/ext/vector_relational.inl \
+ /usr/include/glm/detail/type_float.hpp \
+ /usr/include/glm/ext/quaternion_common.hpp \
+ /usr/include/glm/ext/quaternion_geometric.hpp \
+ /usr/include/glm/ext/quaternion_geometric.inl \
+ /usr/include/glm/ext/quaternion_common.inl \
+ /usr/include/glm/ext/quaternion_float.hpp \
+ /usr/include/glm/detail/type_quat.hpp \
+ /usr/include/glm/ext/quaternion_relational.hpp \
+ /usr/include/glm/ext/quaternion_relational.inl \
+ /usr/include/glm/detail/type_quat.inl \
+ /usr/include/glm/ext/quaternion_float_precision.hpp \
+ /usr/include/glm/ext/quaternion_double.hpp \
+ /usr/include/glm/ext/quaternion_double_precision.hpp \
+ /usr/include/glm/ext/quaternion_trigonometric.hpp \
+ /usr/include/glm/ext/quaternion_trigonometric.inl \
+ /usr/include/glm/ext/quaternion_transform.hpp \
+ /usr/include/glm/ext/quaternion_transform.inl \
+ /usr/include/glm/gtc/quaternion.inl /usr/include/glm/gtc/epsilon.hpp \
+ /usr/include/glm/detail/setup.hpp /usr/include/glm/gtc/epsilon.inl \
+ /usr/include/glm/gtc/vec1.hpp /usr/include/glm/ext/vector_bool1.hpp \
+ /usr/include/glm/ext/vector_bool1_precision.hpp \
+ /usr/include/glm/ext/vector_float1.hpp \
+ /usr/include/glm/ext/vector_float1_precision.hpp \
+ /usr/include/glm/ext/vector_double1.hpp \
+ /usr/include/glm/ext/vector_double1_precision.hpp \
+ /usr/include/glm/ext/vector_int1.hpp \
+ /usr/include/glm/ext/vector_int1_sized.hpp \
+ /usr/include/glm/ext/vector_uint1.hpp \
+ /usr/include/glm/ext/vector_uint1_sized.hpp \
+ /usr/include/c++/12.2.1/cstring /usr/include/string.h \
+ /usr/include/strings.h /usr/include/glm/gtc/type_ptr.inl \
+ /home/garrett/git/opengl-text-editor/external/freetype/include/ft2build.h \
+ /home/garrett/git/opengl-text-editor/external/freetype/include/freetype/config/ftheader.h \
+ /home/garrett/git/opengl-text-editor/external/freetype/include/freetype/freetype.h \
+ /home/garrett/git/opengl-text-editor/build/external/freetype/include/freetype/config/ftconfig.h \
+ /home/garrett/git/opengl-text-editor/build/external/freetype/include/freetype/config/ftoption.h \
+ /home/garrett/git/opengl-text-editor/external/freetype/include/freetype/config/ftstdlib.h \
+ /usr/include/c++/12.2.1/stdlib.h /usr/include/setjmp.h \
+ /home/garrett/git/opengl-text-editor/external/freetype/include/freetype/config/integer-types.h \
+ /home/garrett/git/opengl-text-editor/external/freetype/include/freetype/config/public-macros.h \
+ /home/garrett/git/opengl-text-editor/external/freetype/include/freetype/config/mac-support.h \
+ /home/garrett/git/opengl-text-editor/external/freetype/include/freetype/fttypes.h \
+ /home/garrett/git/opengl-text-editor/external/freetype/include/freetype/ftsystem.h \
+ /home/garrett/git/opengl-text-editor/external/freetype/include/freetype/ftimage.h \
+ /home/garrett/git/opengl-text-editor/external/freetype/include/freetype/fterrors.h \
+ /home/garrett/git/opengl-text-editor/external/freetype/include/freetype/ftmoderr.h \
+ /home/garrett/git/opengl-text-editor/external/freetype/include/freetype/fterrdef.h
