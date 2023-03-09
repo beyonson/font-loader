@@ -13,6 +13,8 @@
 #include <ft2build.h>
 #include FT_FREETYPE_H
 
+void initTextbox();
+void getKeyPressed(GLFWwindow* window, int key, int scancode, int action, int mods);
 void RenderText(Shader &s, std::string text, float x, float y, float scale, glm::vec3 color);
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow* window);
@@ -30,27 +32,13 @@ struct Character {
 };
 std::map<char, Character> Characters;
 
+// create memory management objects
 unsigned int textVBO, textVAO;
 unsigned int VAO, VBO, EBO;
+std::string typedText = "";
 
 int main()
 {
-
-    // create vertex coordinates
-    float vertices[] = {
-        // positions        // colors
-        -0.8f, -0.8f, 0.0f, 0.5f, 0.0f, 0.0f,   // bottom right
-         0.8f, -0.8f, 0.0f, 0.5f, 0.0f, 0.0f,   // bottom left
-        -0.8f,  0.8f, 0.0f, 0.5f, 0.0f, 1.0f,   // top
-         0.8f,  0.8f, 0.0f, 0.5f, 0.0f, 1.0f    // top
-    };
-
-    // create rectangle
-    unsigned int indices[] = {
-        0, 1, 2,
-        1, 3, 2
-    };
-
     // initialize glfw and set version
     glfwInit();
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
@@ -87,35 +75,12 @@ int main()
     }
 
     // tell OpenGL size of window
-    glViewport(0, 0, 800, 600);
+    glViewport(0, 0, SCR_WIDTH, SCR_HEIGHT);
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
+    // initialize text box
     Shader ourShader("../shaders/shader.vs", "../shaders/shader.fs");
-
-    // create array object, buffer object, element object
-    glGenVertexArrays(1, &VAO);
-    glBindVertexArray(VAO);
-
-    // create buffer object and assign vertex data
-    glGenBuffers(1, &VBO);
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-
-    // create element buffer object and assign indices
-    glGenBuffers(1, &EBO);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
-
-    // tell OpenGL how to interpret vertex data
-    // data, size (of attribute), type, normalize, stride (space b/w attributes), offset from beginning of data
-    //
-    // position
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
-    glEnableVertexAttribArray(0);
-    // color
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
-    glEnableVertexAttribArray(1);
-
+    initTextbox();
 
     // start doing text stuff
 
@@ -187,6 +152,9 @@ int main()
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
 
+    // set key press callback
+    glfwSetKeyCallback(window, getKeyPressed);
+
     // call render loop
     while(!glfwWindowShouldClose(window))
     {
@@ -206,7 +174,7 @@ int main()
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
         // draw text
-        RenderText(textShader, "hello world", 80.0f, 492.0f, 1.0f, glm::vec3(0.5, 0.8f, 0.2f));
+        RenderText(textShader, typedText, 80.0f, 492.0f, 1.0f, glm::vec3(0.5, 0.8f, 0.2f));
 
         // check and call events and swap buffers
         glfwSwapBuffers(window);
@@ -215,6 +183,48 @@ int main()
 
     glfwTerminate();
     return 0;
+}
+
+void initTextbox()
+{
+    // create vertex coordinates
+    float vertices[] = {
+        // positions        // colors
+        -0.8f, -0.8f, 0.0f, 0.5f, 0.0f, 0.0f,   // bottom right
+         0.8f, -0.8f, 0.0f, 0.5f, 0.0f, 0.0f,   // bottom left
+        -0.8f,  0.8f, 0.0f, 0.5f, 0.0f, 1.0f,   // top
+         0.8f,  0.8f, 0.0f, 0.5f, 0.0f, 1.0f    // top
+    };
+
+    // create rectangle
+    unsigned int indices[] = {
+        0, 1, 2,
+        1, 3, 2
+    };
+
+    // create array object, buffer object, element object
+    glGenVertexArrays(1, &VAO);
+    glBindVertexArray(VAO);
+
+    // create buffer object and assign vertex data
+    glGenBuffers(1, &VBO);
+    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+
+    // create element buffer object and assign indices
+    glGenBuffers(1, &EBO);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+
+    // tell OpenGL how to interpret vertex data
+    // data, size (of attribute), type, normalize, stride (space b/w attributes), offset from beginning of data
+    //
+    // position
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
+    glEnableVertexAttribArray(0);
+    // color
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
+    glEnableVertexAttribArray(1);
 }
 
 void RenderText(Shader &s, std::string text, float x, float y, float scale, glm::vec3 color)
@@ -259,6 +269,12 @@ void RenderText(Shader &s, std::string text, float x, float y, float scale, glm:
     }
     glBindVertexArray(0);
     glBindTexture(GL_TEXTURE_2D, 0);
+}
+
+void getKeyPressed(GLFWwindow* window, int key, int scancode, int action, int mods)
+{
+    if (action == GLFW_RELEASE)
+        typedText += key;
 }
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)
