@@ -31,6 +31,7 @@ struct Character {
 std::map<char, Character> Characters;
 
 unsigned int textVBO, textVAO;
+unsigned int VAO, VBO, EBO;
 
 int main()
 {
@@ -47,7 +48,7 @@ int main()
     // create rectangle
     unsigned int indices[] = {
         0, 1, 2,
-        1, 2, 3
+        1, 3, 2
     };
 
     // initialize glfw and set version
@@ -72,17 +73,6 @@ int main()
         return -1;
     }
 
-    // enable blending for text rendering and create projection matrix
-    glEnable(GL_CULL_FACE);
-    glEnable(GL_BLEND);
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-
-    Shader textShader("../shaders/text.vs", "../shaders/text.fs");
-    glm::mat4 projection = glm::ortho(0.0f, static_cast<float>(SCR_WIDTH), 0.0f, static_cast<float>(SCR_HEIGHT));
-    textShader.use();
-    glUniformMatrix4fv(glGetUniformLocation(textShader.ID, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
-    glPixelStorei(GL_UNPACK_ALIGNMENT, 1); // disable byte-alignment restriction
-
     // initialize Freetype and load font
     FT_Library ft;
     if (FT_Init_FreeType(&ft)) {
@@ -100,37 +90,51 @@ int main()
     glViewport(0, 0, 800, 600);
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
-    // Shader ourShader("../shaders/shader.vs", "../shaders/shader.fs");
+    Shader ourShader("../shaders/shader.vs", "../shaders/shader.fs");
 
     // create array object, buffer object, element object
-    // // use these id's to initialize the text box
-    // unsigned int VAO, VBO, EBO;
+    glGenVertexArrays(1, &VAO);
+    glBindVertexArray(VAO);
 
-    // glGenVertexArrays(1, &VAO);
-    // glBindVertexArray(VAO);
+    // create buffer object and assign vertex data
+    glGenBuffers(1, &VBO);
+    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
-    // // create buffer object and assign vertex data
-    // glGenBuffers(1, &VBO);
-    // glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    // glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+    // create element buffer object and assign indices
+    glGenBuffers(1, &EBO);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
-    // // create element buffer object and assign indices
-    // glGenBuffers(1, &EBO);
-    // glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-    // glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
-
-    // // tell OpenGL how to interpret vertex data
-    // // data, size (of attribute), type, normalize, stride (space b/w attributes), offset from beginning of data
-    // //
-    // // position
-    // glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
-    // glEnableVertexAttribArray(0);
-    // // color
-    // glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
-    // glEnableVertexAttribArray(1);
+    // tell OpenGL how to interpret vertex data
+    // data, size (of attribute), type, normalize, stride (space b/w attributes), offset from beginning of data
+    //
+    // position
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
+    glEnableVertexAttribArray(0);
+    // color
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
+    glEnableVertexAttribArray(1);
 
 
     // start doing text stuff
+
+    // enable blending for text rendering and create projection matrix
+    glEnable(GL_CULL_FACE);
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+    Shader textShader("../shaders/text.vs", "../shaders/text.fs");
+    glm::mat4 projection = glm::ortho(0.0f, static_cast<float>(SCR_WIDTH), 0.0f, static_cast<float>(SCR_HEIGHT));
+    textShader.use();
+    glUniformMatrix4fv(glGetUniformLocation(textShader.ID, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
+    glPixelStorei(GL_UNPACK_ALIGNMENT, 1); // disable byte-alignment restriction
+    
+    // set size to load glyphs as
+    FT_Set_Pixel_Sizes(face, 0, 48);
+
+    // disable byte-alignment restriction
+    glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
 
     for (unsigned char c = 0; c < 128; c++)
     {
@@ -190,19 +194,19 @@ int main()
         processInput(window);
 
         // set shader program
-        // ourShader.use();
+        ourShader.use();
 
         // rendering commands
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
-        // // draw triangle
-        // glBindVertexArray(VAO);
-        // glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-        // glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+        // draw triangle
+        glBindVertexArray(VAO);
+        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
         // draw text
-        RenderText(textShader, "hello world", 25.0f, 25.0f, 1.0f, glm::vec3(0.5, 0.8f, 0.2f));
+        RenderText(textShader, "hello world", 80.0f, 492.0f, 1.0f, glm::vec3(0.5, 0.8f, 0.2f));
 
         // check and call events and swap buffers
         glfwSwapBuffers(window);
