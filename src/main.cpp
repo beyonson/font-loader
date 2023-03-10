@@ -1,6 +1,8 @@
 #include <iostream>
 #include <cmath>
 #include <map>
+#include <vector>
+#include <string>
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
@@ -13,9 +15,13 @@
 #include <ft2build.h>
 #include FT_FREETYPE_H
 
+#define STB_IMAGE_WRITE_IMPLEMENTATION
+#include "stb_image_write.h"
+
 void initTextbox();
 void getKeyPressed(GLFWwindow* window, int key, int scancode, int action, int mods);
-void RenderText(Shader &s, std::string text, float x, float y, float scale, glm::vec3 color);
+void RenderText(Shader &s, std::string text, float x, float y, float scale, glm::vec3 color, GLFWwindow* window);
+void saveImage(std::string filepath, GLFWwindow* w, int x, int y, int charWidth, int charHeight);
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow* window);
 
@@ -69,7 +75,7 @@ int main()
     }
 
     FT_Face face;
-    if (FT_New_Face(ft, "../fonts/arial.ttf", 0, &face)) {
+    if (FT_New_Face(ft, "../fonts/DroidSansMono.ttf", 0, &face)) {
         std::cout << "ERROR: FREETYPE: Failed to load font" << std::endl;
         return -1;
     }
@@ -168,13 +174,13 @@ int main()
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
-        // draw triangle
+        // draw text box
         glBindVertexArray(VAO);
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
         // draw text
-        RenderText(textShader, typedText, 80.0f, 492.0f, 1.0f, glm::vec3(0.5, 0.8f, 0.2f));
+        RenderText(textShader, typedText, 82.0f, 492.0f, 1.0f, glm::vec3(0.5f, 0.5f, 0.5f), window);
 
         // check and call events and swap buffers
         glfwSwapBuffers(window);
@@ -192,8 +198,8 @@ void initTextbox()
         // positions        // colors
         -0.8f, -0.8f, 0.0f, 0.5f, 0.0f, 0.0f,   // bottom right
          0.8f, -0.8f, 0.0f, 0.5f, 0.0f, 0.0f,   // bottom left
-        -0.8f,  0.8f, 0.0f, 0.5f, 0.0f, 1.0f,   // top
-         0.8f,  0.8f, 0.0f, 0.5f, 0.0f, 1.0f    // top
+        -0.8f,  0.8f, 0.0f, 0.5f, 0.0f, 0.0f,   // top
+         0.8f,  0.8f, 0.0f, 0.5f, 0.0f, 0.0f    // top
     };
 
     // create rectangle
@@ -227,7 +233,7 @@ void initTextbox()
     glEnableVertexAttribArray(1);
 }
 
-void RenderText(Shader &s, std::string text, float x, float y, float scale, glm::vec3 color)
+void RenderText(Shader &s, std::string text, float x, float y, float scale, glm::vec3 color, GLFWwindow* window)
 {
     // activate corresponding render state	
     s.use();
@@ -237,6 +243,8 @@ void RenderText(Shader &s, std::string text, float x, float y, float scale, glm:
 
     // iterate through all characters
     std::string::const_iterator c;
+    unsigned int charCount = 0;
+    std::string fileName;
     for (c = text.begin(); c != text.end(); c++)
     {
         Character ch = Characters[*c];
@@ -266,9 +274,31 @@ void RenderText(Shader &s, std::string text, float x, float y, float scale, glm:
         glDrawArrays(GL_TRIANGLES, 0, 6);
         // now advance cursors for next glyph (note that advance is number of 1/64 pixels)
         x += (ch.Advance >> 6) * scale; // bitshift by 6 to get value in pixels (2^6 = 64)
+        fileName = "../chars/ss" + std::to_string(charCount) + ".png";
+        saveImage(fileName, window, xpos, ypos, w, h);
+        charCount++;
     }
     glBindVertexArray(0);
     glBindTexture(GL_TEXTURE_2D, 0);
+}
+
+void saveImage(std::string filepath, GLFWwindow* w, int x, int y, int charWidth, int charHeight) {
+    int width, height;
+
+    glfwGetFramebufferSize(w, &width, &height);
+    GLsizei nrChannels = 3;
+    GLsizei stride = nrChannels * charWidth;
+    stride += (stride % 4) ? (4 - stride % 4) : 0;
+    GLsizei bufferSize = stride * charHeight;
+    std::vector<char> buffer(bufferSize);
+    glPixelStorei(GL_PACK_ALIGNMENT, 4);
+    glReadBuffer(GL_FRONT);
+    glReadPixels(x, y, charWidth, charHeight, GL_RGB, GL_UNSIGNED_BYTE, buffer.data());
+    stbi_flip_vertically_on_write(true);
+
+    char* fileName = new char[filepath.length() + 1];
+    strcpy(fileName, filepath.c_str());
+    stbi_write_png(fileName, charWidth, charHeight, nrChannels, buffer.data(), stride);
 }
 
 void getKeyPressed(GLFWwindow* window, int key, int scancode, int action, int mods)
@@ -285,5 +315,7 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 void processInput(GLFWwindow* window)
 {
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+    {
         glfwSetWindowShouldClose(window, true);
+    }
 }

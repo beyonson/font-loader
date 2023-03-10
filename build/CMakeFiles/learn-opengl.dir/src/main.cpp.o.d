@@ -157,7 +157,11 @@ CMakeFiles/learn-opengl.dir/src/main.cpp.o: \
  /usr/include/c++/12.2.1/bits/stl_map.h /usr/include/c++/12.2.1/tuple \
  /usr/include/c++/12.2.1/bits/uses_allocator.h \
  /usr/include/c++/12.2.1/bits/stl_multimap.h \
- /usr/include/c++/12.2.1/bits/erase_if.h \
+ /usr/include/c++/12.2.1/bits/erase_if.h /usr/include/c++/12.2.1/vector \
+ /usr/include/c++/12.2.1/bits/stl_uninitialized.h \
+ /usr/include/c++/12.2.1/bits/stl_vector.h \
+ /usr/include/c++/12.2.1/bits/stl_bvector.h \
+ /usr/include/c++/12.2.1/bits/vector.tcc \
  /home/garrett/git/opengl-text-editor/include/glad/glad.h \
  /home/garrett/git/opengl-text-editor/include/KHR/khrplatform.h \
  /home/garrett/git/opengl-text-editor/external/glfw/include/GLFW/glfw3.h \
@@ -350,4 +354,6 @@ CMakeFiles/learn-opengl.dir/src/main.cpp.o: \
  /home/garrett/git/opengl-text-editor/external/freetype/include/freetype/ftimage.h \
  /home/garrett/git/opengl-text-editor/external/freetype/include/freetype/fterrors.h \
  /home/garrett/git/opengl-text-editor/external/freetype/include/freetype/ftmoderr.h \
- /home/garrett/git/opengl-text-editor/external/freetype/include/freetype/fterrdef.h
+ /home/garrett/git/opengl-text-editor/external/freetype/include/freetype/fterrdef.h \
+ /home/garrett/git/opengl-text-editor/include/stb_image_write.h \
+ /usr/include/c++/12.2.1/math.h

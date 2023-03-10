@@ -285,6 +285,11 @@ CMakeFiles/learn-opengl.dir/src/main.cpp.o: /home/garrett/git/opengl-text-editor
   /usr/include/c++/12.2.1/bits/uses_allocator.h \
   /usr/include/c++/12.2.1/bits/stl_multimap.h \
   /usr/include/c++/12.2.1/bits/erase_if.h \
+  /usr/include/c++/12.2.1/vector \
+  /usr/include/c++/12.2.1/bits/stl_uninitialized.h \
+  /usr/include/c++/12.2.1/bits/stl_vector.h \
+  /usr/include/c++/12.2.1/bits/stl_bvector.h \
+  /usr/include/c++/12.2.1/bits/vector.tcc \
   /home/garrett/git/opengl-text-editor/include/glad/glad.h \
   /home/garrett/git/opengl-text-editor/include/KHR/khrplatform.h \
   /home/garrett/git/opengl-text-editor/external/glfw/include/GLFW/glfw3.h \
@@ -514,8 +519,12 @@ CMakeFiles/learn-opengl.dir/src/main.cpp.o: /home/garrett/git/opengl-text-editor
   /home/garrett/git/opengl-text-editor/external/freetype/include/freetype/ftimage.h \
   /home/garrett/git/opengl-text-editor/external/freetype/include/freetype/fterrors.h \
   /home/garrett/git/opengl-text-editor/external/freetype/include/freetype/ftmoderr.h \
-  /home/garrett/git/opengl-text-editor/external/freetype/include/freetype/fterrdef.h
+  /home/garrett/git/opengl-text-editor/external/freetype/include/freetype/fterrdef.h \
+  /home/garrett/git/opengl-text-editor/include/stb_image_write.h \
+  /usr/include/c++/12.2.1/math.h
 
+
+/usr/include/c++/12.2.1/math.h:
 
 /home/garrett/git/opengl-text-editor/external/freetype/include/freetype/fterrdef.h:
 
@@ -530,8 +539,6 @@ CMakeFiles/learn-opengl.dir/src/main.cpp.o: /home/garrett/git/opengl-text-editor
 /home/garrett/git/opengl-text-editor/external/freetype/include/freetype/freetype.h:
 
 /home/garrett/git/opengl-text-editor/external/freetype/include/freetype/config/ftheader.h:
-
-/usr/include/glm/ext/vector_uint1.hpp:
 
 /usr/include/glm/ext/vector_int1_sized.hpp:
 
@@ -755,11 +762,27 @@ external/freetype/include/freetype/config/ftoption.h:
 
 /usr/include/glm/ext/vector_int2.hpp:
 
+/usr/include/glm/ext/vector_double2.hpp:
+
+/usr/include/glm/ext/vector_relational.hpp:
+
+/usr/include/glm/ext/vector_float2_precision.hpp:
+
+/usr/include/glm/ext/vector_uint1_sized.hpp:
+
+/usr/include/glm/ext/vector_float2.hpp:
+
+/usr/include/glm/ext/vector_bool2_precision.hpp:
+
 /usr/include/c++/12.2.1/x86_64-pc-linux-gnu/bits/c++allocator.h:
 
 /usr/include/c++/12.2.1/x86_64-pc-linux-gnu/bits/c++config.h:
 
 /usr/include/c++/12.2.1/bits/erase_if.h:
+
+/usr/include/glm/ext/vector_uint1.hpp:
+
+/usr/include/c++/12.2.1/vector:
 
 /usr/include/sys/select.h:
 
@@ -874,8 +897,6 @@ external/freetype/include/freetype/config/ftoption.h:
 /usr/include/c++/12.2.1/ostream:
 
 /usr/include/c++/12.2.1/x86_64-pc-linux-gnu/bits/cpu_defines.h:
-
-/usr/include/c++/12.2.1/x86_64-pc-linux-gnu/bits/error_constants.h:
 
 /home/garrett/git/opengl-text-editor/src/main.cpp:
 
@@ -1001,6 +1022,12 @@ external/freetype/include/freetype/config/ftoption.h:
 
 /usr/include/bits/cpu-set.h:
 
+/usr/include/c++/12.2.1/x86_64-pc-linux-gnu/bits/basic_file.h:
+
+/usr/include/glm/ext/vector_double2_precision.hpp:
+
+/usr/include/bits/uintn-identity.h:
+
 /usr/include/c++/12.2.1/bits/locale_facets.tcc:
 
 /usr/include/bits/endian.h:
@@ -1038,10 +1065,6 @@ external/freetype/include/freetype/config/ftoption.h:
 /usr/include/bits/long-double.h:
 
 /usr/include/bits/types/struct_FILE.h:
-
-/usr/include/glm/ext/vector_relational.hpp:
-
-/usr/include/glm/ext/vector_float2_precision.hpp:
 
 /usr/include/bits/endianness.h:
 
@@ -1107,10 +1130,6 @@ external/freetype/include/freetype/config/ftoption.h:
 
 /usr/include/stdc-predef.h:
 
-/usr/include/glm/ext/vector_uint1_sized.hpp:
-
-/usr/include/glm/ext/vector_float2.hpp:
-
 /home/garrett/git/opengl-text-editor/external/freetype/include/freetype/fterrors.h:
 
 /usr/include/c++/12.2.1/bits/streambuf_iterator.h:
@@ -1152,6 +1171,8 @@ external/freetype/include/freetype/config/ftoption.h:
 /usr/include/glm/ext/vector_uint3_sized.hpp:
 
 /usr/include/c++/12.2.1/bits/cpp_type_traits.h:
+
+/home/garrett/git/opengl-text-editor/include/stb_image_write.h:
 
 /usr/include/c++/12.2.1/cstddef:
 
@@ -1229,8 +1250,6 @@ external/freetype/include/freetype/config/ftoption.h:
 
 /usr/include/c++/12.2.1/bits/alloc_traits.h:
 
-/usr/include/c++/12.2.1/map:
-
 /home/garrett/git/opengl-text-editor/external/freetype/include/freetype/config/public-macros.h:
 
 /usr/include/c++/12.2.1/bits/stl_construct.h:
@@ -1270,10 +1289,6 @@ external/freetype/include/freetype/config/ftoption.h:
 /usr/include/c++/12.2.1/iosfwd:
 
 /usr/include/bits/types/error_t.h:
-
-/usr/include/glm/detail/func_common.inl:
-
-/usr/include/c++/12.2.1/bits/charconv.h:
 
 /usr/include/c++/12.2.1/bits/locale_classes.tcc:
 
@@ -1375,6 +1390,22 @@ external/freetype/include/freetype/config/ftoption.h:
 
 /usr/include/c++/12.2.1/tuple:
 
+/usr/include/c++/12.2.1/map:
+
+/usr/include/c++/12.2.1/bits/stl_uninitialized.h:
+
+/usr/include/c++/12.2.1/bits/stl_vector.h:
+
+/usr/include/glm/detail/func_common.inl:
+
+/usr/include/c++/12.2.1/bits/charconv.h:
+
+/usr/include/c++/12.2.1/bits/stl_bvector.h:
+
+/usr/include/c++/12.2.1/x86_64-pc-linux-gnu/bits/error_constants.h:
+
+/usr/include/c++/12.2.1/bits/vector.tcc:
+
 /home/garrett/git/opengl-text-editor/external/glfw/include/GLFW/glfw3.h:
 
 /usr/include/glm/ext/matrix_clip_space.inl:
@@ -1400,13 +1431,3 @@ external/freetype/include/freetype/config/ftoption.h:
 /home/garrett/git/opengl-text-editor/include/shader.h:
 
 /usr/include/glm/detail/type_vec2.hpp:
-
-/usr/include/glm/ext/vector_bool2_precision.hpp:
-
-/usr/include/glm/ext/vector_double2.hpp:
-
-/usr/include/c++/12.2.1/x86_64-pc-linux-gnu/bits/basic_file.h:
-
-/usr/include/bits/uintn-identity.h:
-
-/usr/include/glm/ext/vector_double2_precision.hpp:
