@@ -19,9 +19,11 @@
 #include "stb_image_write.h"
 
 void initTextbox();
+void initCharbox();
 void getKeyPressed(GLFWwindow* window, int key, int scancode, int action, int mods);
+void renderLastChar(Shader &s, char text, glm::vec3 color, GLFWwindow* window);
 void RenderText(Shader &s, std::string text, float x, float y, float scale, glm::vec3 color, GLFWwindow* window);
-void saveImage(std::string filepath, GLFWwindow* w, int x, int y, int charWidth, int charHeight);
+void saveImage(std::string filepath, GLFWwindow* w, int x, int y, int advanceX, int advanceY);
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow* window);
 
@@ -34,12 +36,13 @@ struct Character {
     unsigned int TextureID;
     glm::ivec2   Size;
     glm::ivec2   Bearing;
-    unsigned int Advance;
+    unsigned int AdvanceX;
 };
 std::map<char, Character> Characters;
 
 // create memory management objects
 unsigned int textVBO, textVAO;
+unsigned int charVBO, charVAO, charEBO;
 unsigned int VAO, VBO, EBO;
 std::string typedText = "";
 
@@ -75,7 +78,7 @@ int main()
     }
 
     FT_Face face;
-    if (FT_New_Face(ft, "../fonts/DroidSansMono.ttf", 0, &face)) {
+    if (FT_New_Face(ft, "../fonts/luximr.ttf", 0, &face)) {
         std::cout << "ERROR: FREETYPE: Failed to load font" << std::endl;
         return -1;
     }
@@ -87,6 +90,7 @@ int main()
     // initialize text box
     Shader ourShader("../shaders/shader.vs", "../shaders/shader.fs");
     initTextbox();
+    initCharbox();
 
     // start doing text stuff
 
@@ -102,7 +106,7 @@ int main()
     glPixelStorei(GL_UNPACK_ALIGNMENT, 1); // disable byte-alignment restriction
     
     // set size to load glyphs as
-    FT_Set_Pixel_Sizes(face, 0, 48);
+    FT_Set_Pixel_Sizes(face, 0, 200);
 
     // disable byte-alignment restriction
     glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
@@ -158,7 +162,7 @@ int main()
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
 
-    // set key press callback
+    // set key press callbackcharacter
     glfwSetKeyCallback(window, getKeyPressed);
 
     // call render loop
@@ -171,7 +175,7 @@ int main()
         ourShader.use();
 
         // rendering commands
-        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+        glClearColor(0.41f, 0.16f, 0.13f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
         // draw text box
@@ -179,8 +183,17 @@ int main()
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
+        // draw char box
+        glBindVertexArray(charVAO);
+        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, charEBO);
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0); 
+
         // draw text
-        RenderText(textShader, typedText, 82.0f, 492.0f, 1.0f, glm::vec3(0.5f, 0.5f, 0.5f), window);
+        RenderText(textShader, typedText, 82.0f, 492.0f, 0.3f, glm::vec3(0.5f, 0.5f, 0.5f), window);
+
+        // render char
+        if (typedText.length())
+            renderLastChar(textShader, typedText[typedText.length() - 1], glm::vec3(0.5f, 0.5f, 0.5f), window);
 
         // check and call events and swap buffers
         glfwSwapBuffers(window);
@@ -233,6 +246,48 @@ void initTextbox()
     glEnableVertexAttribArray(1);
 }
 
+void initCharbox()
+{
+    // create vertex coordinates
+    float vertices[] = {
+        // positions        // colors
+         0.5f, -0.8f, 0.0f, 0.5f, 0.2f, 0.0f,   // bottom left
+         0.8f, -0.8f, 0.0f, 0.5f, 0.2f, 0.0f,   // bottom right
+         0.5f, -0.3f, 0.0f, 0.5f, 0.2f, 0.0f,   // top left
+         0.8f, -0.3f, 0.0f, 0.5f, 0.2f, 0.0f    // top right
+    };
+
+    // create rectangle
+    unsigned int indices[] = {
+        0, 1, 2,
+        1, 3, 2
+    };
+
+    // create array object, buffer object, element object
+    glGenVertexArrays(1, &charVAO);
+    glBindVertexArray(charVAO);
+
+    // create buffer object and assign vertex data
+    glGenBuffers(1, &charVBO);
+    glBindBuffer(GL_ARRAY_BUFFER, charVBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+
+    // create element buffer object and assign indices
+    glGenBuffers(1, &charEBO);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, charEBO);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+
+    // tell OpenGL how to interpret vertex data
+    // data, size (of attribute), type, normalize, stride (space b/w attributes), offset from beginning of data
+    //
+    // position
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
+    glEnableVertexAttribArray(0);
+    // color
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
+    glEnableVertexAttribArray(1);
+}
+
 void RenderText(Shader &s, std::string text, float x, float y, float scale, glm::vec3 color, GLFWwindow* window)
 {
     // activate corresponding render state	
@@ -245,6 +300,7 @@ void RenderText(Shader &s, std::string text, float x, float y, float scale, glm:
     std::string::const_iterator c;
     unsigned int charCount = 0;
     std::string fileName;
+    int advanceX;
     for (c = text.begin(); c != text.end(); c++)
     {
         Character ch = Characters[*c];
@@ -273,16 +329,63 @@ void RenderText(Shader &s, std::string text, float x, float y, float scale, glm:
         // render quad
         glDrawArrays(GL_TRIANGLES, 0, 6);
         // now advance cursors for next glyph (note that advance is number of 1/64 pixels)
-        x += (ch.Advance >> 6) * scale; // bitshift by 6 to get value in pixels (2^6 = 64)
+        x += (ch.AdvanceX >> 6) * scale; // bitshift by 6 to get value in pixels (2^6 = 64)
+        // save image of character
         fileName = "../chars/ss" + std::to_string(charCount) + ".png";
-        saveImage(fileName, window, xpos, ypos, w, h);
+        advanceX = (ch.AdvanceX >> 6) * scale;
+        saveImage(fileName, window, xpos, ypos, advanceX, 48);
         charCount++;
     }
     glBindVertexArray(0);
     glBindTexture(GL_TEXTURE_2D, 0);
 }
 
-void saveImage(std::string filepath, GLFWwindow* w, int x, int y, int charWidth, int charHeight) {
+void renderLastChar(Shader &s, char text, glm::vec3 color, GLFWwindow* window)
+{
+    // activate corresponding render state	
+    s.use();
+    glUniform3f(glGetUniformLocation(s.ID, "textColor"), color.x, color.y, color.z);
+    glActiveTexture(GL_TEXTURE0);
+    glBindVertexArray(textVAO);
+
+    // iterate through all characters
+    if (text)
+    {
+        unsigned int charCount = 0;
+        int advanceX;
+        Character ch = Characters[text];
+
+        float xpos = 600.0f;
+        float ypos = 60.0f;
+        float scale= 1;
+
+        float w = ch.Size.x * scale;
+        float h = ch.Size.y * scale;
+        // update VBO for each character
+        float vertices[6][4] = {
+            { xpos,     ypos + h,   0.0f, 0.0f },            
+            { xpos,     ypos,       0.0f, 1.0f },
+            { xpos + w, ypos,       1.0f, 1.0f },
+
+            { xpos,     ypos + h,   0.0f, 0.0f },
+            { xpos + w, ypos,       1.0f, 1.0f },
+            { xpos + w, ypos + h,   1.0f, 0.0f }           
+        };
+        // render glyph texture over quad
+        glBindTexture(GL_TEXTURE_2D, ch.TextureID);
+        // update content of VBO memory
+        glBindBuffer(GL_ARRAY_BUFFER, textVBO);
+        glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(vertices), vertices); 
+        glBindBuffer(GL_ARRAY_BUFFER, 0);
+        // render quad
+        glDrawArrays(GL_TRIANGLES, 0, 6);
+    }
+    glBindVertexArray(0);
+    glBindTexture(GL_TEXTURE_2D, 0);
+}
+
+void saveImage(std::string filepath, GLFWwindow* w, int x, int y, int charWidth, int charHeight) 
+{
     int width, height;
 
     glfwGetFramebufferSize(w, &width, &height);
