@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.25)
-project(learn-opengl)
+project(opengl-text-editor)
 
 ## add sub directories
 add_subdirectory(external)

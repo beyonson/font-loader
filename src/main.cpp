@@ -21,7 +21,7 @@
 void initTextbox();
 void initCharbox();
 void getKeyPressed(GLFWwindow* window, int key, int scancode, int action, int mods);
-void renderLastChar(Shader &s, char text, glm::vec3 color, GLFWwindow* window);
+void renderLastChar(Shader &s, std::string text, glm::vec3 color, GLFWwindow* window);
 void RenderText(Shader &s, std::string text, float x, float y, float scale, glm::vec3 color, GLFWwindow* window);
 void saveImage(std::string filepath, GLFWwindow* w, int x, int y, int advanceX, int advanceY);
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
@@ -55,7 +55,7 @@ int main()
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
     // create glfw window
-    GLFWwindow* window = glfwCreateWindow(800, 600, "28 club", NULL, NULL);
+    GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "OpenGL Text Editor", NULL, NULL);
     if (window == NULL) {
         std::cout << "ERROR: GLFW: Failed to create GLFW window" << std::endl;
         glfwTerminate();
@@ -193,7 +193,7 @@ int main()
 
         // render char
         if (typedText.length())
-            renderLastChar(textShader, typedText[typedText.length() - 1], glm::vec3(0.5f, 0.5f, 0.5f), window);
+            renderLastChar(textShader, typedText, glm::vec3(0.5f, 0.5f, 0.5f), window);
 
         // check and call events and swap buffers
         glfwSwapBuffers(window);
@@ -253,8 +253,8 @@ void initCharbox()
         // positions        // colors
          0.5f, -0.8f, 0.0f, 0.5f, 0.2f, 0.0f,   // bottom left
          0.8f, -0.8f, 0.0f, 0.5f, 0.2f, 0.0f,   // bottom right
-         0.5f, -0.3f, 0.0f, 0.5f, 0.2f, 0.0f,   // top left
-         0.8f, -0.3f, 0.0f, 0.5f, 0.2f, 0.0f    // top right
+         0.5f,-0.28f, 0.0f, 0.5f, 0.2f, 0.0f,   // top left
+         0.8f,-0.28f, 0.0f, 0.5f, 0.2f, 0.0f    // top right
     };
 
     // create rectangle
@@ -298,7 +298,6 @@ void RenderText(Shader &s, std::string text, float x, float y, float scale, glm:
 
     // iterate through all characters
     std::string::const_iterator c;
-    unsigned int charCount = 0;
     std::string fileName;
     int advanceX;
     for (c = text.begin(); c != text.end(); c++)
@@ -330,17 +329,12 @@ void RenderText(Shader &s, std::string text, float x, float y, float scale, glm:
         glDrawArrays(GL_TRIANGLES, 0, 6);
         // now advance cursors for next glyph (note that advance is number of 1/64 pixels)
         x += (ch.AdvanceX >> 6) * scale; // bitshift by 6 to get value in pixels (2^6 = 64)
-        // save image of character
-        fileName = "../chars/ss" + std::to_string(charCount) + ".png";
-        advanceX = (ch.AdvanceX >> 6) * scale;
-        saveImage(fileName, window, xpos, ypos, advanceX, 48);
-        charCount++;
     }
     glBindVertexArray(0);
     glBindTexture(GL_TEXTURE_2D, 0);
 }
 
-void renderLastChar(Shader &s, char text, glm::vec3 color, GLFWwindow* window)
+void renderLastChar(Shader &s, std::string text, glm::vec3 color, GLFWwindow* window)
 {
     // activate corresponding render state	
     s.use();
@@ -349,14 +343,14 @@ void renderLastChar(Shader &s, char text, glm::vec3 color, GLFWwindow* window)
     glBindVertexArray(textVAO);
 
     // iterate through all characters
-    if (text)
+    if (text.length())
     {
         unsigned int charCount = 0;
         int advanceX;
-        Character ch = Characters[text];
+        Character ch = Characters[text[text.length() - 1]];
 
-        float xpos = 600.0f;
-        float ypos = 60.0f;
+        float xpos = 605.0f;
+        float ypos = 65.0f;
         float scale= 1;
 
         float w = ch.Size.x * scale;
@@ -379,6 +373,10 @@ void renderLastChar(Shader &s, char text, glm::vec3 color, GLFWwindow* window)
         glBindBuffer(GL_ARRAY_BUFFER, 0);
         // render quad
         glDrawArrays(GL_TRIANGLES, 0, 6);
+        // save image of character
+        std::string fileName = "../chars/ss" + std::to_string(text.length()) + ".png";
+        advanceX = (ch.AdvanceX >> 6) * scale;
+        saveImage(fileName, window, xpos-2, ypos-2, advanceX, 155);
     }
     glBindVertexArray(0);
     glBindTexture(GL_TEXTURE_2D, 0);

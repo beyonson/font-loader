@@ -1,4 +1,4 @@
-/home/garrett/git/opengl-text-editor/build/CMakeFiles/learn-opengl.dir
+/home/garrett/git/opengl-text-editor/build/CMakeFiles/opengl-text-editor.dir
 /home/garrett/git/opengl-text-editor/build/CMakeFiles/package.dir
 /home/garrett/git/opengl-text-editor/build/CMakeFiles/package_source.dir
 /home/garrett/git/opengl-text-editor/build/CMakeFiles/edit_cache.dir

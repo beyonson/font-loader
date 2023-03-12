@@ -90,7 +90,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/learn-opengl.dir/DependInfo.cmake"
+  "CMakeFiles/opengl-text-editor.dir/DependInfo.cmake"
   "external/glfw/CMakeFiles/uninstall.dir/DependInfo.cmake"
   "external/glfw/src/CMakeFiles/glfw.dir/DependInfo.cmake"
   "external/glfw/src/CMakeFiles/update_mappings.dir/DependInfo.cmake"

@@ -63,7 +63,7 @@ CMAKE_BINARY_DIR = /home/garrett/git/opengl-text-editor/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/learn-opengl.dir/all
+all: CMakeFiles/opengl-text-editor.dir/all
 all: external/all
 .PHONY : all
 
@@ -72,7 +72,7 @@ preinstall: external/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/learn-opengl.dir/clean
+clean: CMakeFiles/opengl-text-editor.dir/clean
 clean: external/clean
 .PHONY : clean
 
@@ -142,31 +142,31 @@ external/glfw/src/clean: external/glfw/src/CMakeFiles/update_mappings.dir/clean
 .PHONY : external/glfw/src/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/learn-opengl.dir
+# Target rules for target CMakeFiles/opengl-text-editor.dir
 
 # All Build rule for target.
-CMakeFiles/learn-opengl.dir/all: external/glfw/src/CMakeFiles/glfw.dir/all
-CMakeFiles/learn-opengl.dir/all: external/freetype/CMakeFiles/freetype.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/learn-opengl.dir/build.make CMakeFiles/learn-opengl.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/learn-opengl.dir/build.make CMakeFiles/learn-opengl.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/garrett/git/opengl-text-editor/build/CMakeFiles --progress-num=68,69,70 "Built target learn-opengl"
-.PHONY : CMakeFiles/learn-opengl.dir/all
+CMakeFiles/opengl-text-editor.dir/all: external/glfw/src/CMakeFiles/glfw.dir/all
+CMakeFiles/opengl-text-editor.dir/all: external/freetype/CMakeFiles/freetype.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl-text-editor.dir/build.make CMakeFiles/opengl-text-editor.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl-text-editor.dir/build.make CMakeFiles/opengl-text-editor.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/garrett/git/opengl-text-editor/build/CMakeFiles --progress-num=68,69,70 "Built target opengl-text-editor"
+.PHONY : CMakeFiles/opengl-text-editor.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/learn-opengl.dir/rule: cmake_check_build_system
+CMakeFiles/opengl-text-editor.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/garrett/git/opengl-text-editor/build/CMakeFiles 70
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/learn-opengl.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/opengl-text-editor.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/garrett/git/opengl-text-editor/build/CMakeFiles 0
-.PHONY : CMakeFiles/learn-opengl.dir/rule
+.PHONY : CMakeFiles/opengl-text-editor.dir/rule
 
 # Convenience name for target.
-learn-opengl: CMakeFiles/learn-opengl.dir/rule
-.PHONY : learn-opengl
+opengl-text-editor: CMakeFiles/opengl-text-editor.dir/rule
+.PHONY : opengl-text-editor
 
 # clean rule for target.
-CMakeFiles/learn-opengl.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/learn-opengl.dir/build.make CMakeFiles/learn-opengl.dir/clean
-.PHONY : CMakeFiles/learn-opengl.dir/clean
+CMakeFiles/opengl-text-editor.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl-text-editor.dir/build.make CMakeFiles/opengl-text-editor.dir/clean
+.PHONY : CMakeFiles/opengl-text-editor.dir/clean
 
 #=============================================================================
 # Target rules for target external/glfw/CMakeFiles/uninstall.dir

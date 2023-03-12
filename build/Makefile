@@ -182,17 +182,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named learn-opengl
+# Target rules for targets named opengl-text-editor
 
 # Build rule for target.
-learn-opengl: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 learn-opengl
-.PHONY : learn-opengl
+opengl-text-editor: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 opengl-text-editor
+.PHONY : opengl-text-editor
 
 # fast build rule for target.
-learn-opengl/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/learn-opengl.dir/build.make CMakeFiles/learn-opengl.dir/build
-.PHONY : learn-opengl/fast
+opengl-text-editor/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl-text-editor.dir/build.make CMakeFiles/opengl-text-editor.dir/build
+.PHONY : opengl-text-editor/fast
 
 #=============================================================================
 # Target rules for targets named uninstall
@@ -251,7 +251,7 @@ src/glad.o: src/glad.c.o
 
 # target to build an object file
 src/glad.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/learn-opengl.dir/build.make CMakeFiles/learn-opengl.dir/src/glad.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl-text-editor.dir/build.make CMakeFiles/opengl-text-editor.dir/src/glad.c.o
 .PHONY : src/glad.c.o
 
 src/glad.i: src/glad.c.i
@@ -259,7 +259,7 @@ src/glad.i: src/glad.c.i
 
 # target to preprocess a source file
 src/glad.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/learn-opengl.dir/build.make CMakeFiles/learn-opengl.dir/src/glad.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl-text-editor.dir/build.make CMakeFiles/opengl-text-editor.dir/src/glad.c.i
 .PHONY : src/glad.c.i
 
 src/glad.s: src/glad.c.s
@@ -267,7 +267,7 @@ src/glad.s: src/glad.c.s
 
 # target to generate assembly for a file
 src/glad.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/learn-opengl.dir/build.make CMakeFiles/learn-opengl.dir/src/glad.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl-text-editor.dir/build.make CMakeFiles/opengl-text-editor.dir/src/glad.c.s
 .PHONY : src/glad.c.s
 
 src/main.o: src/main.cpp.o
@@ -275,7 +275,7 @@ src/main.o: src/main.cpp.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/learn-opengl.dir/build.make CMakeFiles/learn-opengl.dir/src/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl-text-editor.dir/build.make CMakeFiles/opengl-text-editor.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -283,7 +283,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/learn-opengl.dir/build.make CMakeFiles/learn-opengl.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl-text-editor.dir/build.make CMakeFiles/opengl-text-editor.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -291,7 +291,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/learn-opengl.dir/build.make CMakeFiles/learn-opengl.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl-text-editor.dir/build.make CMakeFiles/opengl-text-editor.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 # Help Target
@@ -312,7 +312,7 @@ help:
 	@echo "... update_mappings"
 	@echo "... freetype"
 	@echo "... glfw"
-	@echo "... learn-opengl"
+	@echo "... opengl-text-editor"
 	@echo "... src/glad.o"
 	@echo "... src/glad.i"
 	@echo "... src/glad.s"
