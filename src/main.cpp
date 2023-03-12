@@ -46,6 +46,7 @@ unsigned int textVBO, textVAO;
 unsigned int charVBO, charVAO, charEBO;
 unsigned int VAO, VBO, EBO;
 std::string typedText = "";
+std::string savedText = "";
 
 int main()
 {
@@ -323,7 +324,12 @@ void renderLastChar(Shader &s, std::string text, glm::vec3 color, GLFWwindow* wi
         // save image of character
         std::string fileName = "../chars/ss" + std::to_string(text.length()) + ".png";
         advanceX = (ch.AdvanceX >> 6) * scale;
-        saveImage(fileName, window, xpos-2, ypos-2, advanceX, 230);
+
+        if (savedText != typedText)
+        {
+            saveImage(fileName, window, xpos-2, ypos-2, advanceX, 230);
+            savedText = typedText;
+        }
     }
     glBindVertexArray(0);
     glBindTexture(GL_TEXTURE_2D, 0);
@@ -373,8 +379,8 @@ bool loadChars(const char* filepath)
         );
         // set texture options
         glGenerateMipmap(GL_TEXTURE_2D);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
         // now store character for later use
