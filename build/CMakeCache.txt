@@ -46,7 +46,7 @@ CMAKE_BUILD_TYPE:STRING=
 CMAKE_COLOR_MAKEFILE:BOOL=ON
 
 //CXX compiler
-CMAKE_CXX_COMPILER:FILEPATH=/usr/bin/c++
+CMAKE_CXX_COMPILER:STRING=/usr/bin/c++
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
@@ -72,7 +72,7 @@ CMAKE_CXX_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
 CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 
 //C compiler
-CMAKE_C_COMPILER:FILEPATH=/usr/bin/cc
+CMAKE_C_COMPILER:STRING=/usr/bin/cc
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
@@ -406,6 +406,9 @@ HarfBuzz_LIBRARY:FILEPATH=/usr/lib/libharfbuzz.so
 //Path to a library.
 MATH_LIBRARY:FILEPATH=/usr/lib/libm.so
 
+//The directory containing a CMake configuration file for OpenCV.
+OpenCV_DIR:PATH=/usr/local/lib/cmake/opencv4
+
 //Arguments to supply to pkg-config
 PKG_CONFIG_ARGN:STRING=
 
@@ -695,15 +698,6 @@ freetype_LIB_DEPENDS:STATIC=general;/usr/lib/libz.so;general;/usr/lib/libbz2.so;
 freetype_SOURCE_DIR:STATIC=/home/garrett/git/opengl-text-editor/external/freetype
 
 //Value Computed by CMake
-learn-opengl_BINARY_DIR:STATIC=/home/garrett/git/opengl-text-editor/build
-
-//Value Computed by CMake
-learn-opengl_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-learn-opengl_SOURCE_DIR:STATIC=/home/garrett/git/opengl-text-editor
-
-//Value Computed by CMake
 opengl-text-editor_BINARY_DIR:STATIC=/home/garrett/git/opengl-text-editor/build
 
 //Value Computed by CMake
@@ -755,7 +749,7 @@ CMAKE_CACHE_MAJOR_VERSION:INTERNAL=3
 //Minor version of cmake used to create the current loaded cache
 CMAKE_CACHE_MINOR_VERSION:INTERNAL=25
 //Patch version of cmake used to create the current loaded cache
-CMAKE_CACHE_PATCH_VERSION:INTERNAL=2
+CMAKE_CACHE_PATCH_VERSION:INTERNAL=3
 //ADVANCED property for variable: CMAKE_COLOR_MAKEFILE
 CMAKE_COLOR_MAKEFILE-ADVANCED:INTERNAL=1
 //Path to CMake executable.
@@ -952,7 +946,9 @@ FIND_PACKAGE_MESSAGE_DETAILS_BZip2:INTERNAL=[/usr/lib/libbz2.so][/usr/include][v
 //Details about finding BrotliDec
 FIND_PACKAGE_MESSAGE_DETAILS_BrotliDec:INTERNAL=[/usr/include][/usr/lib/libbrotlidec.so][v1.0.9()]
 //Details about finding HarfBuzz
-FIND_PACKAGE_MESSAGE_DETAILS_HarfBuzz:INTERNAL=[/usr/include/harfbuzz][/usr/lib/libharfbuzz.so][ON][v7.0.1(2.0.0)]
+FIND_PACKAGE_MESSAGE_DETAILS_HarfBuzz:INTERNAL=[/usr/include/harfbuzz][/usr/lib/libharfbuzz.so][ON][v7.1.0(2.0.0)]
+//Details about finding OpenCV
+FIND_PACKAGE_MESSAGE_DETAILS_OpenCV:INTERNAL=[/usr/local][v4.7.0()]
 //Details about finding PNG
 FIND_PACKAGE_MESSAGE_DETAILS_PNG:INTERNAL=[/usr/lib/libpng.so][/usr/include][v1.6.39()]
 //Details about finding PkgConfig

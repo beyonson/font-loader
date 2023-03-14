@@ -270,29 +270,29 @@ src/glad.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl-text-editor.dir/build.make CMakeFiles/opengl-text-editor.dir/src/glad.c.s
 .PHONY : src/glad.c.s
 
-src/main.o: src/main.cpp.o
-.PHONY : src/main.o
+src/image_processing.o: src/image_processing.cpp.o
+.PHONY : src/image_processing.o
 
 # target to build an object file
-src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl-text-editor.dir/build.make CMakeFiles/opengl-text-editor.dir/src/main.cpp.o
-.PHONY : src/main.cpp.o
+src/image_processing.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl-text-editor.dir/build.make CMakeFiles/opengl-text-editor.dir/src/image_processing.cpp.o
+.PHONY : src/image_processing.cpp.o
 
-src/main.i: src/main.cpp.i
-.PHONY : src/main.i
+src/image_processing.i: src/image_processing.cpp.i
+.PHONY : src/image_processing.i
 
 # target to preprocess a source file
-src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl-text-editor.dir/build.make CMakeFiles/opengl-text-editor.dir/src/main.cpp.i
-.PHONY : src/main.cpp.i
+src/image_processing.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl-text-editor.dir/build.make CMakeFiles/opengl-text-editor.dir/src/image_processing.cpp.i
+.PHONY : src/image_processing.cpp.i
 
-src/main.s: src/main.cpp.s
-.PHONY : src/main.s
+src/image_processing.s: src/image_processing.cpp.s
+.PHONY : src/image_processing.s
 
 # target to generate assembly for a file
-src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl-text-editor.dir/build.make CMakeFiles/opengl-text-editor.dir/src/main.cpp.s
-.PHONY : src/main.cpp.s
+src/image_processing.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl-text-editor.dir/build.make CMakeFiles/opengl-text-editor.dir/src/image_processing.cpp.s
+.PHONY : src/image_processing.cpp.s
 
 # Help Target
 help:
@@ -316,9 +316,9 @@ help:
 	@echo "... src/glad.o"
 	@echo "... src/glad.i"
 	@echo "... src/glad.s"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
+	@echo "... src/image_processing.o"
+	@echo "... src/image_processing.i"
+	@echo "... src/image_processing.s"
 .PHONY : help
 
 
