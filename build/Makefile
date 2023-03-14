@@ -270,29 +270,53 @@ src/glad.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl-text-editor.dir/build.make CMakeFiles/opengl-text-editor.dir/src/glad.c.s
 .PHONY : src/glad.c.s
 
-src/image_processing.o: src/image_processing.cpp.o
-.PHONY : src/image_processing.o
+src/image_proc.o: src/image_proc.cpp.o
+.PHONY : src/image_proc.o
 
 # target to build an object file
-src/image_processing.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl-text-editor.dir/build.make CMakeFiles/opengl-text-editor.dir/src/image_processing.cpp.o
-.PHONY : src/image_processing.cpp.o
+src/image_proc.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl-text-editor.dir/build.make CMakeFiles/opengl-text-editor.dir/src/image_proc.cpp.o
+.PHONY : src/image_proc.cpp.o
 
-src/image_processing.i: src/image_processing.cpp.i
-.PHONY : src/image_processing.i
+src/image_proc.i: src/image_proc.cpp.i
+.PHONY : src/image_proc.i
 
 # target to preprocess a source file
-src/image_processing.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl-text-editor.dir/build.make CMakeFiles/opengl-text-editor.dir/src/image_processing.cpp.i
-.PHONY : src/image_processing.cpp.i
+src/image_proc.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl-text-editor.dir/build.make CMakeFiles/opengl-text-editor.dir/src/image_proc.cpp.i
+.PHONY : src/image_proc.cpp.i
 
-src/image_processing.s: src/image_processing.cpp.s
-.PHONY : src/image_processing.s
+src/image_proc.s: src/image_proc.cpp.s
+.PHONY : src/image_proc.s
 
 # target to generate assembly for a file
-src/image_processing.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl-text-editor.dir/build.make CMakeFiles/opengl-text-editor.dir/src/image_processing.cpp.s
-.PHONY : src/image_processing.cpp.s
+src/image_proc.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl-text-editor.dir/build.make CMakeFiles/opengl-text-editor.dir/src/image_proc.cpp.s
+.PHONY : src/image_proc.cpp.s
+
+src/main.o: src/main.cpp.o
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl-text-editor.dir/build.make CMakeFiles/opengl-text-editor.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl-text-editor.dir/build.make CMakeFiles/opengl-text-editor.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl-text-editor.dir/build.make CMakeFiles/opengl-text-editor.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 # Help Target
 help:
@@ -316,9 +340,12 @@ help:
 	@echo "... src/glad.o"
 	@echo "... src/glad.i"
 	@echo "... src/glad.s"
-	@echo "... src/image_processing.o"
-	@echo "... src/image_processing.i"
-	@echo "... src/image_processing.s"
+	@echo "... src/image_proc.o"
+	@echo "... src/image_proc.i"
+	@echo "... src/image_proc.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 

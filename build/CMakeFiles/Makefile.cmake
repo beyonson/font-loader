@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
   "/home/garrett/git/opengl-text-editor/CMakeLists.txt"
-  "CMakeFiles/3.25.3/CMakeCCompiler.cmake"
-  "CMakeFiles/3.25.3/CMakeCXXCompiler.cmake"
-  "CMakeFiles/3.25.3/CMakeSystem.cmake"
+  "CMakeFiles/3.25.2/CMakeCCompiler.cmake"
+  "CMakeFiles/3.25.2/CMakeCXXCompiler.cmake"
+  "CMakeFiles/3.25.2/CMakeSystem.cmake"
   "/home/garrett/git/opengl-text-editor/external/CMakeLists.txt"
   "/home/garrett/git/opengl-text-editor/external/freetype/CMakeLists.txt"
   "/home/garrett/git/opengl-text-editor/external/freetype/builds/cmake/FindBrotliDec.cmake"
