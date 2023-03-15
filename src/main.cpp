@@ -323,13 +323,14 @@ void renderLastChar(Shader &s, std::string text, glm::vec3 color, GLFWwindow* wi
         // render quad
         glDrawArrays(GL_TRIANGLES, 0, 6);
         // save image of character
-        std::string fileName = "../chars/ss" + std::to_string(text.length()) + ".png";
+        std::string filename = "../chars/ss" + std::to_string(text.length()) + ".png";
         advanceX = (ch.AdvanceX >> 6) * scale;
 
         if (savedText != typedText)
         {
-            imageProc.ipSave(fileName, window, xpos, ypos, advanceX, 200);
-            imageProc.ipThreshold(fileName, true);
+            imageProc.ipSave(filename, window, xpos, ypos, advanceX, 200);
+            imageProc.ipThreshold(filename, filename, true);
+            imageProc.ipSkeletonize(filename, filename);
             savedText = typedText;
         }
     }
