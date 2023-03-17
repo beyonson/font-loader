@@ -4,3 +4,6 @@
 [submodule "external/opencv"]
 	path = external/opencv
 	url = git@github.com:opencv/opencv.git
+[submodule "external/glfw"]
+	path = external/glfw
+	url = git@github.com:glfw/glfw.git
