@@ -15,8 +15,7 @@
 #include <ft2build.h>
 #include FT_FREETYPE_H
 
-#define STB_IMAGE_WRITE_IMPLEMENTATION
-#include "stb_image_write.h"
+#include <image_proc.h>
 
 void initTextbox();
 void initCharbox();
@@ -24,7 +23,6 @@ void getKeyPressed(GLFWwindow* window, int key, int scancode, int action, int mo
 void renderLastChar(Shader &s, std::string text, glm::vec3 color, GLFWwindow* window);
 void RenderText(Shader &s, std::string text, float x, float y, float scale, glm::vec3 color, GLFWwindow* window);
 bool loadChars(const char* filepath);
-void saveImage(std::string filepath, GLFWwindow* w, int x, int y, int advanceX, int advanceY);
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow* window);
 
@@ -45,6 +43,9 @@ std::map<char, Character> Characters;
 unsigned int textVBO, textVAO;
 unsigned int charVBO, charVAO, charEBO;
 unsigned int VAO, VBO, EBO;
+
+// global vars
+ImageProc imageProc;
 std::string typedText = "";
 std::string savedText = "";
 
@@ -322,12 +323,14 @@ void renderLastChar(Shader &s, std::string text, glm::vec3 color, GLFWwindow* wi
         // render quad
         glDrawArrays(GL_TRIANGLES, 0, 6);
         // save image of character
-        std::string fileName = "../chars/ss" + std::to_string(text.length()) + ".png";
+        std::string filename = "../chars/ss" + std::to_string(text.length()) + ".png";
         advanceX = (ch.AdvanceX >> 6) * scale;
 
         if (savedText != typedText)
         {
-            saveImage(fileName, window, xpos-2, ypos-2, advanceX, 230);
+            imageProc.ipSave(filename, window, xpos, ypos, advanceX, 200);
+            imageProc.ipThreshold(filename, filename, true);
+            imageProc.ipSkeletonize(filename, filename);
             savedText = typedText;
         }
     }
@@ -395,26 +398,6 @@ bool loadChars(const char* filepath)
     FT_Done_Face(face);
     FT_Done_FreeType(ft);
     return 0;
-}
-
-void saveImage(std::string filepath, GLFWwindow* w, int x, int y, int charWidth, int charHeight) 
-{
-    int width, height;
-
-    glfwGetFramebufferSize(w, &width, &height);
-    GLsizei nrChannels = 3;
-    GLsizei stride = nrChannels * charWidth;
-    stride += (stride % 4) ? (4 - stride % 4) : 0;
-    GLsizei bufferSize = stride * charHeight;
-    std::vector<char> buffer(bufferSize);
-    glPixelStorei(GL_PACK_ALIGNMENT, 4);
-    glReadBuffer(GL_FRONT);
-    glReadPixels(x, y, charWidth, charHeight, GL_RGB, GL_UNSIGNED_BYTE, buffer.data());
-    stbi_flip_vertically_on_write(true);
-
-    char* fileName = new char[filepath.length() + 1];
-    strcpy(fileName, filepath.c_str());
-    stbi_write_png(fileName, charWidth, charHeight, nrChannels, buffer.data(), stride);
 }
 
 void getKeyPressed(GLFWwindow* window, int key, int scancode, int action, int mods)
