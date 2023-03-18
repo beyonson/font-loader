@@ -17,7 +17,7 @@ class ImageProc
         void ipSave(std::string filepath, GLFWwindow* w, int x, int y, int charWidth, int charHeight);
         int ipThreshold(std::string srcpath, std::string dstpath, bool inverse);
         int ipSkeletonize(std::string srcpath, std::string dstpath);
-        int ipProcessChar(std::string srcpath, std::string dstpath);
+        //int ipProcessChar(std::string srcpath, std::string dstpath);
         //int ipSkeletonize(Mat src, std::string dstpath);
 
     private:
