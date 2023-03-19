@@ -15,10 +15,10 @@
 #include <ft2build.h>
 #include FT_FREETYPE_H
 
-#define STB_IMAGE_WRITE_IMPLEMENTATION
-#include "stb_image_write.h"
+// #define STB_IMAGE_WRITE_IMPLEMENTATION
+// #include "stb_image_write.h"
 
-//#include <image_proc.h>
+#include <image_proc.h>
 
 void initTextbox();
 void initCharbox();
@@ -48,7 +48,7 @@ unsigned int charVBO, charVAO, charEBO;
 unsigned int VAO, VBO, EBO;
 
 // global vars
-//ImageProc imageProc;
+ImageProc imageProc;
 std::string typedText = "";
 std::string savedText = "";
 
@@ -134,18 +134,9 @@ int main()
         glBindVertexArray(VAO);
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-
-        // draw char box
-        glBindVertexArray(charVAO);
-        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, charEBO);
-        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0); 
-
+        
         // draw text
         RenderText(textShader, typedText, 82.0f, 492.0f, 0.2f, glm::vec3(0.5f, 0.5f, 0.5f), window);
-
-        // render char
-        if (typedText.length())
-            renderLastChar(textShader, typedText, glm::vec3(0.5f, 0.5f, 0.5f), window);
 
         // check and call events and swap buffers
         glfwSwapBuffers(window);
@@ -361,7 +352,7 @@ bool loadChars(const char* filepath)
     FT_Set_Pixel_Sizes(face, 0, 300);
     int width, height, advanceX;
     
-    for (unsigned char c = 0; c < 122; c++)
+    for (unsigned int c = 0; c < 122; c++)
     {
         // load character glyph 
         if (FT_Load_Char(face, c, FT_LOAD_RENDER))
@@ -410,7 +401,7 @@ bool loadChars(const char* filepath)
             GL_TEXTURE_2D,
             0,
             GL_RED,
-            advanceX,
+            advanceX + 20,
             280,
             0,
             GL_RED,
@@ -420,8 +411,8 @@ bool loadChars(const char* filepath)
         glTexSubImage2D(
             GL_TEXTURE_2D,
             0,
-            (face->glyph->metrics.horiBearingX >> 6),
-            10,
+            (face->glyph->metrics.horiBearingX >> 6) + 10,
+            (270 - face->glyph->bitmap.rows),
             width,
             height,
             GL_RED,
@@ -436,17 +427,21 @@ bool loadChars(const char* filepath)
         glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, texture2, 0);
 
         // read char pixels from frame buffer
-        unsigned int data_size = advanceX * 280;
-        GLubyte* pixels = new GLubyte[advanceX * 280* 4];
-        glReadPixels(0, 0, advanceX, 280, GL_RGBA, GL_UNSIGNED_BYTE, pixels);
+        unsigned int data_size = (advanceX +20) * 280;
+        GLubyte* pixels = new GLubyte[(advanceX+20) * 280* 4];
+        glReadPixels(0, 0, advanceX + 20, 280, GL_RGBA, GL_UNSIGNED_BYTE, pixels);
 
         glBindFramebuffer(GL_FRAMEBUFFER, 0);
         glDeleteFramebuffers(1, &fbo);
 
         std::string filename = "../chars/myfile";
-        filename += c;
-        filename += ".bmp";
-        stbi_write_bmp( filename.c_str(), advanceX, 280, 4, pixels );
+        filename += std::to_string(c);
+        filename += ".png";
+        //stbi_write_bmp( filename.c_str(), advanceX + 20, 280, 4, pixels );
+
+        imageProc.ipSave(filename, advanceX + 20, 280, pixels);
+        imageProc.ipThreshold(filename, filename, true);
+        imageProc.ipSkeletonize(filename, filename);
     }
     FT_Done_Face(face);
     FT_Done_FreeType(ft);

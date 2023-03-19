@@ -25,6 +25,13 @@ void ImageProc::ipSave(std::string filepath, GLFWwindow* w, int x, int y, int ch
     stbi_write_png(fileName, charWidth, charHeight, nrChannels, buffer.data(), stride);
 }
 
+void ImageProc::ipSave(std::string dstpath, int x, int y, GLubyte* pixels)
+{
+    GLsizei stride = 4 * x;
+    stride += (stride % 4) ? (4 - stride % 4) : 0;
+    stbi_write_png( dstpath.c_str(), x, y, 4, pixels, stride );
+}
+
 int ImageProc::ipThreshold(std::string srcpath, std::string dstpath, bool inverse)
 {
     Mat src_gray, dst, src;
