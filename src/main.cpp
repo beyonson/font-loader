@@ -359,7 +359,7 @@ bool loadChars(const char* filepath)
 
     // set size to load glyphs as
     FT_Set_Pixel_Sizes(face, 0, 300);
-    int width, height;
+    int width, height, advanceX;
     
     for (unsigned char c = 0; c < 122; c++)
     {
@@ -370,17 +370,18 @@ bool loadChars(const char* filepath)
             continue;
         }
         // generate texture
-        unsigned int texture;
+        unsigned int texture, texture2;
         width = face->glyph->bitmap.width;
         height = face->glyph->bitmap.rows;
+        advanceX = face->glyph->advance.x >> 6;
         glGenTextures(1, &texture);
         glBindTexture(GL_TEXTURE_2D, texture);
         glTexImage2D(
             GL_TEXTURE_2D,
             0,
             GL_RED,
-            face->glyph->bitmap.width,
-            face->glyph->bitmap.rows,
+            width,
+            height,
             0,
             GL_RED,
             GL_UNSIGNED_BYTE,
@@ -395,27 +396,57 @@ bool loadChars(const char* filepath)
         // now store character for later use
         Character character = {
             texture, 
-            glm::ivec2(face->glyph->bitmap.width, face->glyph->bitmap.rows),
+            glm::ivec2(width, height),
             glm::ivec2(face->glyph->bitmap_left, face->glyph->bitmap_top),
             static_cast<unsigned int>(face->glyph->advance.x)
         };
         Characters.insert(std::pair<char, Character>(c, character));
-        // save character bitmap
+
+        glGenTextures(1, &texture2);
+        glBindTexture(GL_TEXTURE_2D, texture2);
+
+        // create empty rectangle
+        glTexImage2D(
+            GL_TEXTURE_2D,
+            0,
+            GL_RED,
+            advanceX,
+            280,
+            0,
+            GL_RED,
+            GL_UNSIGNED_BYTE,
+            NULL
+        );
+        glTexSubImage2D(
+            GL_TEXTURE_2D,
+            0,
+            (face->glyph->metrics.horiBearingX >> 6),
+            10,
+            width,
+            height,
+            GL_RED,
+            GL_UNSIGNED_BYTE,
+            face->glyph->bitmap.buffer
+        );
+
+        // bind new frame buffer
         unsigned int fbo;
         glGenFramebuffers(1, &fbo);
         glBindFramebuffer(GL_FRAMEBUFFER, fbo);
-        glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, texture, 0);
+        glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, texture2, 0);
 
-        int data_size = face->glyph->bitmap.width * face->glyph->bitmap.rows * 4;
-        GLubyte* pixels = new GLubyte[width * height * 4];
-        glReadPixels(0, 0, width, height, GL_RGBA, GL_UNSIGNED_BYTE, pixels);
+        // read char pixels from frame buffer
+        unsigned int data_size = advanceX * 280;
+        GLubyte* pixels = new GLubyte[advanceX * 280* 4];
+        glReadPixels(0, 0, advanceX, 280, GL_RGBA, GL_UNSIGNED_BYTE, pixels);
 
         glBindFramebuffer(GL_FRAMEBUFFER, 0);
         glDeleteFramebuffers(1, &fbo);
+
         std::string filename = "../chars/myfile";
         filename += c;
         filename += ".bmp";
-        stbi_write_bmp( filename.c_str(), width, height, 4, pixels );
+        stbi_write_bmp( filename.c_str(), advanceX, 280, 4, pixels );
     }
     FT_Done_Face(face);
     FT_Done_FreeType(ft);
