@@ -23,7 +23,6 @@
 void initTextbox();
 void initCharbox();
 void getKeyPressed(GLFWwindow* window, int key, int scancode, int action, int mods);
-void renderLastChar(Shader &s, std::string text, glm::vec3 color, GLFWwindow* window);
 void RenderText(Shader &s, std::string text, float x, float y, float scale, glm::vec3 color, GLFWwindow* window);
 bool loadChars(const char* filepath);
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
@@ -99,7 +98,7 @@ int main()
     glPixelStorei(GL_UNPACK_ALIGNMENT, 1); // disable byte-alignment restriction
 
     // load font
-    if (loadChars("../fonts/LiberationMono-Regular.ttf")) {
+    if (loadChars("../fonts/DroidSansMono.ttf")) {
         return -1;
     }
 
@@ -136,7 +135,7 @@ int main()
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
         
         // draw text
-        RenderText(textShader, typedText, 82.0f, 492.0f, 0.2f, glm::vec3(0.5f, 0.5f, 0.5f), window);
+        RenderText(textShader, typedText, 82.0f, 492.0f, 0.15f, glm::vec3(0.5f, 0.5f, 0.5f), window);
 
         // check and call events and swap buffers
         glfwSwapBuffers(window);
@@ -277,61 +276,6 @@ void RenderText(Shader &s, std::string text, float x, float y, float scale, glm:
     glBindTexture(GL_TEXTURE_2D, 0);
 }
 
-void renderLastChar(Shader &s, std::string text, glm::vec3 color, GLFWwindow* window)
-{
-    // activate corresponding render state	
-    s.use();
-    glUniform3f(glGetUniformLocation(s.ID, "textColor"), color.x, color.y, color.z);
-    glActiveTexture(GL_TEXTURE0);
-    glBindVertexArray(textVAO);
-
-    // iterate through all characters
-    if (text.length())
-    {
-        unsigned int charCount = 0;
-        int advanceX;
-        Character ch = Characters[text[text.length() - 1]];
-
-        float xpos = 605.0f;
-        float ypos = 65.0f;
-        float scale= 1;
-
-        float w = ch.Size.x * scale;
-        float h = ch.Size.y * scale;
-        // update VBO for each character
-        float vertices[6][4] = {
-            { xpos,     ypos + h,   0.0f, 0.0f },            
-            { xpos,     ypos,       0.0f, 1.0f },
-            { xpos + w, ypos,       1.0f, 1.0f },
-
-            { xpos,     ypos + h,   0.0f, 0.0f },
-            { xpos + w, ypos,       1.0f, 1.0f },
-            { xpos + w, ypos + h,   1.0f, 0.0f }           
-        };
-        // render glyph texture over quad
-        glBindTexture(GL_TEXTURE_2D, ch.TextureID);
-        // update content of VBO memory
-        glBindBuffer(GL_ARRAY_BUFFER, textVBO);
-        glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(vertices), vertices); 
-        glBindBuffer(GL_ARRAY_BUFFER, 0);
-        // render quad
-        glDrawArrays(GL_TRIANGLES, 0, 6);
-        // save image of character
-        std::string filename = "../chars/ss" + std::to_string(text.length()) + ".png";
-        advanceX = (ch.AdvanceX >> 6) * scale;
-
-        if (savedText != typedText)
-        {
-            //imageProc.ipSave(filename, window, xpos, ypos, advanceX, 200);
-            //imageProc.ipThreshold(filename, filename, true);
-            //imageProc.ipSkeletonize(filename, filename);
-            savedText = typedText;
-        }
-    }
-    glBindVertexArray(0);
-    glBindTexture(GL_TEXTURE_2D, 0);
-}
-
 bool loadChars(const char* filepath)
 {
     // initialize Freetype and load font
@@ -349,7 +293,7 @@ bool loadChars(const char* filepath)
     }
 
     // set size to load glyphs as
-    FT_Set_Pixel_Sizes(face, 0, 300);
+    FT_Set_Pixel_Sizes(face, 0, 400);
     int width, height, advanceX;
     
     for (unsigned int c = 0; c < 122; c++)
@@ -364,7 +308,7 @@ bool loadChars(const char* filepath)
         unsigned int texture, texture2;
         width = face->glyph->bitmap.width;
         height = face->glyph->bitmap.rows;
-        advanceX = face->glyph->advance.x >> 6;
+        advanceX = (face->glyph->advance.x >> 6) + 30;
         glGenTextures(1, &texture);
         glBindTexture(GL_TEXTURE_2D, texture);
         glTexImage2D(
@@ -401,8 +345,8 @@ bool loadChars(const char* filepath)
             GL_TEXTURE_2D,
             0,
             GL_RED,
-            advanceX + 20,
-            280,
+            advanceX,
+            400,
             0,
             GL_RED,
             GL_UNSIGNED_BYTE,
@@ -411,8 +355,8 @@ bool loadChars(const char* filepath)
         glTexSubImage2D(
             GL_TEXTURE_2D,
             0,
-            (face->glyph->metrics.horiBearingX >> 6) + 10,
-            (270 - face->glyph->bitmap.rows),
+            (face->glyph->metrics.horiBearingX >> 6) + 15,
+            (380 - face->glyph->bitmap.rows),
             width,
             height,
             GL_RED,
@@ -427,19 +371,18 @@ bool loadChars(const char* filepath)
         glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, texture2, 0);
 
         // read char pixels from frame buffer
-        unsigned int data_size = (advanceX +20) * 280;
-        GLubyte* pixels = new GLubyte[(advanceX+20) * 280* 4];
-        glReadPixels(0, 0, advanceX + 20, 280, GL_RGBA, GL_UNSIGNED_BYTE, pixels);
+        unsigned int data_size = (advanceX) * 400;
+        GLubyte* pixels = new GLubyte[(advanceX) * 400* 4];
+        glReadPixels(0, 0, advanceX, 400, GL_RGBA, GL_UNSIGNED_BYTE, pixels);
 
         glBindFramebuffer(GL_FRAMEBUFFER, 0);
         glDeleteFramebuffers(1, &fbo);
 
         std::string filename = "../chars/myfile";
         filename += std::to_string(c);
-        filename += ".png";
-        //stbi_write_bmp( filename.c_str(), advanceX + 20, 280, 4, pixels );
+        filename += ".bmp";
 
-        imageProc.ipSave(filename, advanceX + 20, 280, pixels);
+        imageProc.ipSave(filename, advanceX , 400, pixels);
         imageProc.ipThreshold(filename, filename, true);
         imageProc.ipSkeletonize(filename, filename);
     }

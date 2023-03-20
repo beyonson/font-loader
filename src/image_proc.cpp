@@ -29,7 +29,7 @@ void ImageProc::ipSave(std::string dstpath, int x, int y, GLubyte* pixels)
 {
     GLsizei stride = 4 * x;
     stride += (stride % 4) ? (4 - stride % 4) : 0;
-    stbi_write_png( dstpath.c_str(), x, y, 4, pixels, stride );
+    stbi_write_bmp( dstpath.c_str(), x, y, 4, pixels );
 }
 
 int ImageProc::ipThreshold(std::string srcpath, std::string dstpath, bool inverse)
