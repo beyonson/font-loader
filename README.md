@@ -17,7 +17,9 @@ This project was built and tested with the following versions
 ### Installation
 
 First, clone the repository:
-`$ git clone git@github.com:beyonson/opengl-text-editor.git`
+```
+$ git clone git@github.com:beyonson/opengl-text-editor.git
+```
 
 Then, change directories into the project, and initialize submodules:
 ```

@@ -10,13 +10,14 @@ include_directories(include ${OpenCV_INCLUDE_DIRS})
 
 ## create executables and link
 set(SOURCES src/main.cpp 
-            src/image_proc.cpp
-            src/glad.c 
+            src/glad.c
+	    src/image_proc.cpp 
             include/shader.h
             include/glad/glad.h
             include/KHR/khrplatform.h
             include/stb_image_write.h
-            include/image_proc.h)
+	    include/image_proc.h
+            )
             
 add_executable(${PROJECT_NAME}
     ${SOURCES}

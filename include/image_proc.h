@@ -15,13 +15,14 @@ class ImageProc
 {
     public:
         void ipSave(std::string filepath, GLFWwindow* w, int x, int y, int charWidth, int charHeight);
+        void ipSave(std::string dstpath, int x, int y, GLubyte* pixels);
         int ipThreshold(std::string srcpath, std::string dstpath, bool inverse);
         int ipSkeletonize(std::string srcpath, std::string dstpath);
-        int ipProcessChar(std::string srcpath, std::string dstpath);
+        //int ipProcessChar(std::string srcpath, std::string dstpath);
         //int ipSkeletonize(Mat src, std::string dstpath);
 
     private:
-        int threshold_value = 100;
+        int threshold_value = 0;
         int threshold_type = 4;
         int const max_value = 255;
         int const max_type = 4;
