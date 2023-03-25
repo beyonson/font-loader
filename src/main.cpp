@@ -20,10 +20,6 @@
 
 #include <image_proc.h>
 
-void initTextbox();
-void initCharbox();
-void getKeyPressed(GLFWwindow* window, int key, int scancode, int action, int mods);
-void RenderText(Shader &s, std::string text, float x, float y, float scale, glm::vec3 color, GLFWwindow* window);
 bool loadChars(const char* filepath);
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow* window);
@@ -43,13 +39,9 @@ std::map<char, Character> Characters;
 
 // create memory management objects
 unsigned int textVBO, textVAO;
-unsigned int charVBO, charVAO, charEBO;
-unsigned int VAO, VBO, EBO;
 
 // global vars
 ImageProc imageProc;
-std::string typedText = "";
-std::string savedText = "";
 
 int main()
 {
@@ -58,6 +50,7 @@ int main()
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+    glfwWindowHint(GLFW_VISIBLE, GLFW_FALSE);
 
     // create glfw window
     GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "OpenGL Text Editor", NULL, NULL);
@@ -78,12 +71,7 @@ int main()
     // tell OpenGL size of window
     glViewport(0, 0, SCR_WIDTH, SCR_HEIGHT);
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
-
-    // initialize text box
-    Shader ourShader("../shaders/shader.vs", "../shaders/shader.fs");
-    initTextbox();
-    initCharbox();
-
+    
     // start doing text stuff
 
     // enable blending for text rendering and create projection matrix
@@ -113,167 +101,8 @@ int main()
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
 
-    // set key press callbackcharacter
-    glfwSetKeyCallback(window, getKeyPressed);
-
-    // call render loop
-    while(!glfwWindowShouldClose(window))
-    {
-        // input
-        processInput(window);
-
-        // set shader program
-        ourShader.use();
-
-        // rendering commands
-        glClearColor(0.41f, 0.16f, 0.13f, 1.0f);
-        glClear(GL_COLOR_BUFFER_BIT);
-
-        // draw text box
-        glBindVertexArray(VAO);
-        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-        
-        // draw text
-        RenderText(textShader, typedText, 82.0f, 492.0f, 0.15f, glm::vec3(0.5f, 0.5f, 0.5f), window);
-
-        // check and call events and swap buffers
-        glfwSwapBuffers(window);
-        glfwPollEvents();
-    }
-
     glfwTerminate();
     return 0;
-}
-
-void initTextbox()
-{
-    // create vertex coordinates
-    float vertices[] = {
-        // positions        // colors
-        -0.8f, -0.8f, 0.0f, 0.5f, 0.0f, 0.0f,   // bottom right
-         0.8f, -0.8f, 0.0f, 0.5f, 0.0f, 0.0f,   // bottom left
-        -0.8f,  0.8f, 0.0f, 0.5f, 0.0f, 0.0f,   // top
-         0.8f,  0.8f, 0.0f, 0.5f, 0.0f, 0.0f    // top
-    };
-
-    // create rectangle
-    unsigned int indices[] = {
-        0, 1, 2,
-        1, 3, 2
-    };
-
-    // create array object, buffer object, element object
-    glGenVertexArrays(1, &VAO);
-    glBindVertexArray(VAO);
-
-    // create buffer object and assign vertex data
-    glGenBuffers(1, &VBO);
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-
-    // create element buffer object and assign indices
-    glGenBuffers(1, &EBO);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
-
-    // tell OpenGL how to interpret vertex data
-    // data, size (of attribute), type, normalize, stride (space b/w attributes), offset from beginning of data
-    //
-    // position
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
-    glEnableVertexAttribArray(0);
-    // color
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
-    glEnableVertexAttribArray(1);
-}
-
-void initCharbox()
-{
-    // create vertex coordinates
-    float vertices[] = {
-        // positions        // colors
-         0.5f,  -0.8f, 0.0f, 0.5f, 0.2f, 0.0f,   // bottom left
-         0.95f, -0.8f, 0.0f, 0.5f, 0.2f, 0.0f,   // bottom right
-         0.5f, -0.03f, 0.0f, 0.5f, 0.2f, 0.0f,   // top left
-         0.95f,-0.03f, 0.0f, 0.5f, 0.2f, 0.0f    // top right
-    };
-
-    // create rectangle
-    unsigned int indices[] = {
-        0, 1, 2,
-        1, 3, 2
-    };
-
-    // create array object, buffer object, element object
-    glGenVertexArrays(1, &charVAO);
-    glBindVertexArray(charVAO);
-
-    // create buffer object and assign vertex data
-    glGenBuffers(1, &charVBO);
-    glBindBuffer(GL_ARRAY_BUFFER, charVBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-
-    // create element buffer object and assign indices
-    glGenBuffers(1, &charEBO);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, charEBO);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
-
-    // tell OpenGL how to interpret vertex data
-    // data, size (of attribute), type, normalize, stride (space b/w attributes), offset from beginning of data
-    //
-    // position
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
-    glEnableVertexAttribArray(0);
-    // color
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
-    glEnableVertexAttribArray(1);
-}
-
-void RenderText(Shader &s, std::string text, float x, float y, float scale, glm::vec3 color, GLFWwindow* window)
-{
-    // activate corresponding render state	
-    s.use();
-    glUniform3f(glGetUniformLocation(s.ID, "textColor"), color.x, color.y, color.z);
-    glActiveTexture(GL_TEXTURE0);
-    glBindVertexArray(textVAO);
-
-    // iterate through all characters
-    std::string::const_iterator c;
-    std::string fileName;
-    int advanceX;
-    for (c = text.begin(); c != text.end(); c++)
-    {
-        Character ch = Characters[*c];
-
-        float xpos = x + ch.Bearing.x * scale;
-        float ypos = y - (ch.Size.y - ch.Bearing.y) * scale;
-
-        float w = ch.Size.x * scale;
-        float h = ch.Size.y * scale;
-        // update VBO for each character
-        float vertices[6][4] = {
-            { xpos,     ypos + h,   0.0f, 0.0f },            
-            { xpos,     ypos,       0.0f, 1.0f },
-            { xpos + w, ypos,       1.0f, 1.0f },
-
-            { xpos,     ypos + h,   0.0f, 0.0f },
-            { xpos + w, ypos,       1.0f, 1.0f },
-            { xpos + w, ypos + h,   1.0f, 0.0f }           
-        };
-        // render glyph texture over quad
-        glBindTexture(GL_TEXTURE_2D, ch.TextureID);
-        // update content of VBO memory
-        glBindBuffer(GL_ARRAY_BUFFER, textVBO);
-        glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(vertices), vertices); 
-        glBindBuffer(GL_ARRAY_BUFFER, 0);
-        // render quad
-        glDrawArrays(GL_TRIANGLES, 0, 6);
-        // now advance cursors for next glyph (note that advance is number of 1/64 pixels)
-        x += (ch.AdvanceX >> 6) * scale; // bitshift by 6 to get value in pixels (2^6 = 64)
-    }
-    glBindVertexArray(0);
-    glBindTexture(GL_TEXTURE_2D, 0);
 }
 
 bool loadChars(const char* filepath)
@@ -389,12 +218,6 @@ bool loadChars(const char* filepath)
     FT_Done_Face(face);
     FT_Done_FreeType(ft);
     return 0;
-}
-
-void getKeyPressed(GLFWwindow* window, int key, int scancode, int action, int mods)
-{
-    if (action == GLFW_RELEASE)
-        typedText += key;
 }
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)

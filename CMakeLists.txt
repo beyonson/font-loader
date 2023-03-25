@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.23)
-project(opengl-text-editor)
+project(text-editor)
 
 ## find packages
 find_package( OpenCV REQUIRED )
