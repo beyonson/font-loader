@@ -207,7 +207,7 @@ bool loadChars(const char* filepath)
         glBindFramebuffer(GL_FRAMEBUFFER, 0);
         glDeleteFramebuffers(1, &fbo);
 
-        std::string filename = "../chars/myfile";
+        std::string filename = "../chars/";
         filename += std::to_string(c);
         filename += ".bmp";
 
