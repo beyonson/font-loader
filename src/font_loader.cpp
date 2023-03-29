@@ -3,22 +3,18 @@
 #include <map>
 #include <vector>
 #include <string>
-
+// import opengl libraries
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
-#include <shader.h>
-
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
-
+// import freetype
 #include <ft2build.h>
 #include FT_FREETYPE_H
-
-// #define STB_IMAGE_WRITE_IMPLEMENTATION
-// #include "stb_image_write.h"
-
+// import local
 #include <image_proc.h>
+#include <shader.h>
 
 #define FONTPATH argv[1]
 
@@ -85,7 +81,6 @@ int main(int argc, char *argv[])
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
     
     // start doing text stuff
-
     // enable blending for text rendering and create projection matrix
     glEnable(GL_CULL_FACE);
     glEnable(GL_BLEND);
@@ -99,6 +94,7 @@ int main(int argc, char *argv[])
 
     // load font
     if (loadChars(FONTPATH)) {
+        // error statement in loadchars
         return -1;
     }
 
