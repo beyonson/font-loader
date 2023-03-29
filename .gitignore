@@ -1,5 +1,5 @@
 build/*
 !build/.gitkeep
 !build/font-loader
-chars/*
-!chars/.gitkeep
+#chars/*
+#!chars/.gitkeep
