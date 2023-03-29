@@ -20,6 +20,8 @@
 
 #include <image_proc.h>
 
+#define FONTPATH argv[1]
+
 bool loadChars(const char* filepath);
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow* window);
@@ -43,8 +45,18 @@ unsigned int textVBO, textVAO;
 // global vars
 ImageProc imageProc;
 
-int main()
+int main(int argc, char *argv[])
 {
+    if (argc > 2) {
+        std::cout << "ERROR: too many arguments" << std::endl;
+        return -1;
+    } else if (argc < 2) {
+        std::cout << "ERROR: too few arguments" << std::endl; 
+        return -1;
+    } else {
+        std::cout << "Loading font " + std::string(FONTPATH) << std::endl;
+    }
+
     // initialize glfw and set version
     glfwInit();
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
@@ -86,7 +98,7 @@ int main()
     glPixelStorei(GL_UNPACK_ALIGNMENT, 1); // disable byte-alignment restriction
 
     // load font
-    if (loadChars("../fonts/DroidSansMono.ttf")) {
+    if (loadChars(FONTPATH)) {
         return -1;
     }
 

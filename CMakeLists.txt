@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.23)
-project(text-editor)
+project(font-loader)
 
 ## find packages
 find_package( OpenCV REQUIRED )
@@ -15,7 +15,7 @@ include_directories(include ${OpenCV_INCLUDE_DIRS})
 ## create executables and link
 set(SOURCES src/glad.c
 	    src/image_proc.cpp 
-	    src/window.cpp
+	    src/font_loader.cpp
 	    src/circular_progress.cpp
 	    src/main_window.cpp
             include/shader.h
