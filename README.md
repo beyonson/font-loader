@@ -18,12 +18,12 @@ This project was built and tested with the following versions
 
 First, clone the repository:
 ```
-$ git clone git@github.com:beyonson/opengl-text-editor.git
+$ git clone git@github.com:beyonson/font-loader.git
 ```
 
 Then, change directories into the project, and initialize submodules:
 ```
-$ cd opengl-text-editor
+$ cd font-loader
 $ git submodule update --init --recursive
 ```
 
@@ -33,3 +33,12 @@ $ cd build
 $ cmake ..
 $ make
 ```
+
+### Usage
+
+After building run
+```
+$ ./font-loader <font filepath>
+```
+
+Where font filepath is the font you want loaded
