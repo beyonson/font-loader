@@ -5,6 +5,7 @@
 #include <QtGui>
 #include <QtWidgets>
 #include <QPaintEvent>
+#include <string>
 
 class CircularProgress : public QWidget
 {
@@ -19,6 +20,13 @@ class CircularProgress : public QWidget
 		int height 		= 200;
 		int progressWidth 	= 200;
 		bool progressRoundedCap	= true;
+		unsigned int progColor	= 0x498BD1;
+		int maxValue		= 100;
+		std::string fontFamily	= "Segoe UI";
+		int fontSize		= 12;
+		char suffix		= '%';
+		unsigned int textColor	= 0x498BD1;
+		bool enableShadow	= true;
 
 	signals:
 

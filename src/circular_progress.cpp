@@ -2,6 +2,7 @@
 
 CircularProgress::CircularProgress(QWidget *parent) : QWidget(parent)
 {
+	this->resize(this->width,this->height);
 }
 
 void CircularProgress::paintEvent(QPaintEvent *)
