@@ -1,4 +1,4 @@
 build/*
 !build/.gitkeep
-chars/*
-!chars/.gitkeep
+#chars/*
+#!chars/.gitkeep
