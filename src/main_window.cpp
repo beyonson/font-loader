@@ -1,12 +1,26 @@
 #include "main_window.h"
 
+SplashScreen::SplashScreen(QMainWindow *parent) : QMainWindow(parent)
+{
+	this->setWindowFlags(Qt::FramelessWindowHint);
+	this->setAttribute(Qt::WA_TranslucentBackground);
+	this->splashScreen->setupUi(this);
+	this->splashScreen->pushButton->clicked();
+
+	// configure progress
+	this->circularProgress->setParent(this->splashScreen->centralwidget);
+	this->circularProgress->setFixedSize(this->circularProgress->width, this->circularProgress->height);
+	this->circularProgress->addShadow(true);
+	this->circularProgress->move(15,15);
+}
+
+// int SplashScreen::setProgressValue(int newValue)
+// {
+// 	return loadFont("../fonts/DroidSansMono.ttf");
+// }
+
 MainWindow::MainWindow(QMainWindow *parent) : QMainWindow(parent)
 {
-	// set properties
-	//this->resize(500,500);	
-	//this->setWindowFlags(Qt::FramelessWindowHint);
-	//this->setAttribute(Qt::WA_TranslucentBackground);
-
 	// show main window
 	this->mainWindow->setupUi(this);
 
@@ -15,14 +29,4 @@ MainWindow::MainWindow(QMainWindow *parent) : QMainWindow(parent)
 	// //this->slider->valueChanged.connect(this->prog->setValue());
 	// QObject::connect(this->slider, SIGNAL(valueChanged(int)), this->prog, SLOT(setValue(int)));
 
-	// // progress values
-	// this->prog->value = 0;
-	// this->prog->setMinimumSize(this->prog->width, this->prog->height);
-	// this->prog->addShadow(true);
-
-	// // add circular progress widget
-	// this->layout->addWidget(this->prog, Qt::AlignCenter, Qt::AlignCenter);
-	// this->layout->addWidget(this->slider, Qt::AlignCenter, Qt::AlignCenter);
-	// this->frame->setLayout(this->layout);
-	// this->setCentralWidget(this->frame);
 }

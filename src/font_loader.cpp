@@ -1,26 +1,4 @@
-#include <iostream>
-#include <cmath>
-#include <map>
-#include <vector>
-#include <string>
-// import opengl libraries
-#include <glad/glad.h>
-#include <GLFW/glfw3.h>
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
-#include <glm/gtc/type_ptr.hpp>
-// import freetype
-#include <ft2build.h>
-#include FT_FREETYPE_H
-// import local
-#include <image_proc.h>
-#include <shader.h>
-
-#define FONTPATH argv[1]
-
-bool loadChars(const char* filepath);
-void framebuffer_size_callback(GLFWwindow* window, int width, int height);
-void processInput(GLFWwindow* window);
+#include "font_loader.h"
 
 // settings
 const unsigned int SCR_WIDTH = 800;
@@ -41,18 +19,8 @@ unsigned int textVBO, textVAO;
 // global vars
 ImageProc imageProc;
 
-int main(int argc, char *argv[])
+int loadFont(const char* FONTPATH)
 {
-    if (argc > 2) {
-        std::cout << "ERROR: too many arguments" << std::endl;
-        return -1;
-    } else if (argc < 2) {
-        std::cout << "ERROR: too few arguments" << std::endl; 
-        return -1;
-    } else {
-        std::cout << "Loading font " + std::string(FONTPATH) << std::endl;
-    }
-
     // initialize glfw and set version
     glfwInit();
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);

@@ -1,14 +1,15 @@
 /********************************************************************************
-** Form generated from reading UI file 'splash_screenfpKeHt.ui'
+** Form generated from reading UI file 'splash_screentBqnVD.ui'
 **
 ** Created by: Qt User Interface Compiler version 5.15.8
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef SPLASH_SCREENFPKEHT_H
-#define SPLASH_SCREENFPKEHT_H
+#ifndef SPLASH_SCREENTBQNVD_H
+#define SPLASH_SCREENTBQNVD_H
 
+#define QT_NO_OPENGL
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QFrame>
@@ -16,8 +17,10 @@
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include "font_loader.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -34,11 +37,12 @@ public:
     QVBoxLayout *verticalLayout_3;
     QGridLayout *gridLayout;
     QLabel *loading;
-    QLabel *title;
-    QFrame *percentFrame;
     QFrame *fontFrame;
     QVBoxLayout *verticalLayout_4;
     QLabel *fontSelected;
+    QLabel *title;
+    QFrame *percentFrame;
+    QPushButton *pushButton;
 
     void setupUi(QMainWindow *SplashScreen)
     {
@@ -91,22 +95,6 @@ public:
 
         gridLayout->addWidget(loading, 3, 0, 1, 1);
 
-        title = new QLabel(texts);
-        title->setObjectName(QString::fromUtf8("title"));
-        title->setMinimumSize(QSize(0, 30));
-        title->setAlignment(Qt::AlignCenter);
-
-        gridLayout->addWidget(title, 0, 0, 1, 1);
-
-        percentFrame = new QFrame(texts);
-        percentFrame->setObjectName(QString::fromUtf8("percentFrame"));
-        percentFrame->setMinimumSize(QSize(0, 60));
-        percentFrame->setMaximumSize(QSize(16777215, 80));
-        percentFrame->setFrameShape(QFrame::StyledPanel);
-        percentFrame->setFrameShadow(QFrame::Raised);
-
-        gridLayout->addWidget(percentFrame, 1, 0, 1, 1);
-
         fontFrame = new QFrame(texts);
         fontFrame->setObjectName(QString::fromUtf8("fontFrame"));
         fontFrame->setFrameShape(QFrame::NoFrame);
@@ -129,11 +117,34 @@ public:
 
         gridLayout->addWidget(fontFrame, 2, 0, 1, 1);
 
+        title = new QLabel(texts);
+        title->setObjectName(QString::fromUtf8("title"));
+        title->setMinimumSize(QSize(0, 30));
+        title->setAlignment(Qt::AlignCenter);
+
+        gridLayout->addWidget(title, 0, 0, 1, 1);
+
+        percentFrame = new QFrame(texts);
+        percentFrame->setObjectName(QString::fromUtf8("percentFrame"));
+        percentFrame->setMinimumSize(QSize(0, 60));
+        percentFrame->setMaximumSize(QSize(16777215, 80));
+        percentFrame->setFrameShape(QFrame::StyledPanel);
+        percentFrame->setFrameShadow(QFrame::Raised);
+
+        gridLayout->addWidget(percentFrame, 1, 0, 1, 1);
+
 
         verticalLayout_3->addLayout(gridLayout);
 
 
         verticalLayout_2->addWidget(texts);
+
+        pushButton = new QPushButton(circleBg);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton->setMinimumSize(QSize(40, 20));
+        pushButton->setMaximumSize(QSize(40, 20));
+
+        verticalLayout_2->addWidget(pushButton, 0, Qt::AlignHCenter);
 
 
         horizontalLayout->addWidget(circleBg);
@@ -152,8 +163,9 @@ public:
     {
         SplashScreen->setWindowTitle(QCoreApplication::translate("SplashScreen", "Loading", nullptr));
         loading->setText(QCoreApplication::translate("SplashScreen", "loading...", nullptr));
-        title->setText(QCoreApplication::translate("SplashScreen", "Whiteboard Typerwriter", nullptr));
         fontSelected->setText(QCoreApplication::translate("SplashScreen", "Font Selected:", nullptr));
+        title->setText(QCoreApplication::translate("SplashScreen", "Whiteboard Typerwriter", nullptr));
+        pushButton->setText(QCoreApplication::translate("SplashScreen", "PushButton", nullptr));
     } // retranslateUi
 
 };
@@ -164,4 +176,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // SPLASH_SCREENFPKEHT_H
+#endif // SPLASH_SCREENTBQNVD_H
