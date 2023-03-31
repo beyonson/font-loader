@@ -7,6 +7,7 @@
 #include <QFrame>
 #include <QColor>
 #include "circular_progress.h"
+#include "ui_typewriter.h"
 
 class MainWindow : public QMainWindow
 {
@@ -16,6 +17,7 @@ class MainWindow : public QMainWindow
 		explicit MainWindow(QMainWindow *parent = 0);
 
 	private:
+		Ui_MainWindow *mainWindow= new Ui_MainWindow();
 		QFrame *frame			= new QFrame();
 		QVBoxLayout *layout 	= new QVBoxLayout();
 		CircularProgress *prog	= new CircularProgress(); 

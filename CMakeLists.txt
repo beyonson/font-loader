@@ -10,21 +10,23 @@ qt_standard_project_setup()
 
 ## add sub directories
 add_subdirectory(external)
-include_directories(include ${OpenCV_INCLUDE_DIRS})
+include_directories(include ui ${OpenCV_INCLUDE_DIRS})
 
 ## create executables and link
 set(SOURCES src/glad.c
 	    src/image_proc.cpp 
-	    src/gui.cpp
 	    src/circular_progress.cpp
-	    src/main_window.cpp
+	    src/ui_main.cpp
             include/shader.h
             include/glad/glad.h
             include/KHR/khrplatform.h
             include/stb_image_write.h
 	    include/image_proc.h
 	    include/circular_progress.h
-	    include/main_window.h
+	    src/main_window.h
+	    src/main_window.cpp
+	    src/ui_typewriter.h
+	    src/ui_splash_screen.h
             )
 
 add_executable(${PROJECT_NAME}
