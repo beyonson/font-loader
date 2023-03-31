@@ -15,7 +15,7 @@ include_directories(include ${OpenCV_INCLUDE_DIRS})
 ## create executables and link
 set(SOURCES src/glad.c
 	    src/image_proc.cpp 
-	    src/font_loader.cpp
+	    src/gui.cpp
 	    src/circular_progress.cpp
 	    src/main_window.cpp
             include/shader.h
