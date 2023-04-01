@@ -61,29 +61,7 @@ int loadFont(const char* FONTPATH)
     glPixelStorei(GL_UNPACK_ALIGNMENT, 1); // disable byte-alignment restriction
 
     // load font
-    if (loadChars(FONTPATH)) {
-        // error statement in loadchars
-        return -1;
-    }
-
-    // create objects for the text
-    glGenVertexArrays(1, &textVAO);
-    glGenBuffers(1, &textVBO);
-    glBindVertexArray(textVAO);
-    glBindBuffer(GL_ARRAY_BUFFER, textVBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(float)*6*4, NULL, GL_DYNAMIC_DRAW);
-    glEnableVertexAttribArray(0);
-    glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 4*sizeof(float), 0);
-    glBindBuffer(GL_ARRAY_BUFFER, 0);
-    glBindVertexArray(0);
-
-    glfwTerminate();
-    return 0;
-}
-
-bool loadChars(const char* filepath)
-{
-    // initialize Freetype and load font
+        // initialize Freetype and load font
     FT_Library ft;
     if (FT_Init_FreeType(&ft)) {
         std::cout << "ERROR: FREETYPE: Failed to initialize FreeType" << std::endl;
@@ -92,7 +70,7 @@ bool loadChars(const char* filepath)
 
     // create and load face
     FT_Face face;
-    if (FT_New_Face(ft, filepath, 0, &face)) {
+    if (FT_New_Face(ft, FONTPATH, 0, &face)) {
         std::cout << "ERROR: FREETYPE: Failed to load font face" << std::endl;
         return 1;
     }
@@ -193,7 +171,25 @@ bool loadChars(const char* filepath)
     }
     FT_Done_Face(face);
     FT_Done_FreeType(ft);
+
+    // create objects for the text
+    glGenVertexArrays(1, &textVAO);
+    glGenBuffers(1, &textVBO);
+    glBindVertexArray(textVAO);
+    glBindBuffer(GL_ARRAY_BUFFER, textVBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(float)*6*4, NULL, GL_DYNAMIC_DRAW);
+    glEnableVertexAttribArray(0);
+    glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 4*sizeof(float), 0);
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+    glBindVertexArray(0);
+
+    glfwTerminate();
     return 0;
+}
+
+bool loadChars(const char* filepath)
+{
+    return true;
 }
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)

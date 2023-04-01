@@ -5,7 +5,9 @@ SplashScreen::SplashScreen(QMainWindow *parent) : QMainWindow(parent)
 	this->setWindowFlags(Qt::FramelessWindowHint);
 	this->setAttribute(Qt::WA_TranslucentBackground);
 	this->splashScreen->setupUi(this);
-	this->splashScreen->pushButton->clicked();
+	this->timer->start(25);
+	QTimer::singleShot(100, this, SLOT(runFontLoader()));
+	QObject::connect(this->timer, SIGNAL(timeout()), this, SLOT(setProgressValue()));
 
 	// configure progress
 	this->circularProgress->setParent(this->splashScreen->centralwidget);
@@ -14,19 +16,24 @@ SplashScreen::SplashScreen(QMainWindow *parent) : QMainWindow(parent)
 	this->circularProgress->move(15,15);
 }
 
-// int SplashScreen::setProgressValue(int newValue)
-// {
-// 	return loadFont("../fonts/DroidSansMono.ttf");
-// }
+void SplashScreen::setProgressValue()
+{
+	this->circularProgress->setValue(counter);
+	counter++;
+
+	if (counter > 100) 
+	{
+		this->timer->stop();
+	}
+}
+
+void SplashScreen::runFontLoader()
+{
+	loadFont("../fonts/DroidSansMono.ttf");
+}
 
 MainWindow::MainWindow(QMainWindow *parent) : QMainWindow(parent)
 {
 	// show main window
 	this->mainWindow->setupUi(this);
-
-	// this->frame->setStyleSheet("border: none; background: transparent;");
-	// this->slider->setRange(0,100);	
-	// //this->slider->valueChanged.connect(this->prog->setValue());
-	// QObject::connect(this->slider, SIGNAL(valueChanged(int)), this->prog, SLOT(setValue(int)));
-
 }

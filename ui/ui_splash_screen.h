@@ -1,15 +1,14 @@
 /********************************************************************************
-** Form generated from reading UI file 'splash_screentBqnVD.ui'
+** Form generated from reading UI file 'splash_screencTmUHl.ui'
 **
 ** Created by: Qt User Interface Compiler version 5.15.8
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef SPLASH_SCREENTBQNVD_H
-#define SPLASH_SCREENTBQNVD_H
+#ifndef SPLASH_SCREENCTMUHL_H
+#define SPLASH_SCREENCTMUHL_H
 
-#define QT_NO_OPENGL
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QFrame>
@@ -17,10 +16,8 @@
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QPushButton>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
-#include "font_loader.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -36,13 +33,12 @@ public:
     QFrame *texts;
     QVBoxLayout *verticalLayout_3;
     QGridLayout *gridLayout;
-    QLabel *loading;
     QFrame *fontFrame;
     QVBoxLayout *verticalLayout_4;
     QLabel *fontSelected;
     QLabel *title;
     QFrame *percentFrame;
-    QPushButton *pushButton;
+    QLabel *loading;
 
     void setupUi(QMainWindow *SplashScreen)
     {
@@ -89,12 +85,6 @@ public:
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
         gridLayout = new QGridLayout();
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        loading = new QLabel(texts);
-        loading->setObjectName(QString::fromUtf8("loading"));
-        loading->setAlignment(Qt::AlignCenter);
-
-        gridLayout->addWidget(loading, 3, 0, 1, 1);
-
         fontFrame = new QFrame(texts);
         fontFrame->setObjectName(QString::fromUtf8("fontFrame"));
         fontFrame->setFrameShape(QFrame::NoFrame);
@@ -133,18 +123,17 @@ public:
 
         gridLayout->addWidget(percentFrame, 1, 0, 1, 1);
 
+        loading = new QLabel(texts);
+        loading->setObjectName(QString::fromUtf8("loading"));
+        loading->setAlignment(Qt::AlignCenter);
+
+        gridLayout->addWidget(loading, 3, 0, 1, 1);
+
 
         verticalLayout_3->addLayout(gridLayout);
 
 
         verticalLayout_2->addWidget(texts);
-
-        pushButton = new QPushButton(circleBg);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setMinimumSize(QSize(40, 20));
-        pushButton->setMaximumSize(QSize(40, 20));
-
-        verticalLayout_2->addWidget(pushButton, 0, Qt::AlignHCenter);
 
 
         horizontalLayout->addWidget(circleBg);
@@ -162,10 +151,9 @@ public:
     void retranslateUi(QMainWindow *SplashScreen)
     {
         SplashScreen->setWindowTitle(QCoreApplication::translate("SplashScreen", "Loading", nullptr));
-        loading->setText(QCoreApplication::translate("SplashScreen", "loading...", nullptr));
         fontSelected->setText(QCoreApplication::translate("SplashScreen", "Font Selected:", nullptr));
         title->setText(QCoreApplication::translate("SplashScreen", "Whiteboard Typerwriter", nullptr));
-        pushButton->setText(QCoreApplication::translate("SplashScreen", "PushButton", nullptr));
+        loading->setText(QCoreApplication::translate("SplashScreen", "loading...", nullptr));
     } // retranslateUi
 
 };
@@ -176,4 +164,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // SPLASH_SCREENTBQNVD_H
+#endif // SPLASH_SCREENCTMUHL_H

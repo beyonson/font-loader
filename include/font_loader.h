@@ -19,6 +19,7 @@
 // import local
 #include "image_proc.h"
 #include "shader.h"
+#include "circular_progress.h"
 
 int loadFont(const char* FONTPATH);
 bool loadChars(const char* filepath);

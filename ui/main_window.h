@@ -12,6 +12,7 @@
 #include "ui_typewriter.h"
 #include "ui_splash_screen.h"
 #include "circular_progress.h"
+#include "font_loader.h"
 
 class SplashScreen : public QMainWindow
 {
@@ -21,11 +22,14 @@ class SplashScreen : public QMainWindow
 		explicit SplashScreen(QMainWindow *parent = 0);
 
 	private:
+		unsigned int counter				= 0;
 		Ui_SplashScreen *splashScreen		= new Ui_SplashScreen();
 		CircularProgress *circularProgress 	= new CircularProgress();
+		QTimer *timer						= new QTimer();
 
-	// slots:
-	// 	int setProgressValue(int newValue);
+	private slots:
+		void setProgressValue();
+		void runFontLoader();
 };
 
 class MainWindow : public QMainWindow

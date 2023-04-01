@@ -10,8 +10,6 @@
 #include <QtWidgets>
 #include <QPaintEvent>
 
-#include "font_loader.h"
-
 class CircularProgress : public QWidget
 {
 	Q_OBJECT
