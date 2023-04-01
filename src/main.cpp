@@ -4,9 +4,8 @@
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
-    SplashScreen window;
-    window.show();
-    window.setWindowTitle(
-        QApplication::translate("toplevel", "Top-level widget"));
+    SplashScreen splashScreen;
+    splashScreen.show();
+    
     return app.exec();
 }

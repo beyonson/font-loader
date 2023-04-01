@@ -23,11 +23,11 @@ class SplashScreen : public QMainWindow
 
 	private:
 		unsigned int counter				= 0;
-		Ui_SplashScreen *splashScreen		= new Ui_SplashScreen();
 		CircularProgress *circularProgress 	= new CircularProgress();
+		Ui_SplashScreen *splashScreen		= new Ui_SplashScreen();
 		QTimer *timer						= new QTimer();
 
-	private slots:
+	public slots:
 		void setProgressValue();
 		void runFontLoader();
 };

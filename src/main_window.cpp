@@ -6,7 +6,7 @@ SplashScreen::SplashScreen(QMainWindow *parent) : QMainWindow(parent)
 	this->setAttribute(Qt::WA_TranslucentBackground);
 	this->splashScreen->setupUi(this);
 	this->timer->start(25);
-	QTimer::singleShot(100, this, SLOT(runFontLoader()));
+	QTimer::singleShot(150, this, SLOT(runFontLoader()));
 	QObject::connect(this->timer, SIGNAL(timeout()), this, SLOT(setProgressValue()));
 
 	// configure progress
@@ -20,6 +20,7 @@ void SplashScreen::setProgressValue()
 {
 	this->circularProgress->setValue(counter);
 	counter++;
+	std::cout << counter << std::endl;
 
 	if (counter > 100) 
 	{
