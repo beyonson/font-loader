@@ -20,7 +20,6 @@ void SplashScreen::setProgressValue()
 {
 	this->circularProgress->setValue(counter);
 	counter++;
-	std::cout << counter << std::endl;
 
 	if (counter > 100) 
 	{
