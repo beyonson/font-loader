@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="icons">
+    <file>icons/greyupload.png</file>
     <file>icons/upload.png</file>
     <file>icons/info.png</file>
     <file>icons/align-center.png</file>
