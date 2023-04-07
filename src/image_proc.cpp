@@ -1,4 +1,4 @@
-#include "../include/image_proc.h"
+#include "image_proc.h"
 
 #define STB_IMAGE_WRITE_IMPLEMENTATION
 #include "stb_image_write.h"

@@ -4,6 +4,7 @@
 #include <string>
 #include <iostream>
 
+#define QT_NO_OPENGL
 #include <QtCore>
 #include <QtGui>
 #include <QtWidgets>
@@ -14,9 +15,7 @@ class CircularProgress : public QWidget
 	Q_OBJECT
 	public:
 		explicit CircularProgress(QWidget *parent = 0);
-		int width 				= 200;
-		int height 				= 200;
-		friend class MainWindow;
+		friend class SplashScreen;
 
 	protected:
 		void paintEvent(QPaintEvent *);
@@ -24,6 +23,8 @@ class CircularProgress : public QWidget
 		
 	private:
 		int value 				= 0;
+		int width 				= 270;
+		int height 				= 270;
 		int progWidth 			= 10;
 		int maxValue			= 100;
 		int fontSize			= 30;
