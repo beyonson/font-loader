@@ -70,12 +70,23 @@ class MainWindow(QMainWindow):
         self.ui.minButton.clicked.connect(self.showMinimized)
         self.ui.minButton.clicked.connect(self.showMaximized)
 
+        # connect other buttons
+        self.ui.fontButton.clicked.connect(self.uploadFont)
+
         self.show()
 
     def changeValue(self, value):
         self.progress.setValue(value)
-    
 
+    def uploadFont(self):
+        fontName = QFileDialog.getOpenFileName(QStackedWidget(), 'open file', '/home/garrett/git/font-loader/fonts', 'ttf files  (*.ttf)')
+        
+        id = QFontDatabase.addApplicationFont(str(fontName[0]))
+        if id < 0: print("ERROR: failed to load Qt font")
+
+        families = QFontDatabase.applicationFontFamilies(id)
+        self.ui.textInput.setFont(QFont(families[0], 48))
+        self.ui.fontLabel.setText("  " + families[0])
     
 if __name__ == "__main__":
     app = QApplication(sys.argv)
