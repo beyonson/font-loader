@@ -359,7 +359,7 @@
                       </size>
                      </property>
                      <property name="text">
-                      <string>  C:/font/font.ttf</string>
+                      <string>  FreeMono</string>
                      </property>
                     </widget>
                    </item>
@@ -499,6 +499,7 @@
            <widget class="QPlainTextEdit" name="textInput">
             <property name="font">
              <font>
+              <family>FreeMono</family>
               <pointsize>48</pointsize>
              </font>
             </property>

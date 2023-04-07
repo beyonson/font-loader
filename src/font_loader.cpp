@@ -4,15 +4,7 @@
 // settings
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
-
-// create character struct
-struct Character {
-    unsigned int TextureID;
-    glm::ivec2   Size;
-    glm::ivec2   Bearing;
-    unsigned int AdvanceX;
-};
-std::map<char, Character> Characters;
+const unsigned int CHARHEIGHT = 500;
 
 // create memory management objects
 unsigned int textVBO, textVAO;
@@ -112,35 +104,28 @@ int main(int argc, char *argv[])
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-        // now store character for later use
-        Character character = {
-            texture, 
-            glm::ivec2(width, height),
-            glm::ivec2(face->glyph->bitmap_left, face->glyph->bitmap_top),
-            static_cast<unsigned int>(face->glyph->advance.x)
-        };
-        Characters.insert(std::pair<char, Character>(c, character));
 
         glGenTextures(1, &texture2);
         glBindTexture(GL_TEXTURE_2D, texture2);
 
-        // create empty rectangle
+        // create larger empty rectangle
         glTexImage2D(
             GL_TEXTURE_2D,
             0,
             GL_RED,
             advanceX,
-            400,
+            CHARHEIGHT,
             0,
             GL_RED,
             GL_UNSIGNED_BYTE,
             NULL
         );
+        // copy char texture into larger empty rectangle
         glTexSubImage2D(
             GL_TEXTURE_2D,
             0,
             (face->glyph->metrics.horiBearingX >> 6) + 15,
-            (380 - face->glyph->bitmap.rows),
+            (360 - (face->glyph->metrics.horiBearingY >> 6)), // 360 chosen arbitrarily as the y origin
             width,
             height,
             GL_RED,
@@ -155,9 +140,9 @@ int main(int argc, char *argv[])
         glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, texture2, 0);
 
         // read char pixels from frame buffer
-        unsigned int data_size = (advanceX) * 400;
-        GLubyte* pixels = new GLubyte[(advanceX) * 400* 4];
-        glReadPixels(0, 0, advanceX, 400, GL_RGBA, GL_UNSIGNED_BYTE, pixels);
+        unsigned int data_size = (advanceX) * CHARHEIGHT;
+        GLubyte* pixels = new GLubyte[(advanceX) * CHARHEIGHT* 4];
+        glReadPixels(0, 0, advanceX, CHARHEIGHT, GL_RGBA, GL_UNSIGNED_BYTE, pixels);
 
         glBindFramebuffer(GL_FRAMEBUFFER, 0);
         glDeleteFramebuffers(1, &fbo);
@@ -166,7 +151,7 @@ int main(int argc, char *argv[])
         filename += std::to_string(c);
         filename += ".bmp";
 
-        imageProc.ipSave(filename, advanceX , 400, pixels);
+        imageProc.ipSave(filename, advanceX , CHARHEIGHT, pixels);
         imageProc.ipThreshold(filename, filename, true);
         imageProc.ipSkeletonize(filename, filename);
     }

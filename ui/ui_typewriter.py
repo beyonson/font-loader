@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'typewriterHqdPaq.ui'
+## Form generated from reading UI file 'typewriterBcYgRj.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.8
 ##
@@ -264,6 +264,7 @@ class Ui_TypeWriter(object):
         self.textInput = QPlainTextEdit(self.rightFrame)
         self.textInput.setObjectName(u"textInput")
         font1 = QFont()
+        font1.setFamily(u"FreeMono")
         font1.setPointSize(48)
         self.textInput.setFont(font1)
 
@@ -288,7 +289,7 @@ class Ui_TypeWriter(object):
         self.minButton.setText("")
         self.maxButton.setText("")
         self.loadFontLabel.setText(QCoreApplication.translate("TypeWriter", u"Load Font", None))
-        self.fontLabel.setText(QCoreApplication.translate("TypeWriter", u"  C:/font/font.ttf", None))
+        self.fontLabel.setText(QCoreApplication.translate("TypeWriter", u"  FreeMono", None))
         self.fontButton.setText("")
     # retranslateUi
 
