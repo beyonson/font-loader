@@ -1,9 +1,9 @@
 import sys
 import os
 import subprocess
-from PySide6.QtCore import *
-from PySide6.QtGui import *
-from PySide6.QtWidgets import *
+from PySide2.QtCore import *
+from PySide2.QtGui import *
+from PySide2.QtWidgets import *
 
 from circular_progress import CircularProgress
 from ui_newnew import Ui_TypeWriter
@@ -42,6 +42,7 @@ class SplashScreen(QMainWindow):
         # run font loader
         subprocess.Popen('../build/font-loader ../fonts/DroidSansMono.ttf', shell=True)
 
+    # counter process for loading font
     def update(self):
         global counter
 
@@ -74,4 +75,4 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = SplashScreen()
 
-    sys.exit(app.exec())
+    sys.exit(app.exec_())
