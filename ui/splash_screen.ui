@@ -118,6 +118,9 @@
             <layout class="QVBoxLayout" name="verticalLayout_3">
              <item>
               <layout class="QGridLayout" name="gridLayout">
+               <property name="topMargin">
+                <number>25</number>
+               </property>
                <item row="2" column="0">
                 <widget class="QFrame" name="fontFrame">
                  <property name="frameShape">
