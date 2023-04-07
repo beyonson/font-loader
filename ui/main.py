@@ -40,7 +40,7 @@ class SplashScreen(QMainWindow):
         self.show()
 
         # run font loader
-        subprocess.Popen('../build/font-loader ../fonts/DroidSansMono.ttf', shell=True)
+        subprocess.Popen('../build/font-loader ../fonts/FreeMono.ttf', shell=True)
 
     # counter process for loading font
     def update(self):
@@ -81,10 +81,13 @@ class MainWindow(QMainWindow):
     def uploadFont(self):
         fontName = QFileDialog.getOpenFileName(QStackedWidget(), 'open file', '/home/garrett/git/font-loader/fonts', 'ttf files  (*.ttf)')
         
+        # load font from file
         id = QFontDatabase.addApplicationFont(str(fontName[0]))
         if id < 0: print("ERROR: failed to load Qt font")
 
+        # update UI
         families = QFontDatabase.applicationFontFamilies(id)
+        self.ui.textInput.clear()
         self.ui.textInput.setFont(QFont(families[0], 48))
         self.ui.fontLabel.setText("  " + families[0])
     
