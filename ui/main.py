@@ -6,7 +6,7 @@ from PySide2.QtGui import *
 from PySide2.QtWidgets import *
 
 from circular_progress import CircularProgress
-from ui_newnew import Ui_TypeWriter
+from ui_typewriter import Ui_TypeWriter
 from ui_splash_screen import Ui_SplashScreen
 
 counter = 0
@@ -35,7 +35,7 @@ class SplashScreen(QMainWindow):
         # create timer
         self.timer = QTimer()
         self.timer.timeout.connect(self.update)
-        self.timer.start(30)
+        self.timer.start(10)
 
         self.show()
 
@@ -65,10 +65,16 @@ class MainWindow(QMainWindow):
         self.ui = Ui_TypeWriter()
         self.ui.setupUi(self)
 
+        # connect navigation buttons
+        self.ui.closeButton.clicked.connect(self.close)
+        self.ui.minButton.clicked.connect(self.showMinimized)
+        self.ui.minButton.clicked.connect(self.showMaximized)
+
         self.show()
 
     def changeValue(self, value):
         self.progress.setValue(value)
+    
 
     
 if __name__ == "__main__":

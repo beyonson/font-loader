@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'new-newhzLsqv.ui'
+## Form generated from reading UI file 'typewriterHqdPaq.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.8
 ##
@@ -120,16 +120,22 @@ class Ui_TypeWriter(object):
         self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.closeButton = QPushButton(self.buttonFrame)
         self.closeButton.setObjectName(u"closeButton")
+        self.closeButton.setCursor(QCursor(Qt.OpenHandCursor))
+        self.closeButton.setMouseTracking(True)
 
         self.horizontalLayout_2.addWidget(self.closeButton)
 
         self.minButton = QPushButton(self.buttonFrame)
         self.minButton.setObjectName(u"minButton")
+        self.minButton.setCursor(QCursor(Qt.OpenHandCursor))
+        self.minButton.setMouseTracking(True)
 
         self.horizontalLayout_2.addWidget(self.minButton)
 
         self.maxButton = QPushButton(self.buttonFrame)
         self.maxButton.setObjectName(u"maxButton")
+        self.maxButton.setCursor(QCursor(Qt.OpenHandCursor))
+        self.maxButton.setMouseTracking(True)
 
         self.horizontalLayout_2.addWidget(self.maxButton)
 
