@@ -22,11 +22,13 @@ class SplashScreen(QMainWindow):
         self.ui.fontSelected.setText("Font Selected: Free Mono")
 
         # configure circular progress
-        self.progress = CircularProgress()
-        self.progress.width = 270
-        self.progress.height = 270
-        self.progress.value = 0
-        self.progress.fontSize = 30
+        self.progress               = CircularProgress()
+        self.progress.width         = 270
+        self.progress.height        = 270
+        self.progress.value         = 0
+        self.progress.fontSize      = 30
+        self.progress.progressColor = 0xa6adc8
+        self.progress.textColor     = 0xa6adc8
         self.progress.setFixedSize(self.progress.width, self.progress.height)
         self.progress.move(15,15)
         self.progress.addShadow(True)
@@ -82,7 +84,13 @@ class MainWindow(QMainWindow):
         self.progress.setValue(value)
 
     def uploadFont(self):
-        fontName = QFileDialog.getOpenFileName(QStackedWidget(), 'open file', '/home/garrett/git/font-loader/fonts', 'ttf files  (*.ttf)')
+        fontName = QFileDialog.getOpenFileName(QStackedWidget(), 'open file', '../fonts', 'ttf files  (*.ttf)')
+
+        # load font from file
+        id = QFontDatabase.addApplicationFont(str(fontName[0]))
+        if id < 0: 
+            print("ERROR: failed to load Qt font")
+            return
 
         # create parent frame to block buttons
         self.progressParent = QFrame()
@@ -94,12 +102,15 @@ class MainWindow(QMainWindow):
         self.progress = CircularProgress()
         self.progress.setWindowFlags(Qt.FramelessWindowHint)
         self.progress.setAttribute(Qt.WA_TranslucentBackground)
-        self.progress.width = 270
-        self.progress.height = 270
-        self.progress.value = 0
-        self.progress.fontSize = 30
         self.progress.setFixedSize(self.progress.width, self.progress.height)
         self.progress.addShadow(True)
+        self.progress.width         = 200
+        self.progress.height        = 200
+        self.progress.value         = 0
+        self.progress.fontSize      = 20
+        self.progress.progressColor = 0xa6adc8
+        self.progress.textColor     = 0xa6adc8
+        self.progress.percent       = False
 
         self.layout = QVBoxLayout()
         self.layout.addWidget(self.progress, Qt.AlignCenter, Qt.AlignCenter)
@@ -114,10 +125,6 @@ class MainWindow(QMainWindow):
         # run font loader
         subprocess.Popen('../build/font-loader ' + fontName[0], shell=True)
         
-        # load font from file
-        id = QFontDatabase.addApplicationFont(str(fontName[0]))
-        if id < 0: print("ERROR: failed to load Qt font")
-
         # update UI
         families = QFontDatabase.applicationFontFamilies(id)
         self.ui.textInput.clear()
