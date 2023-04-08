@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'typewriterZTXcwQ.ui'
+## Form generated from reading UI file 'typewriterVPBaaM.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.8
 ##
@@ -19,7 +19,8 @@ class Ui_TypeWriter(object):
         if not TypeWriter.objectName():
             TypeWriter.setObjectName(u"TypeWriter")
         TypeWriter.resize(800, 600)
-        TypeWriter.setMaximumSize(QSize(16777215, 600))
+        TypeWriter.setMinimumSize(QSize(800, 600))
+        TypeWriter.setMaximumSize(QSize(800, 600))
         TypeWriter.setStyleSheet(u"*{\n"
 "	border: none;\n"
 "	background-color: transparent;\n"
