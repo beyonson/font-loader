@@ -1,6 +1,8 @@
 import sys
 import os
 import subprocess
+import glob
+
 from PySide2.QtCore import *
 from PySide2.QtGui import *
 from PySide2.QtWidgets import *
@@ -9,7 +11,8 @@ from circular_progress import CircularProgress
 from ui_typewriter import Ui_TypeWriter
 from ui_splash_screen import Ui_SplashScreen
 
-counter = 0
+counter     = 0
+fontFolder  = ''
 
 class SplashScreen(QMainWindow):
     def __init__(self):
@@ -38,7 +41,7 @@ class SplashScreen(QMainWindow):
         # create timer
         self.timer = QTimer()
         self.timer.timeout.connect(self.update)
-        self.timer.start(10)
+        self.timer.start(25)
 
         self.show()
 
@@ -68,7 +71,6 @@ class MainWindow(QMainWindow):
         self.setAttribute(Qt.WA_TranslucentBackground)
         self.ui = Ui_TypeWriter()
         self.ui.setupUi(self)
-        self.counter = 0
 
         # connect navigation buttons
         self.ui.closeButton.clicked.connect(self.close)
@@ -77,11 +79,26 @@ class MainWindow(QMainWindow):
 
         # connect other buttons
         self.ui.fontButton.clicked.connect(self.uploadFont)
+        self.ui.fontDirButton.clicked.connect(self.openFolder)
 
         self.show()
 
     def changeValue(self, value):
         self.progress.setValue(value)
+
+    def mousePressEvent(self, event):
+        self.oldPosition = event.globalPos()
+
+    def mouseMoveEvent(self, event):
+        delta = QPoint(event.globalPos() - self.oldPosition)
+        self.move(self.x() + delta.x(), self.y() + delta.y())
+        self.oldPosition = event.globalPos()
+
+    def openFolder(self):
+        fontFolder = QFileDialog.getExistingDirectory(None, 'Select a folder:', '../', QFileDialog.ShowDirsOnly)
+        fonts = os.listdir(fontFolder)
+        for font in fonts:
+            self.ui.fontDirList.addItem(font)
 
     def uploadFont(self):
         fontName = QFileDialog.getOpenFileName(QStackedWidget(), 'open file', '../fonts', 'ttf files  (*.ttf)')

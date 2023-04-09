@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'typewriterVPBaaM.ui'
+## Form generated from reading UI file 'typewriterqIsFSf.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.8
 ##
@@ -71,14 +71,26 @@ class Ui_TypeWriter(object):
 "	font-size: 12;\n"
 "}\n"
 "\n"
+"#fontDirList:item:hover {\n"
+"	background-color: #585b70;\n"
+"	color: #7f849c;\n"
+"	font-size: 12;\n"
+"}\n"
+"\n"
+"#fontDirList:item:selected {\n"
+"	ba"
+                        "ckground-color: transparent;\n"
+"	color: #585b70;\n"
+"	font-size: 12;\n"
+"}\n"
+"\n"
 "#closeButton {\n"
 "	background-color: #f38ba8;\n"
 "	border-style: solid;\n"
 "	border-radius:6px;\n"
 "	max-width:12px;\n"
 "	max-height:12px;\n"
-"	min-w"
-                        "idth:12px;\n"
+"	min-width:12px;\n"
 "	min-height:12px;\n"
 "}\n"
 "#minButton {\n"
@@ -306,8 +318,11 @@ class Ui_TypeWriter(object):
         font1.setFamily(u"Source Code Pro")
         font1.setPointSize(12)
         self.fontDirList.setFont(font1)
+        self.fontDirList.setMouseTracking(True)
+        self.fontDirList.setFocusPolicy(Qt.ClickFocus)
         self.fontDirList.setFrameShape(QFrame.NoFrame)
-        self.fontDirList.setSelectionRectVisible(True)
+        self.fontDirList.setSelectionMode(QAbstractItemView.SingleSelection)
+        self.fontDirList.setSelectionRectVisible(False)
 
         self.horizontalLayout_8.addWidget(self.fontDirList)
 
@@ -363,7 +378,7 @@ class Ui_TypeWriter(object):
         self.closeButton.setText("")
         self.minButton.setText("")
         self.maxButton.setText("")
-        self.loadFontLabel.setText(QCoreApplication.translate("TypeWriter", u"Load Font ", None))
+        self.loadFontLabel.setText(QCoreApplication.translate("TypeWriter", u"Upload Font", None))
         self.fontButton.setText("")
         self.fontLabel.setText(QCoreApplication.translate("TypeWriter", u"  Free Mono", None))
         self.fontDirLabel.setText(QCoreApplication.translate("TypeWriter", u"Open Folder  ", None))
