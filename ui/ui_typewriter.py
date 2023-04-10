@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'typewriterqIsFSf.ui'
+## Form generated from reading UI file 'typewriterunBkQU.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.8
 ##
@@ -65,6 +65,10 @@ class Ui_TypeWriter(object):
 "	color: #585b70;\n"
 "}\n"
 "\n"
+"#fontDirSelLabel {\n"
+"	color: #585b70;\n"
+"}\n"
+"\n"
 "#fontDirList {\n"
 "	background-color: transparent;\n"
 "	color: #585b70;\n"
@@ -74,12 +78,12 @@ class Ui_TypeWriter(object):
 "#fontDirList:item:hover {\n"
 "	background-color: #585b70;\n"
 "	color: #7f849c;\n"
-"	font-size: 12;\n"
+"	font-size: "
+                        "12;\n"
 "}\n"
 "\n"
 "#fontDirList:item:selected {\n"
-"	ba"
-                        "ckground-color: transparent;\n"
+"	background-color: transparent;\n"
 "	color: #585b70;\n"
 "	font-size: 12;\n"
 "}\n"
@@ -308,12 +312,25 @@ class Ui_TypeWriter(object):
         self.fontDirFrame.setObjectName(u"fontDirFrame")
         self.fontDirFrame.setFrameShape(QFrame.NoFrame)
         self.fontDirFrame.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_8 = QHBoxLayout(self.fontDirFrame)
+        self.verticalLayout_4 = QVBoxLayout(self.fontDirFrame)
+        self.verticalLayout_4.setSpacing(0)
+        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
+        self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.fontDirListFrame = QFrame(self.fontDirFrame)
+        self.fontDirListFrame.setObjectName(u"fontDirListFrame")
+        self.fontDirListFrame.setFrameShape(QFrame.StyledPanel)
+        self.fontDirListFrame.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_8 = QHBoxLayout(self.fontDirListFrame)
         self.horizontalLayout_8.setSpacing(0)
         self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
-        self.horizontalLayout_8.setContentsMargins(0, 5, 0, 0)
-        self.fontDirList = QListWidget(self.fontDirFrame)
+        self.horizontalLayout_8.setContentsMargins(0, -1, 0, -1)
+        self.fontDirList = QListWidget(self.fontDirListFrame)
         self.fontDirList.setObjectName(u"fontDirList")
+        sizePolicy = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Minimum)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.fontDirList.sizePolicy().hasHeightForWidth())
+        self.fontDirList.setSizePolicy(sizePolicy)
         font1 = QFont()
         font1.setFamily(u"Source Code Pro")
         font1.setPointSize(12)
@@ -327,9 +344,37 @@ class Ui_TypeWriter(object):
         self.horizontalLayout_8.addWidget(self.fontDirList)
 
 
+        self.verticalLayout_4.addWidget(self.fontDirListFrame)
+
+        self.fontDirSelFrame = QFrame(self.fontDirFrame)
+        self.fontDirSelFrame.setObjectName(u"fontDirSelFrame")
+        self.fontDirSelFrame.setFrameShape(QFrame.NoFrame)
+        self.fontDirSelFrame.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_11 = QHBoxLayout(self.fontDirSelFrame)
+        self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
+        self.fontDirSelLabel = QLabel(self.fontDirSelFrame)
+        self.fontDirSelLabel.setObjectName(u"fontDirSelLabel")
+        self.fontDirSelLabel.setFont(font)
+
+        self.horizontalLayout_11.addWidget(self.fontDirSelLabel)
+
+        self.fontDirSelButton = QPushButton(self.fontDirSelFrame)
+        self.fontDirSelButton.setObjectName(u"fontDirSelButton")
+        self.fontDirSelButton.setCursor(QCursor(Qt.OpenHandCursor))
+        icon2 = QIcon()
+        icon2.addFile(u":/icons/icons/arrow-right.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.fontDirSelButton.setIcon(icon2)
+        self.fontDirSelButton.setIconSize(QSize(24, 24))
+
+        self.horizontalLayout_11.addWidget(self.fontDirSelButton)
+
+
+        self.verticalLayout_4.addWidget(self.fontDirSelFrame)
+
+
         self.verticalLayout_2.addWidget(self.fontDirFrame)
 
-        self.verticalSpacer = QSpacerItem(20, 100, QSizePolicy.Minimum, QSizePolicy.Fixed)
+        self.verticalSpacer = QSpacerItem(20, 100, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
         self.verticalLayout_2.addItem(self.verticalSpacer)
 
@@ -383,5 +428,7 @@ class Ui_TypeWriter(object):
         self.fontLabel.setText(QCoreApplication.translate("TypeWriter", u"  Free Mono", None))
         self.fontDirLabel.setText(QCoreApplication.translate("TypeWriter", u"Open Folder  ", None))
         self.fontDirButton.setText("")
+        self.fontDirSelLabel.setText(QCoreApplication.translate("TypeWriter", u"Set Selected Font", None))
+        self.fontDirSelButton.setText("")
     # retranslateUi
 

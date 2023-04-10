@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="icons">
+    <file>icons/arrow-right.png</file>
     <file>icons/greyfolder.png</file>
     <file>icons/greyupload.png</file>
     <file>icons/upload.png</file>
