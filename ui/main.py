@@ -84,8 +84,22 @@ class MainWindow(QMainWindow):
         self.ui.fontDirButton.clicked.connect(self.openFolder)
         self.ui.fontDirSelButton.clicked.connect(self.setSelectedFont)
         self.ui.fontDirList.currentRowChanged.connect(self.selectFont)
+        self.ui.textInput.textChanged.connect(self.writeToFile)
 
         self.show()
+
+    def writeToFile(self):
+        textFile = open("../../typedText.txt", "a")
+        asciiNum = ord(self.ui.textInput.toPlainText()[-1])
+
+        if (asciiNum == 32):
+            textFile.write("_")
+        elif (asciiNum == 10):
+            textFile.write(">")
+        else:
+            textFile.write(chr(asciiNum))
+        
+        textFile.close()
 
     def changeValue(self, value):
         self.progress.setValue(value)
