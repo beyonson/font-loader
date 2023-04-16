@@ -85,6 +85,7 @@ class MainWindow(QMainWindow):
         self.ui.fontDirSelButton.clicked.connect(self.setSelectedFont)
         self.ui.fontDirList.currentRowChanged.connect(self.selectFont)
         self.ui.textInput.textChanged.connect(self.writeToFile)
+        self.ui.resetButton.clicked.connect(self.sendResetSignal)
 
         self.show()
 
@@ -117,8 +118,10 @@ class MainWindow(QMainWindow):
 
         fontFolder = QFileDialog.getExistingDirectory(None, 'Select a folder:', '../', QFileDialog.ShowDirsOnly)
         fonts = os.listdir(fontFolder)
-        for font in fonts:
-            self.ui.fontDirList.addItem(font)
+        if fonts:
+            self.ui.fontDirButton.clear()
+            for font in fonts:
+                self.ui.fontDirList.addItem(font)
 
     def selectFont(self):
         global selectedFont
@@ -126,6 +129,11 @@ class MainWindow(QMainWindow):
         selectedFont = self.ui.fontDirList.currentItem().text()
         self.ui.fontDirSelLabel.setText("Set " + selectedFont)
         self.ui.fontDirSelFrame.show()
+
+    def sendResetSignal(self):
+        textFile = open("../../typedText.txt", "a")
+        textFile.write("^")
+        textFile.close()
 
     def setSelectedFont(self):
         global fontFolder, selectedFont

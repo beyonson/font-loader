@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'typewriterunBkQU.ui'
+## Form generated from reading UI file 'typewritermrOmFN.ui'
 ##
-## Created by: Qt User Interface Compiler version 5.15.8
+## Created by: Qt User Interface Compiler version 5.15.9
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -37,6 +37,10 @@ class Ui_TypeWriter(object):
 "#textInput {\n"
 "	background-color: transparent;\n"
 "	color: #a6adc8;\n"
+"}\n"
+"\n"
+"#resetButton {\n"
+" 	color: #585b70;\n"
 "}\n"
 "\n"
 "#leftFrame {\n"
@@ -76,10 +80,10 @@ class Ui_TypeWriter(object):
 "}\n"
 "\n"
 "#fontDirList:item:hover {\n"
-"	background-color: #585b70;\n"
+"	background-c"
+                        "olor: #585b70;\n"
 "	color: #7f849c;\n"
-"	font-size: "
-                        "12;\n"
+"	font-size: 12;\n"
 "}\n"
 "\n"
 "#fontDirList:item:selected {\n"
@@ -392,18 +396,66 @@ class Ui_TypeWriter(object):
         self.rightFrame.setObjectName(u"rightFrame")
         self.rightFrame.setFrameShape(QFrame.NoFrame)
         self.rightFrame.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_7 = QHBoxLayout(self.rightFrame)
+        self.verticalLayout_5 = QVBoxLayout(self.rightFrame)
+        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
+        self.topRightFrame = QFrame(self.rightFrame)
+        self.topRightFrame.setObjectName(u"topRightFrame")
+        self.topRightFrame.setFrameShape(QFrame.NoFrame)
+        self.topRightFrame.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_7 = QHBoxLayout(self.topRightFrame)
         self.horizontalLayout_7.setSpacing(0)
         self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
-        self.horizontalLayout_7.setContentsMargins(30, 50, 30, 30)
-        self.textInput = QPlainTextEdit(self.rightFrame)
-        self.textInput.setObjectName(u"textInput")
-        font2 = QFont()
-        font2.setFamily(u"FreeMono")
-        font2.setPointSize(48)
-        self.textInput.setFont(font2)
+        self.horizontalLayout_7.setContentsMargins(0, 0, 0, 0)
+        self.horizontalSpacer_4 = QSpacerItem(300, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.horizontalLayout_7.addWidget(self.textInput)
+        self.horizontalLayout_7.addItem(self.horizontalSpacer_4)
+
+        self.frame_4 = QFrame(self.topRightFrame)
+        self.frame_4.setObjectName(u"frame_4")
+        font2 = QFont()
+        font2.setFamily(u"Source Code Pro")
+        font2.setPointSize(11)
+        self.frame_4.setFont(font2)
+        self.frame_4.setFrameShape(QFrame.NoFrame)
+        self.frame_4.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_12 = QHBoxLayout(self.frame_4)
+        self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
+        self.resetButton = QPushButton(self.frame_4)
+        self.resetButton.setObjectName(u"resetButton")
+        font3 = QFont()
+        font3.setFamily(u"Source Code Pro")
+        font3.setPointSize(10)
+        self.resetButton.setFont(font3)
+        self.resetButton.setCursor(QCursor(Qt.OpenHandCursor))
+        icon3 = QIcon()
+        icon3.addFile(u":/icons/icons/refresh-cw.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.resetButton.setIcon(icon3)
+
+        self.horizontalLayout_12.addWidget(self.resetButton)
+
+
+        self.horizontalLayout_7.addWidget(self.frame_4)
+
+
+        self.verticalLayout_5.addWidget(self.topRightFrame)
+
+        self.bottomRightFrame = QFrame(self.rightFrame)
+        self.bottomRightFrame.setObjectName(u"bottomRightFrame")
+        self.bottomRightFrame.setFrameShape(QFrame.NoFrame)
+        self.bottomRightFrame.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_13 = QHBoxLayout(self.bottomRightFrame)
+        self.horizontalLayout_13.setObjectName(u"horizontalLayout_13")
+        self.textInput = QPlainTextEdit(self.bottomRightFrame)
+        self.textInput.setObjectName(u"textInput")
+        font4 = QFont()
+        font4.setFamily(u"FreeMono")
+        font4.setPointSize(48)
+        self.textInput.setFont(font4)
+
+        self.horizontalLayout_13.addWidget(self.textInput)
+
+
+        self.verticalLayout_5.addWidget(self.bottomRightFrame)
 
 
         self.horizontalLayout.addWidget(self.rightFrame)
@@ -430,5 +482,6 @@ class Ui_TypeWriter(object):
         self.fontDirButton.setText("")
         self.fontDirSelLabel.setText(QCoreApplication.translate("TypeWriter", u"Set Selected Font", None))
         self.fontDirSelButton.setText("")
+        self.resetButton.setText(QCoreApplication.translate("TypeWriter", u" Reset", None))
     # retranslateUi
 
