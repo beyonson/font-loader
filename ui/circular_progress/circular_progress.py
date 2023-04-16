@@ -11,13 +11,14 @@ class CircularProgress(QWidget):
         self.height             =200
         self.progressWidth      = 10
         self.progressRoundedCap = True
-        self.progressColor      = 0x4988D1
+        self.progressColor      = 0xcdd6f4
         self.maxValue           = 100
         self.fontFamily         = "Segoe UI"
         self.fontSize           = 12
         self.suffix             = "%"
-        self.textColor          = 0x4988D1
+        self.textColor          = 0xcdd6f4
         self.enableShadow       = True
+        self.percent            = True
 
         # set default size
         self.resize(self.width, self.height)
@@ -70,7 +71,10 @@ class CircularProgress(QWidget):
         # create text
         pen.setColor(QColor(self.textColor))
         paint.setPen(pen)
-        paint.drawText(rect, Qt.AlignCenter, f"{self.value}{self.suffix}")
+        if self.percent:
+            paint.drawText(rect, Qt.AlignCenter, f"{self.value}{self.suffix}")
+        else: 
+            paint.drawText(rect, Qt.AlignCenter, "loading...")
 
         # close painter
         paint.end()
