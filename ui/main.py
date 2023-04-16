@@ -74,6 +74,11 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
         self.ui.fontDirSelFrame.hide()
 
+        # set text edit format
+        fmt = QTextCharFormat()
+        fmt.setFontCapitalization(QFont.AllUppercase)
+        self.ui.textInput.setCurrentCharFormat(fmt)
+
         # connect navigation buttons
         self.ui.closeButton.clicked.connect(self.close)
         self.ui.minButton.clicked.connect(self.showMinimized)
@@ -90,17 +95,18 @@ class MainWindow(QMainWindow):
         self.show()
 
     def writeToFile(self):
-        textFile = open("../../typedText.txt", "a")
-        asciiNum = ord(self.ui.textInput.toPlainText()[-1])
+        if len(self.ui.textInput.toPlainText()) > 0:
+            textFile = open("../../typedText.txt", "a")
+            asciiNum = ord(self.ui.textInput.toPlainText()[-1])
 
-        if (asciiNum == 32):
-            textFile.write("_")
-        elif (asciiNum == 10):
-            textFile.write(">")
-        else:
-            textFile.write(chr(asciiNum))
-        
-        textFile.close()
+            if (asciiNum == 32):
+                textFile.write("_")
+            elif (asciiNum == 10):
+                textFile.write(">")
+            else:
+                textFile.write(chr(asciiNum))
+            
+            textFile.close()
 
     def changeValue(self, value):
         self.progress.setValue(value)
@@ -134,6 +140,8 @@ class MainWindow(QMainWindow):
         textFile = open("../../typedText.txt", "a")
         textFile.write("^")
         textFile.close()
+
+        self.ui.textInput.clear()
 
     def setSelectedFont(self):
         global fontFolder, selectedFont
