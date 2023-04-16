@@ -16,7 +16,7 @@ fontFolder  = ''
 selectedFont= ''
 
 class SplashScreen(QMainWindow):
-    def __init__(self):
+    def __init__(self, startup):
         QMainWindow.__init__(self)
         # create splash screen
         self.setWindowFlags(Qt.FramelessWindowHint)
@@ -39,15 +39,15 @@ class SplashScreen(QMainWindow):
         self.progress.setParent(self.ui.centralwidget)
         self.progress.show()
 
-        # create timer
-        self.timer = QTimer()
-        self.timer.timeout.connect(self.update)
-        self.timer.start(10)
+        if startup:
+            # create timer
+            self.timer = QTimer()
+            self.timer.timeout.connect(self.update)
+            self.timer.start(25)
+            # run font loader
+            subprocess.Popen('../build/font-loader ../fonts/FreeMono.ttf', shell=True)
 
         self.show()
-
-        # run font loader
-        subprocess.Popen('../build/font-loader ../fonts/FreeMono.ttf', shell=True)
 
     # counter process for loading font
     def update(self):
@@ -63,6 +63,12 @@ class SplashScreen(QMainWindow):
             self.close()
 
         counter += 1
+
+    def setFontName(self, name):
+        self.ui.fontSelected.setText("Font Selected: " + name)
+
+    def setProgressValue(self, value):
+        self.progress.setValue(value)
 
 
 class MainWindow(QMainWindow):
@@ -122,10 +128,15 @@ class MainWindow(QMainWindow):
     def openFolder(self):
         global fontFolder
 
-        fontFolder = QFileDialog.getExistingDirectory(None, 'Select a folder:', '../', QFileDialog.ShowDirsOnly)
-        fonts = os.listdir(fontFolder)
-        if fonts:
-            self.ui.fontDirButton.clear()
+        newFolder = QFileDialog.getExistingDirectory(None, 'Select a folder:', '../', QFileDialog.ShowDirsOnly)
+
+        try:
+            fonts = os.listdir(newFolder)
+        except:
+            print("ERROR: no directory selected")
+        else:
+            fontFolder = newFolder
+            self.ui.fontDirList.clear()
             for font in fonts:
                 self.ui.fontDirList.addItem(font)
 
@@ -152,6 +163,7 @@ class MainWindow(QMainWindow):
         if id < 0: 
             print("ERROR: failed to load Qt font")
             return
+        families = QFontDatabase.applicationFontFamilies(id)
 
         # create parent frame to block buttons
         self.progressParent = QFrame()
@@ -160,18 +172,8 @@ class MainWindow(QMainWindow):
         self.progressParent.resize(800,600)
 
         # configure circular progress
-        self.progress = CircularProgress()
-        self.progress.setWindowFlags(Qt.FramelessWindowHint)
-        self.progress.setAttribute(Qt.WA_TranslucentBackground)
-        self.progress.setFixedSize(self.progress.width, self.progress.height)
-        self.progress.addShadow(True)
-        self.progress.width         = 200
-        self.progress.height        = 200
-        self.progress.value         = 0
-        self.progress.fontSize      = 20
-        self.progress.progressColor = 0xa6adc8
-        self.progress.textColor     = 0xa6adc8
-        self.progress.percent       = False
+        self.progress= SplashScreen(False)
+        self.progress.setFontName(families[0])
 
         self.layout = QVBoxLayout()
         self.layout.addWidget(self.progress, Qt.AlignCenter, Qt.AlignCenter)
@@ -187,7 +189,6 @@ class MainWindow(QMainWindow):
         subprocess.Popen('../build/font-loader ' + fontPath, shell=True)
         
         # update UI
-        families = QFontDatabase.applicationFontFamilies(id)
         self.ui.textInput.clear()
         self.ui.textInput.setFont(QFont(families[0], 48))
         self.ui.fontLabel.setText("  " + families[0])
@@ -200,6 +201,7 @@ class MainWindow(QMainWindow):
         if id < 0: 
             print("ERROR: failed to load Qt font")
             return
+        families = QFontDatabase.applicationFontFamilies(id)
 
         # create parent frame to block buttons
         self.progressParent = QFrame()
@@ -207,19 +209,8 @@ class MainWindow(QMainWindow):
         self.progressParent.setStyleSheet("background-color: transparent")
         self.progressParent.resize(800,600)
 
-        # configure circular progress
-        self.progress = CircularProgress()
-        self.progress.setWindowFlags(Qt.FramelessWindowHint)
-        self.progress.setAttribute(Qt.WA_TranslucentBackground)
-        self.progress.setFixedSize(self.progress.width, self.progress.height)
-        self.progress.addShadow(True)
-        self.progress.width         = 200
-        self.progress.height        = 200
-        self.progress.value         = 0
-        self.progress.fontSize      = 20
-        self.progress.progressColor = 0xa6adc8
-        self.progress.textColor     = 0xa6adc8
-        self.progress.percent       = False
+        self.progress= SplashScreen(False)
+        self.progress.setFontName(families[0])
 
         self.layout = QVBoxLayout()
         self.layout.addWidget(self.progress, Qt.AlignCenter, Qt.AlignCenter)
@@ -235,7 +226,6 @@ class MainWindow(QMainWindow):
         subprocess.Popen('../build/font-loader ' + fontName[0], shell=True)
         
         # update UI
-        families = QFontDatabase.applicationFontFamilies(id)
         self.ui.textInput.clear()
         self.ui.textInput.setFont(QFont(families[0], 48))
         self.ui.fontLabel.setText("  " + families[0])
@@ -244,8 +234,7 @@ class MainWindow(QMainWindow):
     def update(self):
         global counter
 
-        self.progress.setValue(counter)
-
+        self.progress.setProgressValue(counter)
         if counter >= 100:
             self.timer.stop()
             self.progressParent.close()
@@ -256,6 +245,6 @@ class MainWindow(QMainWindow):
     
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    window = SplashScreen()
+    window = SplashScreen(True)
 
     sys.exit(app.exec_())

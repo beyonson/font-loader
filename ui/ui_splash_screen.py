@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'splash_screenTyWiko.ui'
+## Form generated from reading UI file 'splash_screenIVXSxt.ui'
 ##
-## Created by: Qt User Interface Compiler version 5.15.8
+## Created by: Qt User Interface Compiler version 5.15.9
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -22,6 +22,7 @@ class Ui_SplashScreen(object):
         SplashScreen.setMaximumSize(QSize(300, 300))
         self.centralwidget = QWidget(SplashScreen)
         self.centralwidget.setObjectName(u"centralwidget")
+        self.centralwidget.setStyleSheet(u"")
         self.verticalLayout = QVBoxLayout(self.centralwidget)
         self.verticalLayout.setSpacing(0)
         self.verticalLayout.setObjectName(u"verticalLayout")
@@ -37,7 +38,7 @@ class Ui_SplashScreen(object):
         self.circleBg = QFrame(self.container)
         self.circleBg.setObjectName(u"circleBg")
         self.circleBg.setStyleSheet(u"QFrame {\n"
-"	background-color: #313244;\n"
+"	background-color: #181825;\n"
 "	color:  #cdd6f4;\n"
 "	border-radius: 120;\n"
 "	font: 9pt \"Segoe Ui\";\n"

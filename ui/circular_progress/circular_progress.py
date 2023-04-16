@@ -32,7 +32,7 @@ class CircularProgress(QWidget):
     def addShadow(self, enable):
         if enable:
             self.shadow = QGraphicsDropShadowEffect(self)
-            self.shadow.setBlurRadius(15)
+            self.shadow.setBlurRadius(30)
             self.shadow.setXOffset(0)
             self.shadow.setYOffset(0)
             self.shadow.setColor(QColor(0,0,0,120))
