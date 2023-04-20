@@ -72,7 +72,7 @@ int main(int argc, char *argv[])
     FT_Set_Pixel_Sizes(face, 0, 400);
     int width, height, advanceX;
     
-    for (unsigned int c = 65; c < 91; c++)
+    for (unsigned int c = 58; c < 91; c++)
     {
         // load character glyph 
         if (FT_Load_Char(face, c, FT_LOAD_RENDER))
