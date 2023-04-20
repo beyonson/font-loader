@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'typewriterFAETGi.ui'
+## Form generated from reading UI file 'typewriterXFhKcJ.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.9
 ##
@@ -529,7 +529,6 @@ class Ui_TypeWriter(object):
         font4.setFamily(u"FreeMono")
         font4.setPointSize(48)
         self.textInput.setFont(font4)
-        self.textInput.setTextInteractionFlags(Qt.NoTextInteraction)
 
         self.horizontalLayout_13.addWidget(self.textInput)
 

@@ -97,6 +97,7 @@ class MainWindow(QMainWindow):
         self.ui.fontDirList.currentRowChanged.connect(self.selectFont)
         self.ui.textInput.textChanged.connect(self.writeToFile)
         self.ui.resetButton.clicked.connect(self.sendResetSignal)
+        self.ui.fontSize.valueChanged.connect(self.sendFontSize)
 
         self.show()
 
@@ -155,6 +156,13 @@ class MainWindow(QMainWindow):
 
         self.ui.textInput.clear()
 
+    def sendFontSize(self):
+        textFile = open("../../typedText.txt", "a")
+        textFile.truncate(0)
+        textFile.write("#" + str(self.ui.fontSize.value()))
+        textFile.close()
+
+        self.ui.textInput.clear()
     def setSelectedFont(self):
         global fontFolder, selectedFont
         # load font from file
