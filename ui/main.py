@@ -23,7 +23,7 @@ class SplashScreen(QMainWindow):
         self.setAttribute(Qt.WA_TranslucentBackground)
         self.ui = Ui_SplashScreen()
         self.ui.setupUi(self)
-        self.ui.fontSelected.setText("Font Selected: Free Mono")
+        self.ui.fontSelected.setText("Font Selected: DroidSansMono")
 
         # configure circular progress
         self.progress               = CircularProgress()
@@ -45,7 +45,7 @@ class SplashScreen(QMainWindow):
             self.timer.timeout.connect(self.update)
             self.timer.start(25)
             # run font loader
-            subprocess.Popen('../build/font-loader ../fonts/FreeMono.ttf', shell=True)
+            subprocess.Popen('../build/font-loader ../fonts/DroidSansMono.ttf', shell=True)
 
         self.show()
 
