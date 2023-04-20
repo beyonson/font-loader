@@ -158,11 +158,12 @@ class MainWindow(QMainWindow):
 
     def sendFontSize(self):
         textFile = open("../../typedText.txt", "a")
-        textFile.truncate(0)
+        #textFile.truncate(0)
         textFile.write("#" + str(self.ui.fontSize.value()))
         textFile.close()
 
         self.ui.textInput.clear()
+
     def setSelectedFont(self):
         global fontFolder, selectedFont
         # load font from file
