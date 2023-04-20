@@ -88,7 +88,7 @@ class MainWindow(QMainWindow):
         # connect navigation buttons
         self.ui.closeButton.clicked.connect(self.close)
         self.ui.minButton.clicked.connect(self.showMinimized)
-        self.ui.minButton.clicked.connect(self.showMaximized)
+        self.ui.maxButton.clicked.connect(self.showMaximized)
 
         # connect other buttons
         self.ui.fontButton.clicked.connect(self.uploadFont)
