@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'typewritermrOmFN.ui'
+## Form generated from reading UI file 'typewriterFAETGi.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.9
 ##
@@ -20,13 +20,40 @@ class Ui_TypeWriter(object):
             TypeWriter.setObjectName(u"TypeWriter")
         TypeWriter.resize(800, 600)
         TypeWriter.setMinimumSize(QSize(800, 600))
-        TypeWriter.setMaximumSize(QSize(800, 600))
+        TypeWriter.setMaximumSize(QSize(1920, 1080))
         TypeWriter.setStyleSheet(u"*{\n"
 "	border: none;\n"
 "	background-color: transparent;\n"
 "	background: none;\n"
 "	padding: 0;\n"
 "	margin: 0;\n"
+"}\n"
+"\n"
+"QSpinBox {\n"
+"	border: 5;\n"
+"	background-color: #1e1e2e;\n"
+"	border-color: #1e1e2e;\n"
+"	color: #585b70;\n"
+"	padding: 0;\n"
+"	margin: 0;\n"
+"}\n"
+"\n"
+"QSpinBox::up-button {\n"
+"    subcontrol-origin: border;\n"
+"    subcontrol-position: top right; \n"
+"	background-color: #585b70;\n"
+"	border-top-left-radius: 3;\n"
+"	border-top-right-radius: 3;\n"
+"	margin: 2;\n"
+"}\n"
+"\n"
+"QSpinBox::down-button {\n"
+"    subcontrol-origin: border;\n"
+"    subcontrol-position: bottom right; \n"
+"	background-color: #585b70;\n"
+"	border-bottom-left-radius: 3;\n"
+"	border-bottom-right-radius: 3;\n"
+"	margin: 2;\n"
 "}\n"
 "\n"
 "#mainFrame {\n"
@@ -45,7 +72,8 @@ class Ui_TypeWriter(object):
 "\n"
 "#leftFrame {\n"
 "	background-color: #1e1e2e;\n"
-"	border-top-left-radius: 22;\n"
+"	border"
+                        "-top-left-radius: 22;\n"
 "	border-bottom-left-radius: 22;\n"
 "}\n"
 "\n"
@@ -65,6 +93,10 @@ class Ui_TypeWriter(object):
 "	color: #585b70;\n"
 "}\n"
 "\n"
+"#fontSizeLabel {\n"
+"	color: #585b70;\n"
+"}\n"
+"\n"
 "#fontDirLabel {\n"
 "	color: #585b70;\n"
 "}\n"
@@ -80,8 +112,7 @@ class Ui_TypeWriter(object):
 "}\n"
 "\n"
 "#fontDirList:item:hover {\n"
-"	background-c"
-                        "olor: #585b70;\n"
+"	background-color: #585b70;\n"
 "	color: #7f849c;\n"
 "	font-size: 12;\n"
 "}\n"
@@ -99,7 +130,8 @@ class Ui_TypeWriter(object):
 "	max-width:12px;\n"
 "	max-height:12px;\n"
 "	min-width:12px;\n"
-"	min-height:12px;\n"
+""
+                        "	min-height:12px;\n"
 "}\n"
 "#minButton {\n"
 "	background-color: #f9e2af;\n"
@@ -382,12 +414,58 @@ class Ui_TypeWriter(object):
 
         self.verticalLayout_2.addItem(self.verticalSpacer)
 
-        self.frame = QFrame(self.leftFrame)
-        self.frame.setObjectName(u"frame")
-        self.frame.setFrameShape(QFrame.StyledPanel)
-        self.frame.setFrameShadow(QFrame.Raised)
+        self.fontSizeFrame = QFrame(self.leftFrame)
+        self.fontSizeFrame.setObjectName(u"fontSizeFrame")
+        self.fontSizeFrame.setFrameShape(QFrame.StyledPanel)
+        self.fontSizeFrame.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_14 = QHBoxLayout(self.fontSizeFrame)
+        self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
+        self.horizontalLayout_14.setContentsMargins(9, 0, 0, 0)
+        self.frame_3 = QFrame(self.fontSizeFrame)
+        self.frame_3.setObjectName(u"frame_3")
+        self.frame_3.setFrameShape(QFrame.StyledPanel)
+        self.frame_3.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_16 = QHBoxLayout(self.frame_3)
+        self.horizontalLayout_16.setSpacing(0)
+        self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
+        self.horizontalLayout_16.setContentsMargins(0, 0, 0, 0)
+        self.fontSizeLabel = QLabel(self.frame_3)
+        self.fontSizeLabel.setObjectName(u"fontSizeLabel")
+        self.fontSizeLabel.setFont(font)
 
-        self.verticalLayout_2.addWidget(self.frame)
+        self.horizontalLayout_16.addWidget(self.fontSizeLabel)
+
+
+        self.horizontalLayout_14.addWidget(self.frame_3)
+
+        self.frame_2 = QFrame(self.fontSizeFrame)
+        self.frame_2.setObjectName(u"frame_2")
+        self.frame_2.setFrameShape(QFrame.StyledPanel)
+        self.frame_2.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_15 = QHBoxLayout(self.frame_2)
+        self.horizontalLayout_15.setSpacing(0)
+        self.horizontalLayout_15.setObjectName(u"horizontalLayout_15")
+        self.horizontalLayout_15.setContentsMargins(0, 0, 0, 0)
+        self.fontSize = QSpinBox(self.frame_2)
+        self.fontSize.setObjectName(u"fontSize")
+        self.fontSize.setMinimumSize(QSize(50, 40))
+        self.fontSize.setMaximumSize(QSize(50, 16777215))
+        self.fontSize.setFont(font)
+        self.fontSize.setButtonSymbols(QAbstractSpinBox.UpDownArrows)
+        self.fontSize.setMinimum(12)
+        self.fontSize.setMaximum(16)
+
+        self.horizontalLayout_15.addWidget(self.fontSize)
+
+
+        self.horizontalLayout_14.addWidget(self.frame_2)
+
+        self.horizontalSpacer_5 = QSpacerItem(35, 20, QSizePolicy.Fixed, QSizePolicy.Minimum)
+
+        self.horizontalLayout_14.addItem(self.horizontalSpacer_5)
+
+
+        self.verticalLayout_2.addWidget(self.fontSizeFrame)
 
 
         self.horizontalLayout.addWidget(self.leftFrame)
@@ -451,6 +529,7 @@ class Ui_TypeWriter(object):
         font4.setFamily(u"FreeMono")
         font4.setPointSize(48)
         self.textInput.setFont(font4)
+        self.textInput.setTextInteractionFlags(Qt.NoTextInteraction)
 
         self.horizontalLayout_13.addWidget(self.textInput)
 
@@ -482,6 +561,7 @@ class Ui_TypeWriter(object):
         self.fontDirButton.setText("")
         self.fontDirSelLabel.setText(QCoreApplication.translate("TypeWriter", u"Set Selected Font", None))
         self.fontDirSelButton.setText("")
+        self.fontSizeLabel.setText(QCoreApplication.translate("TypeWriter", u"Font Size", None))
         self.resetButton.setText(QCoreApplication.translate("TypeWriter", u" Reset", None))
     # retranslateUi
 

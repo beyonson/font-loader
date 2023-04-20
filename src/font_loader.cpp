@@ -153,7 +153,7 @@ int main(int argc, char *argv[])
 
         imageProc.ipSave(filename, advanceX , CHARHEIGHT, pixels);
         imageProc.ipThreshold(filename, filename, true);
-        imageProc.ipSkeletonize(filename, filename);
+	//imageProc.ipSkeletonize(filename, filename);
     }
     FT_Done_Face(face);
     FT_Done_FreeType(ft);

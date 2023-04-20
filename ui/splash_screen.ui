@@ -26,6 +26,9 @@
    <string>Loading</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <property name="spacing">
      <number>0</number>
@@ -70,7 +73,7 @@
         <widget class="QFrame" name="circleBg">
          <property name="styleSheet">
           <string notr="true">QFrame {
-	background-color: #313244;
+	background-color: #181825;
 	color:  #cdd6f4;
 	border-radius: 120;
 	font: 9pt &quot;Segoe Ui&quot;;

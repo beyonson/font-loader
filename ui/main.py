@@ -149,6 +149,7 @@ class MainWindow(QMainWindow):
 
     def sendResetSignal(self):
         textFile = open("../../typedText.txt", "a")
+        textFile.truncate(0)
         textFile.write("^")
         textFile.close()
 
